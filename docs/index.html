@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>系统工程原理与实践 · 导读</title>
+<meta name="description" content="系统工程原理与实践（Kossiakoff 等，第三版）的中文交互式导读">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem("se-guide:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t));}catch(e){}</script>
+<script>var QUIZ={}, GLOSSARY={}, DIAGRAMS={}, SIMS={}, SORTS={}, STEPS={};</script>
+<script src="assets/glossary.js"></script>
+</head>
+<body class="page-index">
+<div class="topbar">
+  <button class="iconbtn menu-btn" id="menuBtn" aria-label="打开目录">☰<span class="lbl-txt"> 目录</span></button>
+  <a class="title" href="index.html"><b>系统工程原理与实践</b>　导读</a>
+  <a class="iconbtn" id="mapBtn" href="concepts.html"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><circle cx="2.6" cy="3.2" r="1.5"/><circle cx="13.4" cy="3.6" r="1.5"/><circle cx="3" cy="13" r="1.5"/><circle cx="13" cy="12.6" r="1.5"/><path d="M8 8 L2.6 3.2 M8 8 L13.4 3.6 M8 8 L3 13 M8 8 L13 12.6"/></svg><span class="lbl-txt">概念图</span></a>
+  <button class="iconbtn" id="themeBtn" aria-label="切换深浅色">◐<span class="lbl-txt"> 深浅色</span></button>
+</div>
+<div class="progress" id="progress"></div>
+<nav class="sidebar" id="sidebar" aria-label="目录">
+  <a class="side-home" href="index.html">全书导读首页</a>
+  <div class="side-stat">
+    <div class="row"><span>已读章节</span><b id="readCount">0 / 23</b></div>
+    <div class="bar"><i id="readBar"></i></div>
+  </div>
+  <div class="toc" id="toc"><div class="toc-part">第一部分 · 系统工程的基础</div><a href="ch01.html" data-ch="ch1" class="core"><span class="num">1</span><span class="lbl">系统工程与现代系统</span><span class="chk" aria-hidden="true"></span></a><a href="ch02.html" data-ch="ch2" class="core"><span class="num">2</span><span class="lbl">复杂系统的结构</span><span class="chk" aria-hidden="true"></span></a><a href="ch03.html" data-ch="ch3" class="core"><span class="num">3</span><span class="lbl">系统开发过程</span><span class="chk" aria-hidden="true"></span></a><a href="ch04.html" data-ch="ch4" class="core"><span class="num">4</span><span class="lbl">系统工程管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第二部分 · 概念开发阶段</div><a href="ch05.html" data-ch="ch5" class="core"><span class="num">5</span><span class="lbl">需要分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch06.html" data-ch="ch6" class="core"><span class="num">6</span><span class="lbl">需求分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch07.html" data-ch="ch7" class="core"><span class="num">7</span><span class="lbl">功能分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch08.html" data-ch="ch8" class="core"><span class="num">8</span><span class="lbl">评估与选择</span><span class="chk" aria-hidden="true"></span></a><a href="ch09.html" data-ch="ch9" class="core"><span class="num">9</span><span class="lbl">系统架构设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch10.html" data-ch="ch10" class="core"><span class="num">10</span><span class="lbl">基于模型的系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch11.html" data-ch="ch11" class="core"><span class="num">11</span><span class="lbl">决策分析与支持</span><span class="chk" aria-hidden="true"></span></a><a href="ch12.html" data-ch="ch12" class="core"><span class="num">12</span><span class="lbl">风险管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第三部分 · 工程开发阶段</div><a href="ch13.html" data-ch="ch13" class=""><span class="num">13</span><span class="lbl">先期开发</span><span class="chk" aria-hidden="true"></span></a><a href="ch14.html" data-ch="ch14" class=""><span class="num">14</span><span class="lbl">软件系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch15.html" data-ch="ch15" class=""><span class="num">15</span><span class="lbl">工程设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch16.html" data-ch="ch16" class=""><span class="num">16</span><span class="lbl">系统集成</span><span class="chk" aria-hidden="true"></span></a><a href="ch17.html" data-ch="ch17" class=""><span class="num">17</span><span class="lbl">试验与评价</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第四部分 · 开发后阶段</div><a href="ch18.html" data-ch="ch18" class=""><span class="num">18</span><span class="lbl">生产</span><span class="chk" aria-hidden="true"></span></a><a href="ch19.html" data-ch="ch19" class=""><span class="num">19</span><span class="lbl">运行与保障</span><span class="chk" aria-hidden="true"></span></a><a href="ch20.html" data-ch="ch20" class=""><span class="num">20</span><span class="lbl">体系工程</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第五部分 · 系统工程的应用领域</div><a href="ch21.html" data-ch="ch21" class=""><span class="num">21</span><span class="lbl">企业系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch22.html" data-ch="ch22" class=""><span class="num">22</span><span class="lbl">系统安全工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch23.html" data-ch="ch23" class=""><span class="num">23</span><span class="lbl">系统工程的未来</span><span class="chk" aria-hidden="true"></span></a></div>
+</nav>
+<div class="scrim" id="scrim"></div>
+<main>
+<div class="wrap">
+
+<header class="hero" id="top">
+  <h1>系统工程原理与实践</h1>
+  <div class="en">Systems Engineering Principles and Practice, Third Edition</div>
+  <div class="meta">
+    <span>Alexander Kossiakoff、Samuel J. Seymour、David A. Flanigan、Steven M. Biemer 著</span>
+    <span>Wiley，2020 年第三版</span>
+  </div>
+  <div id="resume"></div>
+</header>
+
+<section id="intro">
+<h3 style="margin-top:8px">这本书讲的是什么</h3>
+<p class="lead">这本书是美国约翰斯·霍普金斯大学系统工程硕士项目的核心教材，第一版出版于 2003 年。Alexander Kossiakoff 曾在 1969 年至 1980 年担任该校应用物理实验室的主任，1980 年又创办了技术管理硕士项目，这个项目后来扩展为系统工程项目，如今是美国规模最大的在职研究生项目。</p>
+<p>全书要回答的问题可以这样概括：当一个系统大到没有任何一个专业的工程师能够独自把握全局的时候，比如一架客机、一套空中交通管制系统或者一座城市的轨道交通网络，应该由谁、用什么方法来保证这个系统作为一个整体能够完成它的使命。答案是“系统工程”，它的职责是引导复杂系统的工程开发过程。</p>
+<p>学习成为一名系统工程师，与学习在某一个传统工程专业里做到出色，是两件性质很不一样的事情。系统工程师需要养成一种特殊的思考方式，叫作“系统工程视角”：始终把整个系统以及它的使命能否成功作为最核心的目标。</p>
+
+<div class="keybox">
+  <div class="k-title">系统工程师同时面对的三方</div>
+  <ul>
+    <li><strong>系统的用户和其他利益相关者</strong>：他们关心系统能否满足自己的需要，以及使用中会遇到什么问题。</li>
+    <li><strong>企业和项目的管理者</strong>：他们关心经费和进度，项目必须在预算之内、按期完成。</li>
+    <li><strong>各个专业的工程师</strong>：他们负责开发、建造、测试和部署系统的各个组成部分，有各自的能力范围，也有各自的技术追求。</li>
+  </ul>
+  <p>系统工程师需要学会这三方各自的语言和基本原理，理解每一方的要求，然后通过协商找到三方都能接受的平衡方案。这种跨专业的领导作用，是系统工程最关键的贡献，也是它面临的最主要的挑战。</p>
+</div>
+
+<h3>贯穿全书的五个教学模型</h3>
+<p>初学者常常觉得系统工程过于抽象、难以捉摸。为了让它变得具体，全书围绕五个模型展开，这五个模型在后面的章节里会反复出现。</p>
+<div class="diagram" data-d="fiveModels"></div>
+
+<h3>全书的结构</h3>
+<p>第三版全书分为五个部分。前四个部分大体按照一个系统从“提出需要”到“退役”的时间顺序排列，第五部分讲系统工程在几个特殊领域里的应用。</p>
+<section class="bookmap" id="parts"><div class="bm-part" id="part1"><div class="bm-head"><span class="bm-n">第一部分</span><h3>系统工程的基础</h3></div><p>第一部分回答四个基本问题：系统工程是什么，什么样的系统需要它（第 1 章）；一个复杂系统由哪些部分构成，系统工程师需要了解到多深（第 2 章）；一个系统从提出到退役要经历哪些阶段，每个阶段里用什么方法推进（第 3 章）；系统工程工作在项目中如何计划、组织和管理（第 4 章）。后面各章的内容都建立在这四章的概念之上。</p><div class="bm-list"><a class="bm-ch core" href="ch01.html" data-ch="ch1"><span class="bm-num">1</span><span class="bm-t"><b>系统工程与现代系统</b><i>Systems Engineering and the World of Modern Systems</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch02.html" data-ch="ch2"><span class="bm-num">2</span><span class="bm-t"><b>复杂系统的结构</b><i>Structure of Complex Systems</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch03.html" data-ch="ch3"><span class="bm-num">3</span><span class="bm-t"><b>系统开发过程</b><i>The System Development Process</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch04.html" data-ch="ch4"><span class="bm-num">4</span><span class="bm-t"><b>系统工程管理</b><i>Systems Engineering Management</i></span><span class="chk" aria-hidden="true"></span></a></div></div><div class="bm-part" id="part2"><div class="bm-head"><span class="bm-n">第二部分</span><h3>概念开发阶段</h3></div><p>这一部分讲述系统生命周期的前期。按照第 3 章的模型，概念开发阶段包含三个时期，接下来几章依次讲述：</p>
+  <ul>
+    <li><strong>需要分析</strong>（第 5 章）：证明确实需要一个新系统，并且有可行的办法实现它。</li>
+    <li><strong>概念探索</strong>（第 6 章“需求分析”）：把使用方面的要求转化为工程上的性能需求，同时探索多个候选方案。</li>
+    <li><strong>概念定义</strong>（第 7 章“功能分析”和第 8 章“评估与选择”）：确定系统必须完成的功能，并从候选方案中选出一个。</li>
+  </ul>
+  <p>第 5 至 7 章都把第 3 章的四步方法应用到各自的时期，四个步骤在每个时期有各自的名称和产出。此外还有几种方法贯穿整个生命周期，在概念开发阶段尤其重要：系统架构设计、基于模型的系统工程、决策分析和风险管理，分别在第 9 至 12 章展开。</p><div class="bm-list"><a class="bm-ch core" href="ch05.html" data-ch="ch5"><span class="bm-num">5</span><span class="bm-t"><b>需要分析</b><i>Needs Analysis</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch06.html" data-ch="ch6"><span class="bm-num">6</span><span class="bm-t"><b>需求分析</b><i>Requirements Analysis</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch07.html" data-ch="ch7"><span class="bm-num">7</span><span class="bm-t"><b>功能分析</b><i>Functional Analysis</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch08.html" data-ch="ch8"><span class="bm-num">8</span><span class="bm-t"><b>评估与选择</b><i>Evaluation and Selection</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch09.html" data-ch="ch9"><span class="bm-num">9</span><span class="bm-t"><b>系统架构设计</b><i>Systems Architecting</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch10.html" data-ch="ch10"><span class="bm-num">10</span><span class="bm-t"><b>基于模型的系统工程</b><i>Model-Based Systems Engineering</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch11.html" data-ch="ch11"><span class="bm-num">11</span><span class="bm-t"><b>决策分析与支持</b><i>Decision Analysis and Support</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch core" href="ch12.html" data-ch="ch12"><span class="bm-num">12</span><span class="bm-t"><b>风险管理</b><i>Risk Management</i></span><span class="chk" aria-hidden="true"></span></a></div></div><div class="bm-part" id="part3"><div class="bm-head"><span class="bm-n">第三部分</span><h3>工程开发阶段</h3></div><p>到了这一阶段，项目已经选定了一个系统方案，接下来要做的是把这个方案变成真正能够制造和使用的硬件与软件。按照第 3 章的生命周期模型，工程开发阶段包括三个时期：</p>
+  <ul>
+    <li><strong>先期开发</strong>（第 13 章）：在正式投入大规模设计之前，先把方案中尚未被证明可行的部分逐一验证清楚。</li>
+    <li><strong>工程设计</strong>（第 15 章）：完成每一个组件的详细设计，并制造出原型。</li>
+    <li><strong>集成与评价</strong>（第 16、17 章）：把各个组件组装成完整的系统，然后在接近真实使用的条件下测试和评估。</li>
+  </ul>
+  <p>软件在现代系统中所占的比重越来越大，而软件在接口、测试和变更管理上都与硬件有根本的差别，所以软件系统工程单独放在第 14 章。</p><div class="bm-list"><a class="bm-ch" href="ch13.html" data-ch="ch13"><span class="bm-num">13</span><span class="bm-t"><b>先期开发</b><i>Advanced Development</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch" href="ch14.html" data-ch="ch14"><span class="bm-num">14</span><span class="bm-t"><b>软件系统工程</b><i>Software Systems Engineering</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch" href="ch15.html" data-ch="ch15"><span class="bm-num">15</span><span class="bm-t"><b>工程设计</b><i>Engineering Design</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch" href="ch16.html" data-ch="ch16"><span class="bm-num">16</span><span class="bm-t"><b>系统集成</b><i>Systems Integration</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch" href="ch17.html" data-ch="ch17"><span class="bm-num">17</span><span class="bm-t"><b>试验与评价</b><i>Test and Evaluation</i></span><span class="chk" aria-hidden="true"></span></a></div></div><div class="bm-part" id="part4"><div class="bm-head"><span class="bm-n">第四部分</span><h3>开发后阶段</h3></div><p>系统开发并测试完成以后，系统工程的工作并没有结束，它会延续到工厂和使用现场。这一部分包括生产（第 18 章）和运行与保障（第 19 章）两个时期，以及由许多独立系统组成的“体系”的工程问题（第 20 章）。</p><div class="bm-list"><a class="bm-ch" href="ch18.html" data-ch="ch18"><span class="bm-num">18</span><span class="bm-t"><b>生产</b><i>Production</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch" href="ch19.html" data-ch="ch19"><span class="bm-num">19</span><span class="bm-t"><b>运行与保障</b><i>Operation and Support</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch" href="ch20.html" data-ch="ch20"><span class="bm-num">20</span><span class="bm-t"><b>体系工程</b><i>System of Systems Engineering</i></span><span class="chk" aria-hidden="true"></span></a></div></div><div class="bm-part" id="part5"><div class="bm-head"><span class="bm-n">第五部分</span><h3>系统工程的应用领域</h3></div><p>最后一部分把系统工程的视野从单个系统和体系进一步扩大：第 21 章把整个企业当作工程的对象，第 22 章关注系统的安全防护，第 23 章展望系统工程未来的发展方向。</p><div class="bm-list"><a class="bm-ch" href="ch21.html" data-ch="ch21"><span class="bm-num">21</span><span class="bm-t"><b>企业系统工程</b><i>Enterprise Systems Engineering</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch" href="ch22.html" data-ch="ch22"><span class="bm-num">22</span><span class="bm-t"><b>系统安全工程</b><i>Systems Security Engineering</i></span><span class="chk" aria-hidden="true"></span></a><a class="bm-ch" href="ch23.html" data-ch="ch23"><span class="bm-num">23</span><span class="bm-t"><b>系统工程的未来</b><i>The Future of Systems Engineering</i></span><span class="chk" aria-hidden="true"></span></a></div></div></section>
+
+</section>
+
+
+
+<div class="endnote"><p>本导读依据 Alexander Kossiakoff、Samuel J. Seymour、David A. Flanigan、Steven M. Biemer 所著《Systems Engineering Principles and Practice》（第三版，Wiley，2020）编写，章节编号与原书一致。</p></div>
+</div>
+</main>
+<div class="pop" id="pop" role="tooltip"></div>
+<script>
+DIAGRAMS.fiveModels = {
+  title: "五个教学模型",
+  arrows: false,
+  groups: [{ nodes: [
+    { k:"m1", label:"系统层级模型", sub:"系统由什么构成",
+      html:"<p>复杂系统可以一层一层地分解：系统分为子系统，子系统分为组件，组件再分为子组件和零件。在各种系统中还反复出现一组“构建模块”，例如传感、通信、数据处理、结构、动力等功能单元。</p><p>详见 <a href='ch02.html'>第 2 章 复杂系统的结构</a>。</p>" },
+    { k:"m2", label:"系统生命周期模型", sub:"系统经历哪些阶段",
+      html:"<p>这个生命周期模型以美国国防部等机构现有的模型为基础，分为概念开发、工程开发、开发后三个主要阶段，每个阶段再细分为若干个时期。和其他模型相比，这个模型与每个时期实际进行的工程工作以及参与者的对应关系更加明确。</p><p>详见 <a href='ch03.html'>第 3 章 系统开发过程</a>。</p>" },
+    { k:"m3", label:"系统工程方法", sub:"每个阶段里怎么做",
+      html:"<p>系统工程方法由四个基本步骤组成：需求分析、功能定义、物理定义、设计验证。这四个步骤在生命周期的每一个时期里都要重复进行一遍，每重复一次，系统就被描述得更具体一些。</p><p>详见 <a href='ch03.html'>第 3 章 系统开发过程</a>。</p>" },
+    { k:"m4", label:"系统“实体化”", sub:"系统如何从想法变成实物",
+      html:"<p>“实体化”（materialization）描述的是一个系统从抽象的概念，一步一步变成经过工程设计、完成集成并且通过验证的实际系统的过程。对生命周期的每一个时期，都可以列出这个时期结束时系统在各个层级上分别已经具体到什么程度。</p><p>详见 <a href='ch03.html'>第 3 章</a>，以及第 5、6、7、13、15、17 章开头的“实体化状态”表格。</p>" },
+    { k:"m5", label:"系统工程师的职责", sub:"在每个阶段做什么、要懂什么",
+      html:"<p>在生命周期的不同时期，系统工程师分别承担不同的具体职责，为了履行这些职责，也需要掌握不同的知识。这条线索把前面四个模型和真实的工作联系在一起。</p><p>可从 <a href='ch01.html'>第 1 章</a> 读起。</p>" }
+  ]}]
+};
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

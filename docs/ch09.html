@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 9 章 系统架构设计 · 系统工程原理与实践导读</title>
+<meta name="description" content="系统工程原理与实践第 9 章“系统架构设计”的中文导读">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem("se-guide:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t));}catch(e){}</script>
+<script>var QUIZ={}, GLOSSARY={}, DIAGRAMS={}, SIMS={}, SORTS={}, STEPS={};</script>
+<script src="assets/glossary.js"></script>
+</head>
+<body class="page-ch">
+<div class="topbar">
+  <button class="iconbtn menu-btn" id="menuBtn" aria-label="打开目录">☰<span class="lbl-txt"> 目录</span></button>
+  <a class="title" href="index.html"><b>系统工程原理与实践</b>　导读</a>
+  <a class="iconbtn" id="mapBtn" href="concepts.html"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><circle cx="2.6" cy="3.2" r="1.5"/><circle cx="13.4" cy="3.6" r="1.5"/><circle cx="3" cy="13" r="1.5"/><circle cx="13" cy="12.6" r="1.5"/><path d="M8 8 L2.6 3.2 M8 8 L13.4 3.6 M8 8 L3 13 M8 8 L13 12.6"/></svg><span class="lbl-txt">概念图</span></a>
+  <button class="iconbtn" id="themeBtn" aria-label="切换深浅色">◐<span class="lbl-txt"> 深浅色</span></button>
+</div>
+<div class="progress" id="progress"></div>
+<nav class="sidebar" id="sidebar" aria-label="目录">
+  <a class="side-home" href="index.html">全书导读首页</a>
+  <div class="side-stat">
+    <div class="row"><span>已读章节</span><b id="readCount">0 / 23</b></div>
+    <div class="bar"><i id="readBar"></i></div>
+  </div>
+  <div class="toc" id="toc"><div class="toc-part">第一部分 · 系统工程的基础</div><a href="ch01.html" data-ch="ch1" class="core"><span class="num">1</span><span class="lbl">系统工程与现代系统</span><span class="chk" aria-hidden="true"></span></a><a href="ch02.html" data-ch="ch2" class="core"><span class="num">2</span><span class="lbl">复杂系统的结构</span><span class="chk" aria-hidden="true"></span></a><a href="ch03.html" data-ch="ch3" class="core"><span class="num">3</span><span class="lbl">系统开发过程</span><span class="chk" aria-hidden="true"></span></a><a href="ch04.html" data-ch="ch4" class="core"><span class="num">4</span><span class="lbl">系统工程管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第二部分 · 概念开发阶段</div><a href="ch05.html" data-ch="ch5" class="core"><span class="num">5</span><span class="lbl">需要分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch06.html" data-ch="ch6" class="core"><span class="num">6</span><span class="lbl">需求分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch07.html" data-ch="ch7" class="core"><span class="num">7</span><span class="lbl">功能分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch08.html" data-ch="ch8" class="core"><span class="num">8</span><span class="lbl">评估与选择</span><span class="chk" aria-hidden="true"></span></a><a href="ch09.html" data-ch="ch9" class="core active" aria-current="page"><span class="num">9</span><span class="lbl">系统架构设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch10.html" data-ch="ch10" class="core"><span class="num">10</span><span class="lbl">基于模型的系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch11.html" data-ch="ch11" class="core"><span class="num">11</span><span class="lbl">决策分析与支持</span><span class="chk" aria-hidden="true"></span></a><a href="ch12.html" data-ch="ch12" class="core"><span class="num">12</span><span class="lbl">风险管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第三部分 · 工程开发阶段</div><a href="ch13.html" data-ch="ch13" class=""><span class="num">13</span><span class="lbl">先期开发</span><span class="chk" aria-hidden="true"></span></a><a href="ch14.html" data-ch="ch14" class=""><span class="num">14</span><span class="lbl">软件系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch15.html" data-ch="ch15" class=""><span class="num">15</span><span class="lbl">工程设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch16.html" data-ch="ch16" class=""><span class="num">16</span><span class="lbl">系统集成</span><span class="chk" aria-hidden="true"></span></a><a href="ch17.html" data-ch="ch17" class=""><span class="num">17</span><span class="lbl">试验与评价</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第四部分 · 开发后阶段</div><a href="ch18.html" data-ch="ch18" class=""><span class="num">18</span><span class="lbl">生产</span><span class="chk" aria-hidden="true"></span></a><a href="ch19.html" data-ch="ch19" class=""><span class="num">19</span><span class="lbl">运行与保障</span><span class="chk" aria-hidden="true"></span></a><a href="ch20.html" data-ch="ch20" class=""><span class="num">20</span><span class="lbl">体系工程</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第五部分 · 系统工程的应用领域</div><a href="ch21.html" data-ch="ch21" class=""><span class="num">21</span><span class="lbl">企业系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch22.html" data-ch="ch22" class=""><span class="num">22</span><span class="lbl">系统安全工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch23.html" data-ch="ch23" class=""><span class="num">23</span><span class="lbl">系统工程的未来</span><span class="chk" aria-hidden="true"></span></a></div>
+</nav>
+<div class="scrim" id="scrim"></div>
+<main>
+<div class="wrap">
+<div class="part-tag"><a href="index.html#part2">第二部分 · 概念开发阶段</a></div>
+<article class="chapter" id="ch9" data-ch="9" data-title="系统架构设计" data-core="1">
+<div class="ch-head">
+  <div class="ch-label"><span>第 9 章</span><span class="chip core">精读</span></div>
+  <h2>系统架构设计</h2>
+  <div class="en">Systems Architecting</div>
+</div>
+
+<h3>架构师做什么</h3>
+<p>说到“架构”，许多人想到的是建筑，建筑师就是设计房子的人。二十多年前，南加州大学教授 Eberhardt Rechtin 对这种看法提出了挑战。Rechtin 认为，随着系统越来越复杂，当时所说的顶层设计，或者更准确地说概念设计，已经不足以引导工程师和设计人员做出准确而高效的设计。于是 Rechtin 到建筑领域去考察，看复杂的系统（也就是建筑物）是怎样构想和建造出来的。一般认为，“<span class="term" data-t="architecting">系统架构设计</span>”（<span class="en-term">Systems Architecting</span>）这个说法就是 Rechtin 创造的。</p>
+<p>架构关心的是结构、结构之间的关系，以及对设计的期望。这一点对飞机、发电厂、航天器这样的复杂系统，和对建筑物一样适用。所以 Rechtin 的出发点，是把建筑领域的原则用到系统工程中来，作为开发系统的一部分，与系统工程结合在一起。Rechtin 给出的定义是：</p>
+<blockquote>架构设计的本质是构建结构。构建结构可以是为功能赋予形式，可以是从混乱中理出秩序，也可以是把客户尚未成形的想法转化为一个可行的概念模型。关键的手段是平衡各方的需要、协调接口，以及在各种极端之间寻求折中。</blockquote>
+<p>仔细读这个定义，会发现概念开发和概念定义的原则都包含在其中。过去，人们把概念设计和架构设计的各项内容笼统地称为“初步设计”；现在，这个说法已经让位给含义更广的“架构设计”。</p>
+<p>系统架构师的职责，是在利益相关者和工程团队之间起联络作用：理解利益相关者对系统的设想，再把这个设想转化成设计人员能够认得出、用得上的形式。为了忠实地实现最初的设想，架构师必须从多个角度看待问题。架构师在项目开始、系统概念逐步形成和成熟的时候投入最多。随着团队人员更替，设计人员和其他组织进进出出，架构师最好始终留在原来的团队里，保留从系统起源时积累下来的整体知识，既用来带新成员入门，也在关键的决策时刻提供足够的全局视角。</p>
+
+<h3>三种架构：以血糖仪为例</h3>
+<p>系统工程师主要关注三种架构，通常按顺序依次画出：<strong>功能架构</strong>说明必须完成哪些功能，<strong>物理架构</strong>说明系统由哪些组件构成，<strong>分配架构</strong>说明哪项功能由哪个组件执行。血糖仪用来测量病人血液中的葡萄糖含量，让病人据此决定下一步该怎么做。用它作例子，可以把三种架构看得很清楚。</p>
+<h4>功能架构</h4>
+<p><span class="term" data-t="funcArch">功能架构</span>（<span class="en-term">Functional Architecture</span>）主要在系统工程工作的开始阶段完成。它描述完成系统的目标或使命时必须执行的功能，也就是必须执行的动作，通常与具体的解决方案无关，关注的是用动词表达的“要做什么”。功能可以按使命阶段组织，也可以按照负责执行的组织、系统或人员分开排列，这种排列方式叫作“<strong>泳道</strong>”（<span class="en-term">Swimlanes</span>），它用图形表明责任归属，也方便利益相关者讨论到底由哪个组织或系统负责执行哪些功能。功能之间的连接通常是交换的信息或数据，用名词表示。由于这时仍处于概念阶段，所谓“系统”往往还只是一个系统概念。</p>
+<p>为血糖仪建立功能架构，要从识别它要执行的各项功能开始，弄清它怎样与环境交互、怎样与病人交互，一共识别出 12 项功能。</p>
+<h4>物理架构</h4>
+<p><span class="term" data-t="physArch">物理架构</span>（<span class="en-term">Physical Architecture</span>）开发的是实际的系统组件和子系统，通常画成物理框图，表示构成系统的实际组件。组件可以归并成子系统，子系统再归并成系统。组件之间、子系统之间的接口是物理接口，例如导线、互联网连接、以太网连接或无线连接。如果是软件组件，物理架构可以理解为类图，表示数据结构以及类与类之间交换的各种信息。血糖仪一共识别出 8 个组件。</p>
+<h4>分配架构</h4>
+<p><span class="term" data-t="allocArch">分配架构</span>（<span class="en-term">Allocated Architecture</span>）是功能架构和物理架构合在一起的地方，用来确认所有功能和所有物理组件是否都已妥善分配，相当于一份“哪些功能由哪些组件执行”的简单清单。血糖仪的分配如下，强调色的连线表示一个组件承担了多项功能：</p>
+<div class="diagram" data-d="glucose">
+<div class="svgwrap">
+<svg viewBox="0 0 640 446" role="img" aria-label="血糖仪的分配架构：左侧 12 项功能分别连到右侧 8 个组件，试纸和用户界面各承担三项功能">
+  <text class="t3" x="100" y="32" text-anchor="middle">功能</text>
+  <text class="t3" x="515" y="32" text-anchor="middle">组件</text>
+
+  <line class="ln" x1="180" y1="63" x2="440" y2="63"/>
+  <line class="ln" x1="180" y1="95" x2="440" y2="109"/>
+  <line class="lnA" x1="180" y1="127" x2="440" y2="146"/>
+  <line class="lnA" x1="180" y1="159" x2="440" y2="154"/>
+  <line class="lnA" x1="180" y1="191" x2="440" y2="162"/>
+  <line class="ln" x1="180" y1="223" x2="440" y2="200"/>
+  <line class="ln" x1="180" y1="255" x2="440" y2="246"/>
+  <line class="ln" x1="180" y1="287" x2="440" y2="291"/>
+  <line class="ln" x1="180" y1="319" x2="440" y2="337"/>
+  <line class="lnA" x1="180" y1="351" x2="440" y2="375"/>
+  <line class="lnA" x1="180" y1="383" x2="440" y2="383"/>
+  <line class="lnA" x1="180" y1="415" x2="440" y2="391"/>
+
+  <rect class="bxW" x="20" y="50" width="160" height="26" rx="6"/><text class="t1" x="100" y="67.5" text-anchor="middle">反转电压</text>
+  <rect class="bxW" x="20" y="82" width="160" height="26" rx="6"/><text class="t1" x="100" y="99.5" text-anchor="middle">施加负电压</text>
+  <rect class="bxW" x="20" y="114" width="160" height="26" rx="6"/><text class="t1" x="100" y="131.5" text-anchor="middle">接受血糖溶液</text>
+  <rect class="bxW" x="20" y="146" width="160" height="26" rx="6"/><text class="t1" x="100" y="163.5" text-anchor="middle">接受负电压</text>
+  <rect class="bxW" x="20" y="178" width="160" height="26" rx="6"/><text class="t1" x="100" y="195.5" text-anchor="middle">产生电流</text>
+  <rect class="bxW" x="20" y="210" width="160" height="26" rx="6"/><text class="t1" x="100" y="227.5" text-anchor="middle">提供参考电压</text>
+  <rect class="bxW" x="20" y="242" width="160" height="26" rx="6"/><text class="t1" x="100" y="259.5" text-anchor="middle">把电流转换为电压</text>
+  <rect class="bxW" x="20" y="274" width="160" height="26" rx="6"/><text class="t1" x="100" y="291.5" text-anchor="middle">放大信号</text>
+  <rect class="bxW" x="20" y="306" width="160" height="26" rx="6"/><text class="t1" x="100" y="323.5" text-anchor="middle">滤除噪声</text>
+  <rect class="bxW" x="20" y="338" width="160" height="26" rx="6"/><text class="t1" x="100" y="355.5" text-anchor="middle">读取电压</text>
+  <rect class="bxW" x="20" y="370" width="160" height="26" rx="6"/><text class="t1" x="100" y="387.5" text-anchor="middle">查询对照表</text>
+  <rect class="bxW" x="20" y="402" width="160" height="26" rx="6"/><text class="t1" x="100" y="419.5" text-anchor="middle">给出血糖读数</text>
+
+  <g class="hot" data-k="p1"><rect x="440" y="48" width="150" height="30" rx="8"/><text class="t1" x="515" y="67.5" text-anchor="middle">电压反相器</text></g>
+  <g class="hot" data-k="p2"><rect x="440" y="94" width="150" height="30" rx="8"/><text class="t1" x="515" y="113.5" text-anchor="middle">试纸参比电极</text></g>
+  <g class="hot" data-k="p4"><rect x="440" y="139" width="150" height="30" rx="8"/><text class="t1" x="515" y="158.5" text-anchor="middle">试纸</text></g>
+  <g class="hot" data-k="p3"><rect x="440" y="185" width="150" height="30" rx="8"/><text class="t1" x="515" y="204.5" text-anchor="middle">参比电极</text></g>
+  <g class="hot" data-k="p5"><rect x="440" y="231" width="150" height="30" rx="8"/><text class="t1" x="515" y="250.5" text-anchor="middle">跨阻放大器</text></g>
+  <g class="hot" data-k="p6"><rect x="440" y="276" width="150" height="30" rx="8"/><text class="t1" x="515" y="295.5" text-anchor="middle">运算放大器</text></g>
+  <g class="hot" data-k="p7"><rect x="440" y="322" width="150" height="30" rx="8"/><text class="t1" x="515" y="341.5" text-anchor="middle">低通滤波器</text></g>
+  <g class="hot" data-k="p8"><rect x="440" y="368" width="150" height="30" rx="8"/><text class="t1" x="515" y="387.5" text-anchor="middle">用户界面</text></g>
+</svg>
+</div>
+</div>
+<p>分配清单还记下了每项功能由组件执行的频率：接受血糖溶液，以及用户界面承担的读取电压、查询对照表、给出读数这几项，以秒为单位执行（每 1 秒或每 5 秒一次）；其余功能都以 60 赫兹的频率执行。</p>
+<p>理想的分配是一项功能只由一个组件执行。但在复杂系统中，常常会出现以下几种模式：</p>
+<ul>
+  <li><strong>一个组件承担多项功能</strong>。这样做要小心：这个组件一旦失效，多项功能会同时无法执行，它就成了<span class="term" data-t="spof">单点故障</span>（<span class="en-term">Single Point of Failure</span>）。血糖仪中的试纸和用户界面各承担了三项功能。</li>
+  <li><strong>多个组件共同完成一项功能</strong>，又分两种情况。一种是<strong>相互协作</strong>：每个组件都必须完成自己的那一部分，其中有些部分对时间或先后顺序有要求，任何一个没有完成，整项功能就会失败。另一种是<strong>冗余</strong>：例如准备好的备用件，在主组件失效时接替它执行这项功能。</li>
+</ul>
+<p>检查分配架构时有两条要求：</p>
+<ul>
+  <li><strong>不遗漏任何一项功能</strong>：每项功能都有物理组件负责，否则这项功能就无人执行，可能危及整个系统的目标。</li>
+  <li><strong>每个组件都有事可做</strong>：否则这个组件对整个系统可能毫无用处，白白浪费资源。</li>
+</ul>
+<p>如果这两条不满足，就要回到功能架构或物理架构，决定哪些功能和组件需要合并、修改、增加或删除。</p>
+
+<h3>架构框架</h3>
+<p>如今，大型复杂系统的开发项目普遍要求制作架构。最初，架构师和团队在制作和整合架构产品时有很大的自由，结果得到的架构在技术上都正确，结构却五花八门。为了使架构开发工作和相关产品标准化，许多组织制定并强制使用<span class="term" data-t="archFramework">架构框架</span>（<span class="en-term">Architecture Framework</span>）。架构框架是一套标准，规定了开发系统架构的结构化方法、产品和原则。</p>
+<p>最早出现的两个框架，一个是美国国防部强制使用的 C4ISR 架构框架（指挥、控制、通信、计算机、情报、监视与侦察），一个是为商业组织开发的开放组架构框架（TOGAF）。两者后来都有了很大的发展，并且还会继续演变。早期的框架关注的是单个系统及其架构，较新的版本则扩展到了<strong>企业架构</strong>（<span class="en-term">Enterprise Architecture</span>）领域，企业架构是企业工程或企业系统工程的一个分支。目前包括 DODAF 和 TOGAF 在内的各种框架都有企业版。即使主要用途是企业架构，许多框架同样可以用于系统开发。比较常见的有：</p>
+<ul>
+  <li>美国国防部架构框架（DODAF）</li>
+  <li>开放组架构框架（TOGAF）</li>
+  <li>Zachman 框架</li>
+  <li>英国国防部架构框架（MODAF）</li>
+  <li>美国联邦企业架构框架（FEAF）</li>
+  <li>北约架构框架（NAF）</li>
+  <li>美国财政部企业架构框架（TEAF）</li>
+  <li>集成架构框架（IAF）</li>
+  <li>普渡企业参考架构框架（PERAF）</li>
+</ul>
+<p>下面以 DODAF 为例说明框架的基本组成。选它只是为了举例，DODAF 绝不比其他框架更重要或更好。和其他框架一样，DODAF 划分成一系列视角，也就是<strong>视点</strong>（<span class="en-term">Viewpoint</span>）。DODAF 2.0.2 版的八个视点分成三组：</p>
+<ul>
+  <li><strong>系统及其环境</strong>：四个视点，开发时自上而下依次进行。</li>
+  <li><strong>贯穿各处的原则、基础设施和标准</strong>：三个视点，在开发第一组的过程中不断应用和完善，所以画图时通常把它们竖着排在第一组的旁边，每一个都横跨整组。</li>
+  <li><strong>项目</strong>：一个视点，同样在整个架构开发过程中持续更新。</li>
+</ul>
+<div class="diagram" data-d="dodaf"></div>
+<p>第 2 版 DODAF 很容易从系统层次扩展到企业层次，也就是多个系统同时开发、并要集成到原有系统架构中的情况。事实上，三个主要的系统级架构框架 DODAF、MODAF 和 TOGAF 现在都能用于企业级开发。增加了服务视点以后，DODAF 也可以用来描述面向服务的架构。</p>
+<p>框架分为三层：<strong>视点</strong>构成框架，每个视点包含若干<strong>视图</strong>（<span class="en-term">View</span>），每个视图可以用多种<strong>模型</strong>来表示。例如，DODAF 的作战视点下有“作战活动模型”视图，可以用功能流程框图来表示，也可以用 IDEF0 图或几种图的组合来表示。DODAF 在 8 个视点之下一共定义了 52 个视图。</p>
+<p>每一项大型系统开发都必须有一套最低限度的架构视图，但很少有架构会包含全部 52 个视图；具体用哪些视图，由系统工程师和系统架构师根据要传达的内容和相关的利益相关者事先决定。</p>
+<p>开发成功架构的关键，是弄清这份架构的用途。每个开发项目的规模和复杂程度各不相同，但所有架构至少有一个共同的用途：<strong>传递信息</strong>。用哪个框架、框架中的哪些视点、视点中的哪些视图、视图中的哪些模型，都取决于架构师想要达到的目的。DODAF 2.0.2 强调“<span class="term" data-t="fitForPurpose">适用于目的</span>”（<span class="en-term">Fit for Purpose</span>），鼓励架构师只制作在当时对系统开发确实适用的视点和视图；如果既不需要也不适用，把所有视图都做出来毫无益处。随着架构师对系统了解得越来越多，可以再增加视图。</p>
+<p>现有的框架规定了视点和视图的全集，并为每个视图推荐若干候选模型。当前框架的一个特点是每个视图内部都很灵活：只要不违反框架的总体约束，架构师可以使用候选清单之外的模型。例如，许多框架最初是用传统的结构化分析模型来定义视图的，例如 IDEF0 图、功能流程框图和数据流图；后来熟悉面向对象模型的工程师开始把面向对象模型和结构化分析模型混合使用，这种做法越来越普遍，负责这些框架的组织便修订了可用的模型，把面向对象模型也包括进来。目前，统一架构框架（UAF）已经发布并取代了 DODAF，它更容易与 SysML 模型和商业应用结合起来。</p>
+
+<h3>三种通用视图</h3>
+<p>架构视图的用意，是在大规模开发开始之前，从多个视角表示一个系统，帮助利益相关者理解系统概念，并做出重要的权衡决策。架构开发的方法和指南有很多，名称各不相同，但每一份架构描述都包含下面三种视角：</p>
+<div class="tbl"><table>
+  <thead><tr><th>视图</th><th>代表谁的视角</th><th>描述的内容</th><th>典型产品</th></tr></thead>
+  <tbody>
+    <tr><td>作战视图（<span class="en-term">Operational View</span>）</td><td>用户和操作人员</td><td>使用阶段、使用情景和任务流程；从用户角度看的信息流；用户界面</td><td>使用示意图、情景描述（包括用例）、任务流程图、组织结构图、信息流图</td></tr>
+    <tr><td>逻辑视图（<span class="en-term">Logical View</span>）</td><td>管理者和客户</td><td>系统与环境的边界、与外部系统的功能接口、主要功能和行为、数据流、内外部数据集、内外部用户、内部功能接口</td><td>功能流程框图、上下文图、N² 图、IDEF0 图、数据流图，以及各种面向特定利益相关者（包括业务方面）的产品</td></tr>
+    <tr><td>物理视图（<span class="en-term">Physical View</span>）</td><td>设计人员</td><td>物理边界、组件及其接口和相互作用、内部数据库和数据结构、系统自身和外部的信息技术基础设施、开发中执行的标准</td><td>细化到相当程度的物理框图、数据库拓扑、接口控制文件、标准</td></tr>
+  </tbody>
+</table></div>
+
+<div class="sorter" data-sort="ch9Views"></div>
+
+<h3>架构设计与设计工程有什么不同</h3>
+<p>初次接触系统架构设计的人常问：架构设计和设计有什么区别？一个简便的回答方式，是分别列出架构和设计的用途。</p>
+<div class="tbl"><table>
+  <thead><tr><th>系统架构用来</th><th>系统设计用来</th></tr></thead>
+  <tbody>
+    <tr><td>发现并细化使用需求和功能需求</td><td>开发系统组件</td></tr>
+    <tr><td>把系统引向特定的用途或目的</td><td>制造并集成系统组件</td></tr>
+    <tr><td>在不同的选项之间做出区分</td><td>在系统修改时，理解构型的变化</td></tr>
+    <tr><td>解决自制还是外购的决策</td><td></td></tr>
+  </tbody>
+</table></div>
+<p>两者在性质上的差别：</p>
+<div class="tbl"><table>
+  <thead><tr><th></th><th>架构设计</th><th>设计工程</th></tr></thead>
+  <tbody>
+    <tr><td>推理方式</td><td>归纳</td><td>演绎</td></tr>
+    <tr><td>关注重点</td><td>功能和行为</td><td>形式、物理分解与集成</td></tr>
+    <tr><td>处理的参数</td><td>不可度量的参数和特性，与可度量的一样多，甚至更多</td><td>可度量的数量、特性和属性</td></tr>
+    <tr><td>主要工具</td><td>大多不能量化、不够精确，绘图占很大比重</td><td>从物理学推导出的分析工具</td></tr>
+    <tr><td>决策依据</td><td>经验法则（启发式规则）</td><td>算法和分析</td></tr>
+    <tr><td>在生命周期中的活跃期</td><td>前期最活跃；详细设计、制造和单元测试期间基本沉寂；到系统集成和系统测试时再次活跃，确保需求和顶层架构得到遵循</td><td>在架构师沉寂的时期达到高峰</td></tr>
+  </tbody>
+</table></div>
+<p>两者虽然有这些差别，却绝不能看作关系松散的两件事。既然两者是不同的活动，自然会有人问：谁听谁的？在建筑工程中，建筑师处于最高位置，在房屋的设计、开发和施工全过程中都起主导作用。系统开发的情况不同：虽然也有例外，但<strong>系统架构设计是系统工程的一部分</strong>，处于最重要技术位置的是系统工程师。</p>
+
+<h3>架构怎样开发和追溯</h3>
+<p>系统工程师需要了解系统架构是怎样开发出来的，才能在利益相关者、用户、设计人员、维修人员等各个团队之间有效沟通。开发过程大致如下：</p>
+<div class="stepper" data-step="ch9Dev">
+  <div class="svgwrap"><svg viewBox="0 0 640 290" role="img" aria-label="从利益相关者的设想出发，依次形成功能架构和物理架构，两者合成分配架构，最后与需求建立追溯关系">
+    <defs>
+      <marker id="m-ch09-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker>
+    </defs>
+    <g data-s="1">
+      <rect class="bxW" x="20" y="104" width="130" height="40" rx="8" data-on="1"/>
+      <text class="t1" x="85" y="128.5" text-anchor="middle">利益相关者</text>
+      <text class="t3" x="85" y="164" text-anchor="middle">使用环境与最终状态</text>
+    </g>
+    <g data-s="2">
+      <line class="ln" x1="150" y1="124" x2="198" y2="124" marker-end="url(#m-ch09-arr)"/>
+      <rect class="bxW" x="200" y="104" width="180" height="40" rx="8" data-on="2"/>
+      <text class="t1" x="290" y="128.5" text-anchor="middle">功能架构</text>
+      <text class="t3" x="260" y="164" text-anchor="middle">主系统、协作系统、对抗系统</text>
+    </g>
+    <g data-s="3">
+      <line class="ln" x1="380" y1="124" x2="438" y2="124" marker-end="url(#m-ch09-arr)"/>
+      <rect class="bxW" x="440" y="104" width="180" height="40" rx="8" data-on="3"/>
+      <text class="t1" x="530" y="128.5" text-anchor="middle">物理架构</text>
+      <text class="t3" x="550" y="164" text-anchor="middle">组件、子系统、系统</text>
+    </g>
+    <g data-s="4">
+      <line class="ln" x1="340" y1="144" x2="379" y2="212" marker-end="url(#m-ch09-arr)"/>
+      <line class="ln" x1="480" y1="144" x2="441" y2="212" marker-end="url(#m-ch09-arr)"/>
+      <rect class="bxA" x="320" y="214" width="180" height="40" rx="8" data-on="4"/>
+      <text class="t1" x="410" y="238.5" text-anchor="middle">分配架构</text>
+      <text class="t3" x="410" y="276" text-anchor="middle">每项功能都有组件，每个组件都有功能</text>
+    </g>
+    <g data-s="5">
+      <rect class="bxB" x="200" y="14" width="180" height="36" rx="8" data-on="5"/>
+      <text class="t1" x="290" y="36.5" text-anchor="middle">需求</text>
+      <line class="lnA dash" x1="290" y1="104" x2="290" y2="50"/>
+      <text class="t3" x="298" y="81">满足</text>
+      <line class="lnA dash" x1="380" y1="32" x2="530" y2="104"/>
+      <text class="t3" x="476" y="50">非功能需求</text>
+    </g>
+  </svg></div>
+</div>
+<p>架构可追溯性的价值，随着系统复杂程度的提高而增加。它的用处有：</p>
+<ul>
+  <li><strong>评估变化的影响</strong>：架构、设计、测试或需求发生变化时，追溯关系能回答两个问题：
+    <ul>
+      <li>改动一处，会牵动哪些地方？</li>
+      <li>其他部分需要改多少才能适应？</li>
+    </ul>
+    每次变化都靠人工检查受影响的每个元素，工作量会大得惊人；现有的工具能自动找出受影响的部分，而且常常能直接完成修改。</li>
+  <li><strong>让利益相关者看到自己的影响</strong>：利益相关者可以看到自己的设想和指示对架构开发产生了哪些影响；架构师则可以借此确认：这些指示得到了忠实的落实，同时遵守了约束和标准，也照顾到其他利益相关者相互竞争的需要。相互竞争的利益相关者由此理解系统概念将怎样发展，合作也会更多。</li>
+  <li><strong>提醒分配问题</strong>：如果给一个组件分配了过多的功能，工具会自动提醒架构师，以免形成单点故障。</li>
+  <li><strong>找出需要加强的部分</strong>：分析功能和组件之间的分配，能看出哪些功能和组件特别重要，值得增加对故障的承受能力，例如采用冗余组件、准备好的备用件、附加的逻辑，或者其他能让系统在性能下降时继续工作的手段。</li>
+  <li><strong>支持仿真和分析</strong>：确认正在开发的架构能够应对系统设计时要面对的各种环境和威胁。</li>
+</ul>
+<p>市面上有许多开发架构产品的商用工具。选择工具时依次考虑：</p>
+<ul>
+  <li><strong>架构师本人的专长</strong>：架构师必须有把握用这个工具做出利益相关者需要的产品，促进互操作性，并在面对系统将要遇到的使用环境和挑战时评价开发工作。</li>
+  <li><strong>项目内部的协作潜力</strong>：如果团队中的各个组织使用同一种工具，沟通更有效率，也更少因为工具特有的术语而产生误解，可以期望相互理解更深、系统设计更稳健。</li>
+  <li><strong>利益相关者对工具的熟悉程度</strong>：无论是听说过它的名声还是亲自用过。一个懂行的利益相关者在描述自己对系统的设想和能力要求时，会很有说服力。</li>
+  <li><strong>导出和发布</strong>：能把架构导出成图片或技术报告、能导出数字数据，也很有帮助；许多工具还能生成交互式网站，让用户不必安装工具就能浏览整个架构。</li>
+</ul>
+
+<h3>验证架构</h3>
+<p>怎样验证一份架构，取决于它的用途、读者和产品。如果架构是为了记录现有系统的流程和能力，向别人说明和传授，验证就比较容易：现有的用户熟悉系统，可以帮助核对这份架构是否准确地表示了系统。同一个系统的不同用户聚在一起评议时，往往能互相了解到同行是怎样使用这个系统的，这对所有人都很有启发；对于现有用户和想了解系统怎样工作的新利益相关者来说，这也是一次学习。</p>
+<p>如果架构描绘的是未来的“目标”系统概念，找到合适的利益相关者来帮助验证就难得多，在系统与现有设计和使命差别很大时尤其如此：</p>
+<ul>
+  <li>架构师必须找到思想开放、愿意接受不同想法（哪怕与自己的想法截然不同），并且有足够的信任、愿意让架构逐步发展以实现未来目标的利益相关者。</li>
+  <li>有代表性的用户也要慎重挑选，因为有些用户会不自觉地回到现在的工作方式上去，不愿意深入思考未来的系统将怎样运行。</li>
+  <li>利益相关者和合作伙伴还要把未来的运行方式、环境、威胁、合作关系和机会放在心上，才能设想出一个现实的未来系统概念。</li>
+</ul>
+<p>通常要等到足够多的用户、维修人员和利益相关者接触过这份架构以后，验证的结论才会逐渐浮现，例如在演习中，或者在未来使用环境中检验新概念的有限规模试验中。在这些场合，可以检验和评价这份架构在未来的世界里是否有前途；如果结果不理想，就修改或放弃它。收集到的目标、演习数据和评价问题，可以用来判断这份架构概念的实用价值。</p>
+
+<div class="sim" data-sim="ch9Dispatch"></div>
+
+<div class="quiz" data-ch="9"></div>
+</article>
+
+
+<nav class="pager" aria-label="翻页">
+  <a class="prev" href="ch08.html"><small>上一章</small><span>第 8 章　评估与选择</span></a>
+  <a class="next" href="ch10.html"><small>下一章</small><span>第 10 章　基于模型的系统工程</span></a>
+</nav>
+</div>
+</main>
+<div class="pop" id="pop" role="tooltip"></div>
+<script>
+Object.assign(GLOSSARY, {
+  architecting: ["系统架构设计", "Systems Architecting", "把利益相关者的设想转化为功能架构、物理架构和分配架构等结构化描述的工作，是系统工程的一部分。"],
+  archFramework: ["架构框架", "Architecture Framework", "规定开发系统架构所用的结构化方法、产品和原则的一套标准，例如 DODAF、TOGAF、UAF。"],
+  funcArch: ["功能架构", "Functional Architecture", "描述完成系统使命必须执行的各项功能及其相互联系的架构，与具体解决方案无关。功能用动词表示，功能之间交换的信息或数据用名词表示。"],
+  physArch: ["物理架构", "Physical Architecture", "描述构成系统的实际组件、子系统及其物理接口的架构，通常画成物理框图。"],
+  allocArch: ["分配架构", "Allocated Architecture", "把功能架构和物理架构合在一起，说明哪些功能由哪些组件执行的架构。它要保证每项功能都有组件负责，每个组件都有功能可做。"],
+  spof: ["单点故障", "Single Point of Failure", "一旦失效就会使多项功能或整个系统无法工作的单个组件。给一个组件分配过多功能，就会形成这种风险。"],
+  fitForPurpose: ["适用于目的", "Fit for Purpose", "DODAF 2.0.2 提倡的原则：只制作在当时对系统开发确实需要、确实适用的视点和视图，随着了解的加深再逐步增加。"]
+});
+DIAGRAMS.glucose = {
+  title: "血糖仪的分配架构：哪个组件执行哪些功能",
+  initial: "p4",
+  items: [
+    { k:"p1", label:"电压反相器：1 项功能", html:"<p>执行：<strong>反转电压</strong>。</p>" },
+    { k:"p2", label:"试纸参比电极：1 项功能", html:"<p>执行：<strong>施加负电压</strong>。</p>" },
+    { k:"p3", label:"参比电极：1 项功能", html:"<p>执行：<strong>提供参考电压</strong>。</p>" },
+    { k:"p4", label:"试纸：3 项功能", html:"<p>执行：<strong>接受血糖溶液</strong>、<strong>接受负电压</strong>、<strong>产生电流</strong>。</p><p>这是一个承担多项功能的组件。试纸一旦失效，这三项功能会同时丧失。</p>" },
+    { k:"p5", label:"跨阻放大器：1 项功能", html:"<p>执行：<strong>把电流转换为电压</strong>。</p>" },
+    { k:"p6", label:"运算放大器：1 项功能", html:"<p>执行：<strong>放大信号</strong>。</p>" },
+    { k:"p7", label:"低通滤波器：1 项功能", html:"<p>执行：<strong>滤除噪声</strong>。</p>" },
+    { k:"p8", label:"用户界面：3 项功能", html:"<p>执行：<strong>读取电压</strong>、<strong>查询对照表</strong>、<strong>给出血糖读数</strong>。</p><p>它和试纸一样承担了三项功能。12 项功能全部有组件负责，8 个组件也都有事可做，满足分配架构的两条检查要求。</p>" }
+  ]
+};
+DIAGRAMS.dodaf = {
+  title: "DODAF 2.0.2 的八个视点",
+  initial: "cap",
+  groups: [
+    { label: "系统及其环境", nodes: [
+      { k:"cap", label:"能力视点", html:"<p>说明需要什么能力、何时交付、部署后是什么样子。它排在最前面，要先向利益相关者征询，弄清各方需要的总体能力。</p>" },
+      { k:"op", label:"作战视点", html:"<p>描述作战情景、流程、活动和需求。能力确定以后，在这里探讨各种情景和使用方案，进一步弄清系统在使用环境中扮演的角色。</p>" },
+      { k:"svc", label:"服务视点", html:"<p>描述执行者、活动、服务以及它们之间的交换，从作战方面的认识中推导出系统需要提供哪些服务，用来支持面向服务的架构。</p>" },
+      { k:"sys", label:"系统视点", html:"<p>描述已有的或独立的系统，它们的组成、相互连接和所处的环境。在弄清前三个视点的要求以后才开发。</p>" }
+    ]},
+    { label: "贯穿各视点", nodes: [
+      { k:"all", label:"全局视点", html:"<p>提供与所有视图相关的总体背景，包括构型控制和架构的总体意图。</p>" },
+      { k:"data", label:"数据与信息视点", html:"<p>描述数据之间的关系和对应结构，以及预计在整个系统中交换的数据类型。</p>" },
+      { k:"std", label:"标准视点", html:"<p>列出适用的作战、业务、技术和行业政策、标准、指南、约束和预测。</p>" }
+    ]},
+    { label: "项目", nodes: [
+      { k:"proj", label:"项目视点", html:"<p>说明作战需求、能力需求与实现这些需求的各个项目之间的关系，以及能力管理与国防采办过程之间的依赖关系，以项目管理的形式为架构开发提供结构。</p>" }
+    ]}
+  ]
+};
+SORTS.ch9Views = {
+  title: "分类：这份架构产品属于哪一种视图",
+  cats: [ {k:"op", label:"作战视图"}, {k:"log", label:"逻辑视图"}, {k:"phy", label:"物理视图"} ],
+  items: [
+    { t:"一张流程图，画出值班人员在交接班时依次要完成的各项任务", c:"op", why:"任务流程图描述的是用户和操作人员怎样使用系统，属于作战视图。" },
+    { t:"一份接口控制文件，规定两台设备之间连接器的针脚定义和信号电平", c:"phy", why:"接口控制文件规定组件之间实际怎样连接，是设计人员需要的产品，属于物理视图。" },
+    { t:"一张上下文图，画出系统的边界，以及它与外部系统之间的功能接口", c:"log", why:"系统边界和外部功能接口是管理者和客户关心的内容。" },
+    { t:"一张 N² 图，列出系统内部各项功能之间的接口", c:"log", why:"这里是功能之间的接口。组件之间的物理接口才归物理视图。" },
+    { t:"一份组织结构图，说明各个部门分别由哪些人员使用系统", c:"op", why:"它从用户和操作人员的角度说明谁在使用系统，是作战视图的典型产品。" },
+    { t:"一张数据库拓扑图，说明系统内部各个数据库怎样分布和连接", c:"phy", why:"内部数据库和数据结构由物理视图描述，数据库拓扑是它的典型产品。" },
+    { t:"一份使用情景说明，包括用户在紧急情况下操作系统的几个用例", c:"op", why:"情景描述和用例都从用户的角度描述系统的使用，属于作战视图。" },
+    { t:"一张数据流图，描述数据在系统内外各个数据集之间怎样流动", c:"log", why:"数据流和内外部数据集属于逻辑视图。作战视图里的信息流图，画的是从用户角度看的信息流动。" }
+  ]
+};
+STEPS.ch9Dev = {
+  title: "架构开发的四步与可追溯性",
+  steps: [
+    { label:"设想", title:"利益相关者描绘设想", html:"<p>利益相关者对未来的系统怎样运行已有一些设想。架构师与利益相关者交流，借助图画和对使用环境的描述，请利益相关者描绘出：使用环境是什么样子；系统必须做什么；必须面对、配合、对抗或克服什么；成功完成目标以后的最终状态是什么样子。</p>" },
+    { label:"功能", title:"功能架构成形", html:"<p>在描述的过程中，功能架构逐渐成形：把要执行的各项功能记录下来。这些功能不只属于主系统，也包括与它协作的系统和与它对抗的系统。还要请利益相关者确认，功能本身和功能之间的联系都描述得正确。</p>" },
+    { label:"物理", title:"物理架构成形", html:"<p>接着转向物理视角，定义实际执行这些功能的组件，把组件归并成子系统，再把子系统归并成系统。对协作系统和对抗系统也做同样的工作，这可能会暴露出不同系统之间必须解决的互操作性细节，例如数据字段是否正确、数据格式、发送周期。</p>" },
+    { label:"分配", title:"协调成分配架构", html:"<p>最后协调这两份架构产品，把全部功能和全部组件都分配好。这往往是一个反复的过程，设计人员和功能架构师需要相互协调；如果仍有功能或组件没有着落，就要返工修改需求、功能或设计。</p>" },
+    { label:"追溯", title:"建立可追溯性", html:"<p>每个阶段完成以后，各种系统工程产物之间都应当建立<span class=\"term\" data-t=\"traceability\">可追溯性</span>：功能链接到它们所满足的需求；物理组件链接到它们所执行的功能；安全、耐久、韧性、可维修性、互操作性等非功能需求，链接到需要接受评价的物理部分。最终，架构的每一部分都可以追溯到其他部分。</p>" }
+  ]
+};
+SIMS.ch9Dispatch = {
+  title: "情境：为一个全新的调度系统开发架构",
+  intro: "<p>三家公司组成的团队，要为一种全新的城市应急调度系统开发架构。这个系统与现在依靠电话和纸面记录的工作方式截然不同。你担任项目的系统架构师。</p>",
+  start: "n1",
+  nodes: {
+    n1: { text: "<p>项目开始，需要选定制作架构产品的工具。三家公司中有两家已经在使用一种工具，你也用得很熟练，主要客户代表在以前的项目里见过用它做的产品。另一种工具功能更多、更新，但团队里没有人用过。你怎么选？</p>",
+      choices: [
+        { t: "选功能更多、更新的那种工具，大家边做边学", tone: "bad", next: "n2",
+          fb: "<p>选择工具时首先要看架构师本人的专长：架构师必须有把握用它做出利益相关者需要的产品，并据此评价开发工作。一个没人用过的工具，再多的功能也帮不上忙。</p>" },
+        { t: "让三家公司各用自己熟悉的工具，最后把各自的图汇总到一起", tone: "mixed", next: "n2",
+          fb: "<p>每家公司都用得顺手，但失去了协作潜力。团队使用同一种工具，沟通更有效率，也更少因为工具特有的术语产生误解；各用各的，汇总时往往要花大量精力弥合差异。</p>" },
+        { t: "选你熟练、两家公司已在使用、客户代表也熟悉的那种工具", tone: "good", next: "n2",
+          fb: "<p>架构师的专长、团队内的协作潜力、利益相关者对工具的熟悉程度，三个因素都照顾到了。</p>" }
+      ] },
+    n2: { text: "<p>功能架构和物理架构都画好了。做分配时，工具发出提醒：一台中心服务器被分配了大量功能；另外，“向现场人员推送路况”这项功能还没有分配给任何组件。你怎么处理？</p>",
+      choices: [
+        { t: "把还没分配的功能也交给那台中心服务器，反正它的处理能力很强", tone: "bad", next: "n3",
+          fb: "<p>这样做补上了遗漏，却让本来已经过载的组件承担更多功能。它一旦失效，大量功能会同时丧失，单点故障的风险更大了。</p>" },
+        { t: "把那项功能标为“以后再定”，先进入详细设计，免得拖延进度", tone: "bad", next: "n3",
+          fb: "<p>分配架构的首要目的就是不遗漏任何功能。没有组件负责的功能根本得不到执行，可能危及整个系统的目标；到详细设计阶段再发现，代价会大得多。</p>" },
+        { t: "回到功能架构和物理架构调整功能和组件，并为关键功能考虑冗余", tone: "good", next: "n3",
+          fb: "<p>有功能没有着落、或者组件负担过重时，要回到前两份架构，决定合并、修改、增加或删除哪些功能和组件；对特别重要的功能和组件，还要用冗余组件、备用件或附加逻辑提高对故障的承受能力。</p>" }
+      ] },
+    n3: { text: "<p>架构基本完成，需要验证它。由于这是一个“目标”架构，现在还没有人用过这样的系统。你打算怎样验证？</p>",
+      choices: [
+        { t: "请现在调度中心里经验最丰富的几位调度员逐页审阅，他们最懂这项工作", tone: "mixed", next: "end",
+          fb: "<p>有些用户会不自觉地回到现在的工作方式上去，不愿意深入思考未来的系统怎样运行。逐页审阅也很难让人体会新的运行方式。</p>" },
+        { t: "挑选思想开放的利益相关者和有代表性的用户，通过演习或小规模试验来检验", tone: "good", next: "end",
+          fb: "<p>“目标”架构要让足够多的用户、维修人员和利益相关者在演习或有限规模的试验中接触以后，结论才会逐渐浮现。根据收集到的目标、数据和评价问题，再决定保留、修改还是放弃这份架构。</p>" },
+        { t: "架构是严格按照框架的视点和视图做的，结构规范，可以直接交付，不必专门验证", tone: "bad", next: "end",
+          fb: "<p>框架保证的是架构产品的结构一致，不能证明这个系统概念在未来的使用环境中真的可行。架构的共同用途是传递信息，信息对不对，要由用户、维修人员和利益相关者来检验。</p>" }
+      ] },
+    end: { end: true, tone: "good", text: "<p>调度系统的架构进入验证阶段，结论将在演习和试验中逐步得出。</p>" }
+  }
+};
+QUIZ[9] = [
+  { q:"检查一份分配架构时，发现有一个组件没有分配到任何功能。最合理的判断是什么？",
+    o:["这个组件起冗余作用，主组件失效时可以接替","这说明分配留有余量，便于以后扩展新的功能","这个组件可能是多余的，需要回头合并或删除","这个组件是单点故障，应当为它增加一个备份"], a:2,
+    e:"分配架构要求每个组件都有事可做，闲置的组件很可能是资源浪费，需要回头合并、修改或删除功能和组件。冗余指的是多个组件共同承担同一项功能，一个没有分配到任何功能的组件谈不上冗余；单点故障则出在承担了太多功能的组件上。" },
+  { q:"在血糖仪的分配架构中，试纸这一个组件承担了接受血糖溶液、接受负电压和产生电流三项功能。这种分配最需要注意什么？",
+    o:["试纸一旦失效，三项功能会同时丧失","三项功能各配一个组件，才算合格的分配","这三项功能还没有全部分配给组件","这是冗余设计，可靠性因此得到提高"], a:0,
+    e:"一个组件承担多项功能时，它一旦失效，多项功能会同时丧失，这就是单点故障的风险。一项功能对应一个组件只是理想情况，并不是合格与否的硬性标准；冗余是多个组件共同承担一项功能，和这里的情况正好相反。" },
+  { q:"一位项目经理想了解系统的边界、与外部系统的功能接口和主要的数据流。最适合给这位项目经理看的是哪一种视图？",
+    o:["作战视图，例如任务流程图和用例","逻辑视图，例如上下文图和 N² 图","物理视图，例如物理框图和接口控制文件","能力视点，例如部署后的总体能力"], a:1,
+    e:"逻辑视图代表管理者和客户的视角，描述系统边界、与外部系统的功能接口、主要功能和数据流，典型产品有功能流程框图、上下文图和 N² 图。物理视图也涉及接口，但它描述的是组件之间的实际连接，代表的是设计人员的视角。" },
+  { q:"一个团队发现，在详细设计和制造期间很少见到架构师，到系统集成和系统测试时，架构师又频繁出现。这种现象应当怎样理解？",
+    o:["架构师投入不足，应当在各个阶段保持同样的参与程度","架构工作在前期没有做完，只好在集成阶段返工补做","集成和测试属于设计工程，架构师只是临时过来协助","这是架构工作的正常节奏，前期活跃，集成测试时再现"], a:3,
+    e:"架构设计在前期最活跃，在详细设计和制造期间基本沉寂，到系统集成和系统测试时再次活跃，以确保需求和顶层架构得到遵循；设计工程恰好在架构师沉寂的时期达到高峰。架构师最好一直留在项目中，保留对整个项目的了解，但这并不意味着各个阶段的工作量都一样。" }
+];
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

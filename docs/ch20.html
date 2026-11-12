@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 20 章 体系工程 · 系统工程原理与实践导读</title>
+<meta name="description" content="系统工程原理与实践第 20 章“体系工程”的中文导读">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem("se-guide:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t));}catch(e){}</script>
+<script>var QUIZ={}, GLOSSARY={}, DIAGRAMS={}, SIMS={}, SORTS={}, STEPS={};</script>
+<script src="assets/glossary.js"></script>
+</head>
+<body class="page-ch">
+<div class="topbar">
+  <button class="iconbtn menu-btn" id="menuBtn" aria-label="打开目录">☰<span class="lbl-txt"> 目录</span></button>
+  <a class="title" href="index.html"><b>系统工程原理与实践</b>　导读</a>
+  <a class="iconbtn" id="mapBtn" href="concepts.html"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><circle cx="2.6" cy="3.2" r="1.5"/><circle cx="13.4" cy="3.6" r="1.5"/><circle cx="3" cy="13" r="1.5"/><circle cx="13" cy="12.6" r="1.5"/><path d="M8 8 L2.6 3.2 M8 8 L13.4 3.6 M8 8 L3 13 M8 8 L13 12.6"/></svg><span class="lbl-txt">概念图</span></a>
+  <button class="iconbtn" id="themeBtn" aria-label="切换深浅色">◐<span class="lbl-txt"> 深浅色</span></button>
+</div>
+<div class="progress" id="progress"></div>
+<nav class="sidebar" id="sidebar" aria-label="目录">
+  <a class="side-home" href="index.html">全书导读首页</a>
+  <div class="side-stat">
+    <div class="row"><span>已读章节</span><b id="readCount">0 / 23</b></div>
+    <div class="bar"><i id="readBar"></i></div>
+  </div>
+  <div class="toc" id="toc"><div class="toc-part">第一部分 · 系统工程的基础</div><a href="ch01.html" data-ch="ch1" class="core"><span class="num">1</span><span class="lbl">系统工程与现代系统</span><span class="chk" aria-hidden="true"></span></a><a href="ch02.html" data-ch="ch2" class="core"><span class="num">2</span><span class="lbl">复杂系统的结构</span><span class="chk" aria-hidden="true"></span></a><a href="ch03.html" data-ch="ch3" class="core"><span class="num">3</span><span class="lbl">系统开发过程</span><span class="chk" aria-hidden="true"></span></a><a href="ch04.html" data-ch="ch4" class="core"><span class="num">4</span><span class="lbl">系统工程管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第二部分 · 概念开发阶段</div><a href="ch05.html" data-ch="ch5" class="core"><span class="num">5</span><span class="lbl">需要分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch06.html" data-ch="ch6" class="core"><span class="num">6</span><span class="lbl">需求分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch07.html" data-ch="ch7" class="core"><span class="num">7</span><span class="lbl">功能分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch08.html" data-ch="ch8" class="core"><span class="num">8</span><span class="lbl">评估与选择</span><span class="chk" aria-hidden="true"></span></a><a href="ch09.html" data-ch="ch9" class="core"><span class="num">9</span><span class="lbl">系统架构设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch10.html" data-ch="ch10" class="core"><span class="num">10</span><span class="lbl">基于模型的系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch11.html" data-ch="ch11" class="core"><span class="num">11</span><span class="lbl">决策分析与支持</span><span class="chk" aria-hidden="true"></span></a><a href="ch12.html" data-ch="ch12" class="core"><span class="num">12</span><span class="lbl">风险管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第三部分 · 工程开发阶段</div><a href="ch13.html" data-ch="ch13" class=""><span class="num">13</span><span class="lbl">先期开发</span><span class="chk" aria-hidden="true"></span></a><a href="ch14.html" data-ch="ch14" class=""><span class="num">14</span><span class="lbl">软件系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch15.html" data-ch="ch15" class=""><span class="num">15</span><span class="lbl">工程设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch16.html" data-ch="ch16" class=""><span class="num">16</span><span class="lbl">系统集成</span><span class="chk" aria-hidden="true"></span></a><a href="ch17.html" data-ch="ch17" class=""><span class="num">17</span><span class="lbl">试验与评价</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第四部分 · 开发后阶段</div><a href="ch18.html" data-ch="ch18" class=""><span class="num">18</span><span class="lbl">生产</span><span class="chk" aria-hidden="true"></span></a><a href="ch19.html" data-ch="ch19" class=""><span class="num">19</span><span class="lbl">运行与保障</span><span class="chk" aria-hidden="true"></span></a><a href="ch20.html" data-ch="ch20" class=" active" aria-current="page"><span class="num">20</span><span class="lbl">体系工程</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第五部分 · 系统工程的应用领域</div><a href="ch21.html" data-ch="ch21" class=""><span class="num">21</span><span class="lbl">企业系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch22.html" data-ch="ch22" class=""><span class="num">22</span><span class="lbl">系统安全工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch23.html" data-ch="ch23" class=""><span class="num">23</span><span class="lbl">系统工程的未来</span><span class="chk" aria-hidden="true"></span></a></div>
+</nav>
+<div class="scrim" id="scrim"></div>
+<main>
+<div class="wrap">
+<div class="part-tag"><a href="index.html#part4">第四部分 · 开发后阶段</a></div>
+<article class="chapter" id="ch20" data-ch="20" data-title="体系工程">
+<div class="ch-head">
+  <div class="ch-label"><span>第 20 章</span></div>
+  <h2>体系工程</h2>
+  <div class="en">System of Systems Engineering</div>
+</div>
+
+<p>系统使用的环境总在变化：威胁、竞争对手、自然环境、政策和程序、相关的利益群体，都可能发生改变。已有的系统未必跟得上这些变化，轻则完成任务的能力落后，重则完全无法完成任务、变得无人再用。每当环境发生变化就开发一个专门适应新环境的新系统，代价高得难以承受。于是各个组织越来越多地把几个已有的系统组合起来，让它们的能力互相补充，去完成任何一个系统都无法单独完成的目标。这样的组合称为<span class="term" data-t="sos">体系</span>，为这样的组合所做的系统工程工作称为体系工程（<span class="en-term">System of Systems Engineering, SoSE</span>）。它是系统工程的一个专门领域。</p>
+<p>体系工程与<strong>传统系统工程</strong>（<span class="en-term">Traditional Systems Engineering, TSE</span>）的种种不同，大多源于体系对各个<span class="term" data-t="constituentSystem">成员系统</span>的<strong>控制程度和了解程度</strong>都很有限。传统系统工程面对的是一个系统和一个管理组织；体系则由多个系统和多个组织组成，开发、集成、测试和部署的全过程都要靠多个系统、多套管理、多个经费来源和多方运行人员相互合作。控制其他系统的组织不一定与我们有相同的目标，要先说服这些组织，让它们相信合作对双方都有好处，它们才会参与进来。</p>
+<div class="example">
+  <div class="n-title">例子：几个军种的系统</div>
+  <p>陆军、海军和空军各有独特的能力，航空、水面、陆地和水下各个作战领域里的系统，原本都是为各自的特定任务开发的。可是这些部队在同一个国家的指挥下作战，有些系统常常在彼此附近运行，具备协同工作的条件。指挥官不必另外开发新系统，只要为这些系统建立共同的接口和工作程序，就能同时得到多个系统带来的好处。</p>
+</div>
+
+<h3>体系与单个系统有什么不同</h3>
+<ul>
+  <li><strong>范围</strong>
+    <ul>
+      <li>单个系统的范围清楚，包括这个系统本身以及确定的客户、利益相关者、威胁和需要与之交互的其他系统和组织。除非威胁、用户或任务发生变化，范围不会很快改变。</li>
+      <li>体系的成员系统不断加入、修改或退出，每个成员系统在自身生命周期中逐渐成熟，也会改变体系的行为和能力。</li>
+      <li>新出现的威胁对体系各部分的影响也不一样：有些成员系统更容易受到冲击，有些则受到较好的隔离，能够经受更强的威胁。</li>
+    </ul></li>
+  <li><strong>需求</strong>
+    <ul>
+      <li>单个系统有在用户、利益相关者、设计人员和测试人员参与下正式制定、各方商定的需求，为威胁能力的增长和今后的改型预留的余量，大家也都清楚。</li>
+      <li>体系的需求往往不太正式，要依靠成员系统各自的需求过程；除非是能够控制成员系统管理和经费的指导型体系，体系通常没有多少正式需求。</li>
+      <li>成员系统自己的优先事项可能压过体系的整体目标，使体系的能力达不到最好，除非能说服成员系统去开发对体系有益的能力。</li>
+      <li>体系的经费常常只用于系统之间的接口，体系把各个成员系统当作“黑盒子”：看不到它们的内部过程，只能看到它们的输出。</li>
+      <li>已有的系统（遗留系统）带着各自的使用能力和系统需求加入体系；新系统补充已有的能力，可能提供更新的能力，也可能提供各方都需要的冗余能力。有些能力落在体系工程的范围之内，也有一些留在范围之外。</li>
+    </ul></li>
+  <li><strong>架构</strong>
+    <ul>
+      <li>单个系统在开发过程中能够控制自己的架构。</li>
+      <li>体系的架构主要建立在接口上，也就是一个系统的输出能否成为另一个系统的有效输入，并产生期望的结果。</li>
+      <li>为了达到一定程度的互操作，可以采用共同的接口和标准，也可以给成员系统一些资源，让它们修改自己的内部处理以接受另一个系统的接口。</li>
+      <li>成员系统不断成熟和升级，体系的架构也要不断更新，有时还要保持向后兼容，才能继续与已有的系统协同工作。</li>
+    </ul></li>
+  <li><strong>测试</strong>
+    <ul>
+      <li>单个系统通常只有一个出资方，可以使用专门的、能够控制的试验场。</li>
+      <li>体系测试首先要回答谁来负责这次测试，然后是谁掌握数据、谁出钱，以及这次测试与其他已排定的测试之间谁优先。</li>
+      <li>规模大的体系，测试范围可能超出任何一个试验场，甚至要把整个地球当作试验环境。</li>
+      <li>许多项目需要对合作者和竞争者隐瞒本系统的保密或专有信息，谁能查看和处理数据就成了问题。</li>
+      <li>成员系统不断成熟，测试期间的配置控制变得困难，很难确定体系在测试时究竟具备什么能力。</li>
+    </ul></li>
+  <li><strong>采办</strong>
+    <ul>
+      <li>单个系统有一套既定的采办程序，负责的项目办公室掌握资源，需要时可以投入资源去开发能力或纠正缺陷。</li>
+      <li>除了指导型体系以外，体系通常没有正式的采办项目和程序，决定往往受各个成员系统项目办公室自身需要的左右。</li>
+      <li>公认型体系可能有一定的监督和总体指导，外加少量资源，用来鼓励成员系统开发对体系有益的互补能力。</li>
+    </ul></li>
+</ul>
+<p>下面的例子由三个已有系统和一个新系统组成，各条接口的来历并不相同：</p>
+<figure class="fig">
+  <div class="f-title">体系架构的一个例子</div>
+  <div class="svgwrap"><svg viewBox="0 0 640 290" role="img" aria-label="三个已有系统和一个新系统组成的体系，以及三类接口">
+    <line class="ln" x1="204" y1="73" x2="96" y2="227"/>
+    <line class="ln" x1="236" y1="73" x2="344" y2="227"/>
+    <line class="lnB dash" x1="128" y1="250" x2="312" y2="250"/>
+    <line class="lnA" x1="220" y1="147" x2="220" y2="73"/>
+    <line class="lnA" x1="180" y1="193" x2="120" y2="227"/>
+    <line class="lnA" x1="260" y1="193" x2="320" y2="227"/>
+    <rect class="bxW" x="172" y="27" width="96" height="46" rx="8"/>
+    <text class="t1" x="220" y="47" text-anchor="middle">系统 1</text>
+    <text class="t3" x="220" y="64" text-anchor="middle">已有系统</text>
+    <rect class="bxW" x="32" y="227" width="96" height="46" rx="8"/>
+    <text class="t1" x="80" y="247" text-anchor="middle">系统 2</text>
+    <text class="t3" x="80" y="264" text-anchor="middle">已有系统</text>
+    <rect class="bxW" x="312" y="227" width="96" height="46" rx="8"/>
+    <text class="t1" x="360" y="247" text-anchor="middle">系统 3</text>
+    <text class="t3" x="360" y="264" text-anchor="middle">已有系统</text>
+    <rect class="bxA" x="172" y="147" width="96" height="46" rx="8"/>
+    <text class="t1" x="220" y="167" text-anchor="middle">系统 4</text>
+    <text class="t3" x="220" y="184" text-anchor="middle">新系统</text>
+    <line class="ln" x1="440" y1="96" x2="476" y2="96"/>
+    <text class="t3" x="488" y="100">已有的接口</text>
+    <line class="lnB dash" x1="440" y1="150" x2="476" y2="150"/>
+    <text class="t3" x="488" y="145">已有系统之间</text>
+    <text class="t3" x="488" y="162">需要新开发的接口</text>
+    <line class="lnA" x1="440" y1="208" x2="476" y2="208"/>
+    <text class="t3" x="488" y="203">新系统与已有系统之间</text>
+    <text class="t3" x="488" y="220">需要新开发的接口</text>
+  </svg></div>
+</figure>
+<p>两者在八个方面的对照：</p>
+<div class="tbl"><table>
+  <thead><tr><th>传统系统工程</th><th>体系工程</th></tr></thead>
+  <tbody>
+    <tr><td>系统的边界定义清楚</td><td>边界随任务和成员系统的变化而不断改变</td></tr>
+    <tr><td>使用环境相当稳定</td><td>环境随用户需要、技术进步和用户的不同要求而不断变化</td></tr>
+    <tr><td>用户熟悉系统的概念，能够为期望的最终状态提供指导</td><td>用户群体多种多样，彼此的目标可能互相冲突</td></tr>
+    <tr><td>需求定义清楚，并且长期稳定</td><td>体系可能无法用自己定义的需求去改变体系的性能，只能依靠成员系统的需求</td></tr>
+    <tr><td>功能定义清楚，可以分解成需求</td><td>体系的功能可以开发出来，再分配给各个成员系统</td></tr>
+    <tr><td>管理结构清楚，集中在本系统的开发上</td><td>在整个体系工程生命周期中，人员、组织和各组成部分之间很可能出现目标冲突</td></tr>
+    <tr><td>测试的组织方式已知并且定义清楚</td><td>测试可能跨越多个试验场，在数据、测试的控制权和结果的解释上都可能发生冲突</td></tr>
+    <tr><td>采办有正式的程序</td><td>组织结构不太正式（指导型体系除外）</td></tr>
+  </tbody>
+</table></div>
+
+<h3>详解：体系的四种类型</h3>
+<p>常用的分类来自 Dahmann 和 Baldwin：按照中央控制的程度由强到弱，体系分为指导型、公认型、协作型和虚拟型四种，可以从控制程度、目的、管理方式、结构和标准五个方面加以比较。</p>
+<div class="diagram" data-d="sosTypes"></div>
+<p>体系出现在许多领域，下面是一些例子以及它们要解决的问题：</p>
+<div class="tbl"><table>
+  <thead><tr><th>领域</th><th>体系</th><th>要解决的问题</th></tr></thead>
+  <tbody>
+    <tr><td>国防</td><td>空中作战中心</td><td>协调多个系统，完成任务规划</td></tr>
+    <tr><td>国防</td><td>弹道导弹防御系统</td><td>把传感器、作战管理和拦截弹组织在一起，击毁来袭导弹</td></tr>
+    <tr><td>科学</td><td>全球对地观测系统之系统（GEOSS）</td><td>多国合作，收集和共享对地球的观测数据</td></tr>
+    <tr><td>医疗</td><td>全国卫生信息网（NHIN）</td><td>交换和使用来自各地区机构和遗留系统的卫生信息</td></tr>
+    <tr><td>交通</td><td>下一代航空运输系统</td><td>使美国的航空运输系统现代化，提高安全性、效率和韧性</td></tr>
+    <tr><td>金融</td><td>全球金融系统</td><td>涉及众多组织、政策和目标</td></tr>
+    <tr><td>能源</td><td>可持续的住宅能源基础设施系统</td><td>构想提供供热分配和输送、并监测二氧化碳排放的系统</td></tr>
+    <tr><td>航天</td><td>国际空间站</td><td>多国合作，不断加装模块化部件来增加能力</td></tr>
+    <tr><td>能源</td><td>以石油为基础的交通运输</td><td>原油生产、物流、分销和最终使用之间的协作</td></tr>
+    <tr><td>医疗</td><td>医疗体系</td><td>把医院、急救服务、制药和收费系统组织起来，提供从头到尾的医疗服务</td></tr>
+  </tbody>
+</table></div>
+
+<h3>判断体系的五个特征</h3>
+<p>判断一组系统是否构成体系，常用 Maier 在 1998 年提出的五个特征：</p>
+<ol>
+  <li><strong>运行上的独立性</strong>：每个成员系统都是独立的，本身就有用。</li>
+  <li><strong>管理上的独立性</strong>：成员系统不仅能够独立运行，而且实际上通常就是独立运行的，有各自的目的。</li>
+  <li><strong>地理上的分布</strong>：成员系统往往分布得很广。</li>
+  <li><strong><span class="term" data-t="emergentBehavior">涌现行为</span></strong>：体系能够执行一些不属于任何一个成员系统的功能和目的，这些是整体才具有的性质。</li>
+  <li><strong>演进式发展</strong>：随着经验的积累，体系的结构、功能和目的不断增加、去除和修改。</li>
+</ol>
+<p>前两条独立性，是体系与一个庞大的单一系统之间最明显的区别。也有研究者把<strong>复杂适应系统</strong>（<span class="en-term">Complex Adaptive Systems, CAS</span>）的原理用到体系上：成员系统之间的相互依赖和复杂性，可能让体系表现出从单个系统的分析中预料不到的行为，直到体系真正在环境中运行时才显现出来。</p>
+
+<h3>体系工程面临的难题</h3>
+<p>难题有的来自体系外部，例如新出现的威胁、竞争对手改变策略、用户需要以及为体系出钱的一方发生变化；有的来自体系内部，例如有的成员系统选择退出，又有新的系统加入，规定各系统如何协同工作的政策和接口也会随着各成员系统自己的策略而改变。</p>
+<p>Ring 和 Madni 指出了不断增加成员系统带来的几种风险：</p>
+<ul>
+  <li>范围和复杂性随之增大，人们可能并不清楚加入新系统以后整个体系会怎样表现。</li>
+  <li>出错和遭受恶意攻击的“响应面”扩大了，错误和攻击会通过相互依赖影响整个体系。</li>
+  <li>新的系统、组织和用户带来陌生的术语和文化，用户发现错误或警告的能力可能因此下降。</li>
+  <li>一个系统做出改变，可能无意中影响体系的其他部分。原因可能是不了解其他系统会受到什么影响，可能是对影响估计错误，也可能是只顾本系统的利益。</li>
+</ul>
+<p>Keating 和 Katina 则强调，体系工程不能只是传统系统工程的简单外推：</p>
+<ul>
+  <li>要从多个角度整体地评价体系，除了技术，还要包括人、社会、政策、组织和管理等方面。</li>
+  <li>分析体系问题和相互依赖的方法要更加严谨。</li>
+  <li>哲学、公理化和理论性的方法可以补充技术方法。</li>
+  <li>体系工程师应当负责什么、应当了解体系的哪些方面、应当具备什么资格，也需要更好的界定。</li>
+</ul>
+<p>归纳起来，体系工程师最常碰到三个难题：</p>
+<ul>
+  <li><strong>谁来负责</strong>：多个组织合作完成一个项目，尤其是各自的系统能力要在重要目标上接受检验的时候，谁领导、谁配合，很容易引起紧张。如果不是指导型体系，往往没有一个明确的牵头组织，常见的主张有三种：
+    <ul>
+      <li>由在某个场景或任务链中承担大部分活动的系统牵头；</li>
+      <li>由承担最关键的活动或接口的系统牵头，而“最关键”本身又是一个主观判断；</li>
+      <li>由承担大部分经费负担的一方说了算。</li>
+    </ul></li>
+  <li><strong>接口与升级</strong>：成员系统按各自的时间表开发和升级。
+    <ul>
+      <li>一个系统自身能力的提高，不一定能改善整个体系的能力。</li>
+      <li>各自升级给整个体系的配置控制带来困难，测试体系或者按假定的体系配置计划部署时就会出问题。</li>
+      <li>如果升级不向后兼容遗留系统的接口，一个系统的局部改进可能使整个体系的性能显著下降。</li>
+      <li>对策是经常互通计划中的升级和路线图，让其他系统能够提前计划、相应调整自己的接口。</li>
+    </ul></li>
+  <li><strong><span class="term" data-t="interoperability">互操作性</span></strong>：
+    <ul>
+      <li>起初，互操作性关注的是数据和格式的技术交换，让各系统能够接受其他系统的输入、向其他系统发送输出。新系统刚加入时，解决了技术问题就可以应付。</li>
+      <li>如果双方的工作程序或者对信息的理解不同（例如不同军种之间），即使数据交换完全正确，对体系的整体性能也可能毫无意义。</li>
+      <li>对策是体系中所有合作的组织充分沟通，弄清彼此术语上的差别以及对性能的预期。</li>
+    </ul></li>
+</ul>
+<div class="sim" data-sim="ch20NewSystem"></div>
+
+<div class="quiz" data-ch="20"></div>
+</article>
+
+
+<nav class="pager" aria-label="翻页">
+  <a class="prev" href="ch19.html"><small>上一章</small><span>第 19 章　运行与保障</span></a>
+  <a class="next" href="ch21.html"><small>下一章</small><span>第 21 章　企业系统工程</span></a>
+</nav>
+</div>
+</main>
+<div class="pop" id="pop" role="tooltip"></div>
+<script>
+DIAGRAMS.sosTypes = {
+  title: "体系的四种类型",
+  arrows: true,
+  initial: "dir",
+  groups: [{ nodes: [
+    { k:"dir", label:"指导型", sub:"城市公共交通", html:"<p>为特定目的建立和管理，运行由中央统一管理，以确保达到目标。成员系统仍然能够独立运行，但接受自己的正常运行模式服从于中央的目标。例如城市公共交通：各项交通服务分属不同的所有者，可以合作提供城市交通服务，但要参与进来就必须接受相当多的统一调度。</p><div class='tbl'><table><tbody><tr><td>控制程度</td><td>完全控制</td></tr><tr><td>目的</td><td>特定的、由上级规定</td></tr><tr><td>管理方式</td><td>集中、权威式</td></tr><tr><td>结构</td><td>刚性、层级式</td></tr><tr><td>标准</td><td>强制规定</td></tr></tbody></table></div>" },
+    { k:"ack", label:"公认型", sub:"空中交通管制", html:"<p>体系的目标得到成员系统的认可，有指定的管理者和专门的资源；但成员系统保留各自的所有权、目标、经费、开发和维护方式。与指导型体系不同，变化通过各方商定的协作来实现。例如空中交通管制：世界各地提供有管理的安全空域的系统认同共同的目标，共享最佳做法，遵守规章和协议。</p><div class='tbl'><table><tbody><tr><td>控制程度</td><td>大部分控制</td></tr><tr><td>目的</td><td>得到认可</td></tr><tr><td>管理方式</td><td>自上而下的协作</td></tr><tr><td>结构</td><td>在框架之内保持灵活</td></tr><tr><td>标准</td><td>强制执行</td></tr></tbody></table></div>" },
+    { k:"col", label:"协作型", sub:"电网", html:"<p>成员系统自愿参与，以实现某些共同的目的，这些目的可以通过成员系统与体系之间的协作不断演变。与公认型体系不同，这里没有统一的指挥机构，成员系统遵守标准和规章，但可以各自协商，调整自己的角色和工作方式。例如电网：发电、输电和配电由各自自主的系统完成。</p><div class='tbl'><table><tbody><tr><td>控制程度</td><td>由成员系统各自控制</td></tr><tr><td>目的</td><td>自愿形成</td></tr><tr><td>管理方式</td><td>自下而上的协作</td></tr><tr><td>结构</td><td>灵活</td></tr><tr><td>标准</td><td>自愿采用</td></tr></tbody></table></div>" },
+    { k:"vir", label:"虚拟型", sub:"互联网", html:"<p>既没有中央权威，也没有一个所有成员都接受的明确目的，但可以表现出大规模的涌现行为，依靠的是标准化的格式和协议。例如互联网：互联网工程任务组发布各方认可的标准和协议，独立的服务提供者在此基础上开发新的服务或产品，在使用方面既没有人提供管理或治理，也没有人接受管理或治理。</p><div class='tbl'><table><tbody><tr><td>控制程度</td><td>很少或没有</td></tr><tr><td>目的</td><td>不明显</td></tr><tr><td>管理方式</td><td>分散</td></tr><tr><td>结构</td><td>动态变化</td></tr><tr><td>标准</td><td>非正式</td></tr></tbody></table></div>" }
+  ]}]
+};
+SIMS.ch20NewSystem = {
+  title: "情境：给一个公认型体系接入新系统",
+  intro: "<p>三家机构各自拥有一套已经在用的系统（系统 1、系统 2、系统 3），它们组成一个公认型体系：有一位指定的体系管理者和一小笔专门的经费，但每个成员系统的所有权、目标、经费和开发计划仍然归各自的机构。现在要把一个新研制的系统 4 接入这个体系。你是体系的系统工程师。</p>",
+  start: "n1",
+  nodes: {
+    n1: { text: "<p>系统 2 和系统 3 之间还没有接口，而体系的一项任务需要两者交换数据。两家机构的项目办公室都表示，今年的经费和人手已经排给了各自系统的改进计划。你怎么办？</p>",
+      choices: [
+        { t: "以体系管理者的名义发一份正式需求，要求两家机构在年底前完成这条接口", tone: "bad", next: "n2",
+          fb: "<p>公认型体系没有指导型体系那样的指挥权。成员系统保留各自的所有权、目标和经费，变化要靠各方商定的协作来实现，这样一份命令多半得不到执行。</p>" },
+        { t: "用体系的专门经费资助这条接口，并向两家机构说明接口对它们各自任务的好处",tone: "good", next: "n2",
+          fb: "<p>公认型体系的管理者手里有一定的监督权和少量资源，用途正是鼓励成员系统发展对体系有益的互补能力；还要说服成员系统的所有者，让各方相信合作对双方都有好处，各方才会投入。</p>" },
+        { t: "绕开两家机构，让新的系统 4 在中间转发系统 2 和系统 3 的数据，这样谁都不用改", tone: "mixed", next: "n2",
+          fb: "<p>这样暂时省掉了协商，可系统 4 与每个已有系统之间的接口本来就都要新开发，转发又让这项任务完全依赖系统 4 这一个环节，扩大了出错和遭受恶意攻击的“响应面”。</p>" }
+      ] },
+    n2: { text: "<p>接口开发完成，体系要做一次端到端的测试。几个系统分属不同机构，平时各自在自己的试验场上测试，这次测试需要的空间超过任何一个试验场。系统 3 的机构还表示，系统内部的一部分数据属于专有信息，不能给其他机构看。测试开始之前，你首先要做什么？</p>",
+      choices: [
+        { t: "先和各方商定由谁主持测试、谁掌握数据、谁出钱，以及这次测试与已排定的测试谁优先",tone: "good", next: "n3",
+          fb: "<p>体系测试的第一个问题就是谁来负责，接着才是数据、经费和优先次序。系统 3 的专有数据可以留在本机构内部处理，体系测试只观察它的输出，把它当作黑盒子即可。</p>" },
+        { t: "要求系统 3 交出全部内部数据，否则测试结果无法分析，测试只能推迟", tone: "bad", next: "n3",
+          fb: "<p>对合作者和竞争者保守保密或专有的数据，是体系测试中的常态。体系关心的是系统之间的接口和各系统的输出，坚持要全部内部数据，只会让测试一拖再拖。</p>" },
+        { t: "由出钱最多的机构主持测试，其他机构按它的安排派人参加、提供设备和数据",tone: "mixed", next: "n3",
+          fb: "<p>承担大部分经费的一方确实常常要求说了算，但这只是几种主张中的一种：不经商定就按出资多少决定，其他机构未必接受，数据权限和优先次序的问题也仍然没有解决。</p>" }
+      ] },
+    n3: { text: "<p>测试结束半年后，系统 1 的项目办公室宣布：系统 1 将按自己的时间表升级到一套新的接口标准，系统 1 自身的性能会明显提高，但新接口与旧接口不兼容。系统 2 和系统 3 目前都通过旧接口与系统 1 交换数据。你怎样对待这次升级？</p>",
+      choices: [
+        { t: "系统 1 的能力提高了，体系的能力自然也会随之提高，不需要特别处理", tone: "bad", next: "n4",
+          fb: "<p>一个成员系统自身能力的提高，不一定能改善整个体系的能力。升级如果不向后兼容遗留系统的接口，这个局部的改进反而可能使整个体系的性能显著下降。</p>" },
+        { t: "要求系统 1 在体系存续期间一直保持现有接口不变，以保证体系的稳定",tone: "mixed", next: "n4",
+          fb: "<p>体系本来就是演进式发展的，成员系统要在各自的生命周期中不断成熟和升级，公认型体系的管理者也没有权力冻结一个成员系统的设计。</p>" },
+        { t: "请系统 1 尽早公布升级路线图，和其他成员系统商定过渡安排，并据此更新体系的配置", tone: "good", next: "n4",
+          fb: "<p>计划中的升级和路线图应当经常在各成员系统之间通报，让其他系统能够提前计划、相应调整自己的接口；测试和部署所依据的体系配置也要随之更新。</p>" }
+      ] },
+    n4: { text: "<p>过渡完成以后，系统 1 与系统 2 之间的数据交换在技术上完全正确：格式一致，对方能够接收每一条消息。可是系统 2 的操作人员反映，按照系统 1 发来的信息行动，结果常常不对。原来两家机构的工作程序不同，对同一类信息的理解也不一样。你怎样处理？</p>",
+      choices: [
+        { t: "数据格式已经一致，技术接口验收合格，剩下的只是对方操作人员的培训问题", tone: "bad", next: "end",
+          fb: "<p>技术上的数据交换只是互操作性的起点。工作程序或者对信息的理解不同，完全正确的数据交换也可能毫无意义。</p>" },
+        { t: "组织两家机构一起核对术语和各自对性能的预期，把理解上的差别写进接口约定",tone: "good", next: "end",
+          fb: "<p>互操作性既包括数据和格式的技术交换，也包括工作程序和对信息的解释，后者只能靠合作组织之间的沟通来弄清。</p>" },
+        { t: "在两个系统之间再加一层数据转换，把系统 1 的消息改写成系统 2 习惯的样子", tone: "mixed", next: "end",
+          fb: "<p>格式本来已经一致，再加一层转换并不能消除两家机构对信息理解上的差别，反而给体系增加了一个可能出错的环节。</p>" }
+      ] },
+    end: { end: true, tone: "neutral", text: "<p>在公认型体系里，体系的系统工程师几乎没有命令权，手里的工具主要是接口、少量用来鼓励合作的资源、事先商定的规则和持续不断的沟通。</p>" }
+  }
+};
+Object.assign(GLOSSARY, {
+  sos: ["体系", "System of Systems, SoS", "由多个各自独立拥有和管理的系统组合而成、能够完成任何一个系统都无法单独完成的目标的整体，也译作“系统之系统”。"],
+  constituentSystem: ["成员系统", "Constituent System", "参加体系的各个独立系统。它们离开体系也能独立运行、各有用处，通常也由各自的组织独立管理和出资。"],
+  emergentBehavior: ["涌现行为", "Emergent Behavior", "整体所表现出来、但不属于任何一个组成部分的功能、目的或行为。体系的涌现行为往往要等体系在实际环境中运行时才显现出来。"],
+  interoperability: ["互操作性", "Interoperability", "不同系统之间交换信息并正确使用所交换信息的能力。它既包括数据和格式在技术上的交换，也包括各方工作程序和对信息理解的一致。"]
+});
+QUIZ[20] = [
+  { q:"一个国家的电网由许多自主的发电、输电和配电公司组成，没有统一的指挥机构，各方遵守共同的规章，各自协商自己的角色。它属于哪一种体系？",
+    o:["指导型","公认型","协作型","虚拟型"], a:2,
+    e:"电网正是协作型体系的典型例子：成员系统自愿参与，没有统一的指挥机构，标准由各方采用。人们也容易把它误认为公认型，但公认型有指定的管理者和专门的资源，电网没有这样的管理者。" },
+  { q:"城市公共交通和空中交通管制都有一个统一的管理者。按照体系的分类，两者的关键区别是什么？",
+    o:["公共交通的成员接受中央统一调度；空管的成员保留所有权和经费，变化靠协商",
+       "公共交通的成员系统离开整体就不能运行；空管的成员系统能够各自独立运行",
+       "公共交通没有共同的目的；空管有一个得到全体成员认可的共同目的",
+       "公共交通依靠各方自愿采用的标准；空管依靠由上级强制规定的标准"], a:0,
+    e:"城市公共交通是指导型体系，运行由中央统一管理，成员系统接受自己的运行服从中央目标；空中交通管制是公认型体系，有指定的管理者，但成员系统保留各自的所有权、目标和经费，变化通过协商一致实现。第二个选项不对，因为指导型体系的成员系统同样能够独立运行。" },
+  { q:"一艘大型舰艇上的各个分系统由同一家总承包商设计，只有装在一起才能工作。按照 Maier 的五个特征，它通常不算作体系，最主要的原因是什么？",
+    o:["它的分系统组合以后，不能完成任何一个分系统单独完成不了的功能",
+       "它的分系统没有运行上和管理上的独立性，离开整体本身就没有用处",
+       "它的分系统在地理上过于集中，体系的成员必须分布在不同的国家",
+       "它的分系统来自同一家承包商，体系的成员必须来自不同的承包商"], a:1,
+    e:"体系的成员系统必须各自独立、本身就有用，并且实际上通常各自独立运行，这两条独立性是体系与一个庞大的单一系统之间最明显的区别。第一个选项说的是涌现行为，可这艘舰艇作为整体同样具有各分系统单独不具备的能力，所以它缺的并不是涌现行为。" },
+  { q:"一个体系不断吸收新的成员系统、组织和用户。按照 Ring 和 Madni 的分析，这样做会带来哪一种风险？",
+    o:["体系的边界会就此固定下来，以后难以再随着任务的变化而调整",
+       "体系的管理会自然趋于集中，逐渐从公认型体系变成指导型体系",
+       "新加入的成员系统会失去运行上的独立性，离开体系就无法使用",
+       "出错和遭受攻击的范围扩大，陌生的术语和文化让人难以发现警告"], a:3,
+    e:"成员越多，出错和遭受恶意攻击的“响应面”越大，问题会沿着相互依赖扩散到整个体系；新的组织和用户带来陌生的术语和文化，也会削弱用户发现错误和警告的能力。第二个选项听起来顺理成章，但体系属于哪一种类型取决于中央控制的程度，增加成员并不会让管理自动集中。" }
+];
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全书概念图 · 系统工程原理与实践导读</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem("se-guide:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t));}catch(e){}</script>
+<script>var QUIZ={}, GLOSSARY={}, DIAGRAMS={}, SIMS={}, SORTS={}, STEPS={};</script>
+<script src="assets/glossary.js"></script>
+</head>
+<body class="page-concepts">
+<div class="topbar">
+  <button class="iconbtn menu-btn" id="menuBtn" aria-label="打开目录">☰<span class="lbl-txt"> 目录</span></button>
+  <a class="title" href="index.html"><b>系统工程原理与实践</b>　导读</a>
+  <a class="iconbtn" id="mapBtn" href="concepts.html"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><circle cx="2.6" cy="3.2" r="1.5"/><circle cx="13.4" cy="3.6" r="1.5"/><circle cx="3" cy="13" r="1.5"/><circle cx="13" cy="12.6" r="1.5"/><path d="M8 8 L2.6 3.2 M8 8 L13.4 3.6 M8 8 L3 13 M8 8 L13 12.6"/></svg><span class="lbl-txt">概念图</span></a>
+  <button class="iconbtn" id="themeBtn" aria-label="切换深浅色">◐<span class="lbl-txt"> 深浅色</span></button>
+</div>
+<div class="progress" id="progress"></div>
+<nav class="sidebar" id="sidebar" aria-label="目录">
+  <a class="side-home" href="index.html">全书导读首页</a>
+  <div class="side-stat">
+    <div class="row"><span>已读章节</span><b id="readCount">0 / 23</b></div>
+    <div class="bar"><i id="readBar"></i></div>
+  </div>
+  <div class="toc" id="toc"><div class="toc-part">第一部分 · 系统工程的基础</div><a href="ch01.html" data-ch="ch1" class="core"><span class="num">1</span><span class="lbl">系统工程与现代系统</span><span class="chk" aria-hidden="true"></span></a><a href="ch02.html" data-ch="ch2" class="core"><span class="num">2</span><span class="lbl">复杂系统的结构</span><span class="chk" aria-hidden="true"></span></a><a href="ch03.html" data-ch="ch3" class="core"><span class="num">3</span><span class="lbl">系统开发过程</span><span class="chk" aria-hidden="true"></span></a><a href="ch04.html" data-ch="ch4" class="core"><span class="num">4</span><span class="lbl">系统工程管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第二部分 · 概念开发阶段</div><a href="ch05.html" data-ch="ch5" class="core"><span class="num">5</span><span class="lbl">需要分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch06.html" data-ch="ch6" class="core"><span class="num">6</span><span class="lbl">需求分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch07.html" data-ch="ch7" class="core"><span class="num">7</span><span class="lbl">功能分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch08.html" data-ch="ch8" class="core"><span class="num">8</span><span class="lbl">评估与选择</span><span class="chk" aria-hidden="true"></span></a><a href="ch09.html" data-ch="ch9" class="core"><span class="num">9</span><span class="lbl">系统架构设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch10.html" data-ch="ch10" class="core"><span class="num">10</span><span class="lbl">基于模型的系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch11.html" data-ch="ch11" class="core"><span class="num">11</span><span class="lbl">决策分析与支持</span><span class="chk" aria-hidden="true"></span></a><a href="ch12.html" data-ch="ch12" class="core"><span class="num">12</span><span class="lbl">风险管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第三部分 · 工程开发阶段</div><a href="ch13.html" data-ch="ch13" class=""><span class="num">13</span><span class="lbl">先期开发</span><span class="chk" aria-hidden="true"></span></a><a href="ch14.html" data-ch="ch14" class=""><span class="num">14</span><span class="lbl">软件系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch15.html" data-ch="ch15" class=""><span class="num">15</span><span class="lbl">工程设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch16.html" data-ch="ch16" class=""><span class="num">16</span><span class="lbl">系统集成</span><span class="chk" aria-hidden="true"></span></a><a href="ch17.html" data-ch="ch17" class=""><span class="num">17</span><span class="lbl">试验与评价</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第四部分 · 开发后阶段</div><a href="ch18.html" data-ch="ch18" class=""><span class="num">18</span><span class="lbl">生产</span><span class="chk" aria-hidden="true"></span></a><a href="ch19.html" data-ch="ch19" class=""><span class="num">19</span><span class="lbl">运行与保障</span><span class="chk" aria-hidden="true"></span></a><a href="ch20.html" data-ch="ch20" class=""><span class="num">20</span><span class="lbl">体系工程</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第五部分 · 系统工程的应用领域</div><a href="ch21.html" data-ch="ch21" class=""><span class="num">21</span><span class="lbl">企业系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch22.html" data-ch="ch22" class=""><span class="num">22</span><span class="lbl">系统安全工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch23.html" data-ch="ch23" class=""><span class="num">23</span><span class="lbl">系统工程的未来</span><span class="chk" aria-hidden="true"></span></a></div>
+</nav>
+<div class="scrim" id="scrim"></div>
+<main>
+<div class="wrap">
+<header class="cm-head"><h1>全书概念图</h1><div class="en">Concept Map</div></header>
+<div class="cm" id="cm"></div>
+</div>
+</main>
+<div class="pop" id="pop" role="tooltip"></div>
+<script src="assets/concepts.js"></script>
+<script src="assets/cmap.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

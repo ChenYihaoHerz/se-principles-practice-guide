@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 11 章 决策分析与支持 · 系统工程原理与实践导读</title>
+<meta name="description" content="系统工程原理与实践第 11 章“决策分析与支持”的中文导读">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem("se-guide:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t));}catch(e){}</script>
+<script>var QUIZ={}, GLOSSARY={}, DIAGRAMS={}, SIMS={}, SORTS={}, STEPS={};</script>
+<script src="assets/glossary.js"></script>
+</head>
+<body class="page-ch">
+<div class="topbar">
+  <button class="iconbtn menu-btn" id="menuBtn" aria-label="打开目录">☰<span class="lbl-txt"> 目录</span></button>
+  <a class="title" href="index.html"><b>系统工程原理与实践</b>　导读</a>
+  <a class="iconbtn" id="mapBtn" href="concepts.html"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><circle cx="2.6" cy="3.2" r="1.5"/><circle cx="13.4" cy="3.6" r="1.5"/><circle cx="3" cy="13" r="1.5"/><circle cx="13" cy="12.6" r="1.5"/><path d="M8 8 L2.6 3.2 M8 8 L13.4 3.6 M8 8 L3 13 M8 8 L13 12.6"/></svg><span class="lbl-txt">概念图</span></a>
+  <button class="iconbtn" id="themeBtn" aria-label="切换深浅色">◐<span class="lbl-txt"> 深浅色</span></button>
+</div>
+<div class="progress" id="progress"></div>
+<nav class="sidebar" id="sidebar" aria-label="目录">
+  <a class="side-home" href="index.html">全书导读首页</a>
+  <div class="side-stat">
+    <div class="row"><span>已读章节</span><b id="readCount">0 / 23</b></div>
+    <div class="bar"><i id="readBar"></i></div>
+  </div>
+  <div class="toc" id="toc"><div class="toc-part">第一部分 · 系统工程的基础</div><a href="ch01.html" data-ch="ch1" class="core"><span class="num">1</span><span class="lbl">系统工程与现代系统</span><span class="chk" aria-hidden="true"></span></a><a href="ch02.html" data-ch="ch2" class="core"><span class="num">2</span><span class="lbl">复杂系统的结构</span><span class="chk" aria-hidden="true"></span></a><a href="ch03.html" data-ch="ch3" class="core"><span class="num">3</span><span class="lbl">系统开发过程</span><span class="chk" aria-hidden="true"></span></a><a href="ch04.html" data-ch="ch4" class="core"><span class="num">4</span><span class="lbl">系统工程管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第二部分 · 概念开发阶段</div><a href="ch05.html" data-ch="ch5" class="core"><span class="num">5</span><span class="lbl">需要分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch06.html" data-ch="ch6" class="core"><span class="num">6</span><span class="lbl">需求分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch07.html" data-ch="ch7" class="core"><span class="num">7</span><span class="lbl">功能分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch08.html" data-ch="ch8" class="core"><span class="num">8</span><span class="lbl">评估与选择</span><span class="chk" aria-hidden="true"></span></a><a href="ch09.html" data-ch="ch9" class="core"><span class="num">9</span><span class="lbl">系统架构设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch10.html" data-ch="ch10" class="core"><span class="num">10</span><span class="lbl">基于模型的系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch11.html" data-ch="ch11" class="core active" aria-current="page"><span class="num">11</span><span class="lbl">决策分析与支持</span><span class="chk" aria-hidden="true"></span></a><a href="ch12.html" data-ch="ch12" class="core"><span class="num">12</span><span class="lbl">风险管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第三部分 · 工程开发阶段</div><a href="ch13.html" data-ch="ch13" class=""><span class="num">13</span><span class="lbl">先期开发</span><span class="chk" aria-hidden="true"></span></a><a href="ch14.html" data-ch="ch14" class=""><span class="num">14</span><span class="lbl">软件系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch15.html" data-ch="ch15" class=""><span class="num">15</span><span class="lbl">工程设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch16.html" data-ch="ch16" class=""><span class="num">16</span><span class="lbl">系统集成</span><span class="chk" aria-hidden="true"></span></a><a href="ch17.html" data-ch="ch17" class=""><span class="num">17</span><span class="lbl">试验与评价</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第四部分 · 开发后阶段</div><a href="ch18.html" data-ch="ch18" class=""><span class="num">18</span><span class="lbl">生产</span><span class="chk" aria-hidden="true"></span></a><a href="ch19.html" data-ch="ch19" class=""><span class="num">19</span><span class="lbl">运行与保障</span><span class="chk" aria-hidden="true"></span></a><a href="ch20.html" data-ch="ch20" class=""><span class="num">20</span><span class="lbl">体系工程</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第五部分 · 系统工程的应用领域</div><a href="ch21.html" data-ch="ch21" class=""><span class="num">21</span><span class="lbl">企业系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch22.html" data-ch="ch22" class=""><span class="num">22</span><span class="lbl">系统安全工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch23.html" data-ch="ch23" class=""><span class="num">23</span><span class="lbl">系统工程的未来</span><span class="chk" aria-hidden="true"></span></a></div>
+</nav>
+<div class="scrim" id="scrim"></div>
+<main>
+<div class="wrap">
+<div class="part-tag"><a href="index.html#part2">第二部分 · 概念开发阶段</a></div>
+<article class="chapter" id="ch11" data-ch="11" data-title="决策分析与支持" data-core="1">
+<div class="ch-head">
+  <div class="ch-label"><span>第 11 章</span><span class="chip core">精读</span></div>
+  <h2>决策分析与支持</h2>
+  <div class="en">Decision Analysis and Support</div>
+</div>
+
+<p class="lead">系统工程师经常要在需求还不完整、技术还不成熟、经费又有限的情况下做出艰难的决策。支持这些决策的手段主要有四种：<strong>建模、仿真、分析和实验</strong>。在大多数情况下，单靠其中任何一种都不够，需要几种手段配合使用。</p>
+<p>简单的决策只需要一点基本信息和直觉。决定早饭吃什么，只要知道家里有什么食物、自己会做什么菜、还有多少时间就够了。决定是否建造一座核电站就完全不同：需要的输入和产生的后果都多得多，收集来的信息还要经过整理、融合，再以恰当的形式交给决策者，决策者才能做出好的决定。</p>
+
+<h3>决策过程和决策的类型</h3>
+<p>一个复杂决策的基本过程有五个环节：<strong>规划决策过程</strong>、<strong>收集数据</strong>、<strong>整理和处理信息</strong>、<strong>做出决定</strong>、<strong>实施决定</strong>。每个环节都要花时间，连“做出决定”也不是一瞬间的事：如果决定需要多人批准，或者需要一个群体达成一致，这一环节会拖得很长，还会掺进政治上的考虑。大型政府采办项目中的正式决策可能要花几年，一个简单系统中某个组件的决策也许几个小时就够了。</p>
+<p>规划环节要考虑下面几个因素：</p>
+<ul>
+  <li><strong>目标</strong>：各个利益相关者的目标是什么？一线主管的目标和项目经理的目标往往不同，决策应当尽可能满足重要利益相关者的目标。</li>
+  <li><strong>决策的类型</strong>：很多糟糕的决策，根源在于没有弄清需要做的是哪一类决策。要弄清的问题有：
+    <ul>
+      <li>这是“是或否”的批准，是二选一（“自制还是外购”是一个经典的例子），还是从多个方案中挑选？</li>
+      <li>由一个人决定，还是需要一个群体达成一致？</li>
+      <li>实施之前需要谁来批准？</li>
+    </ul>
+  </li>
+  <li><strong>决策的背景</strong>：涉及整个企业的决策和涉及一个组件的决策大不相同。背景包括多个方面：
+    <ul>
+      <li>技术方面，例如子系统的取舍；</li>
+      <li>财务方面，即投资方式和数额；</li>
+      <li>人员方面；</li>
+      <li>过程方面，即业务和技术流程、方法；</li>
+      <li>计划方面，即时间、场地、经费等资源的分配；</li>
+      <li>时间方面，即必须在什么时间之前做出决定，这个期限本身可能会变化；</li>
+      <li>历史方面，即过去已经做出的决定。</li>
+    </ul>
+  </li>
+  <li><strong>利益相关者</strong>：凡是会受到决策结果影响的人或组织，都是利益相关者。决策之前常常没有把这些利益相关者识别出来，可是决定一旦公布，每一个受影响的人都会表达自己的意见。</li>
+  <li><strong>过去的决定</strong>：了解过去做过哪些相关的决定，有助于弄清当前决策的背景，更容易看出可能的后果和受影响的人。</li>
+  <li><strong>支撑数据</strong>：需要及时制订数据收集计划。决策常常一拖再拖，原因是要求的数据精度超过了实际需要。</li>
+</ul>
+<p>按照结构化程度，决策可以分为三类。这三类之间没有截然的界线，它们构成一个连续的谱系，一类非结构化的决策随着经验的积累，也可能逐渐变成半结构化的决策。每一类需要不同的技术支持：</p>
+<div class="tbl"><table>
+  <thead><tr><th>决策类型</th><th>特点</th><th>需要的支持技术</th></tr></thead>
+  <tbody>
+    <tr><td>结构化决策</td><td>例行的决策，背景清楚，信息齐全，有标准和先例可循</td><td>信息系统和数据库</td></tr>
+    <tr><td>半结构化决策</td><td>超出例行范围，过去的决策不能直接照搬，但仍有一定的指导可循。很多系统工程决策属于这一类</td><td>决策支持系统</td></tr>
+    <tr><td>非结构化决策</td><td>复杂、独特，通常只做一次，例如第一次采用某项新技术，不确定性很高</td><td>专家系统（基于知识的系统）</td></tr>
+  </tbody>
+</table></div>
+<p>决策还有不同的层级：<strong>操作层</strong>由工程师、分析员、测试人员做出；<strong>管理层</strong>由总工程师、项目经理和系统工程师做出，这是系统工程决策的主要层级；<strong>战略规划层</strong>由企业高层做出，主要是投资决策和高度不确定条件下的决策。</p>
+<p>正式的决策过程自 20 世纪 70 年代以来变化不大，分为四个阶段：</p>
+<ol>
+  <li><strong>情报</strong>：界定问题，收集并综合数据。</li>
+  <li><strong>设计</strong>：建立模型，找出备选方案，评估备选方案。</li>
+  <li><strong>选择</strong>：在各种选择中搜寻，了解结论对哪些因素敏感，做出决定。</li>
+  <li><strong>实施</strong>：实施变更，解决问题。</li>
+</ol>
+<p>与前面的基本过程相比，正式过程多了一个关键环节：为决策问题本身建立模型，预测每个方案可能带来的结果。这里的模型可大可小，一张电子表格可以是一个决策模型，一个复杂的数字仿真也可以是。建立什么样的模型，取决于五个因素：</p>
+<ol>
+  <li><strong>决策的期限</strong>：如果留给决策者的时间不多，就只能用简单的模型，除非已经有现成的复杂模型可以直接使用。</li>
+  <li><strong>资源</strong>：经费、人员、技能水平、设施和设备，都限制着建立和运行模型的能力。</li>
+  <li><strong>问题的范围</strong>：简单的决策不需要复杂的模型。问题范围又取决于决策的影响面、利益相关者的数量和类型、涉及的实体有多少和多复杂，以及政治上的限制。</li>
+  <li><strong>不确定性</strong>：如果所需信息的不确定性很大，模型中就必须包含某种概率推理。</li>
+  <li><strong>利益相关者的目标和价值观</strong>：即使有客观数据支持，决策本质上仍然是主观的。系统工程师要决定哪些价值观放进模型里、哪些留在模型之外处理，其中很重要的一部分是各方对风险的承受能力。</li>
+</ol>
+<p>在技术上希望达到的模型范围和逼真程度，与项目实际能够提供的资源之间，需要取得平衡。能够把握这种平衡的人，除了系统工程师之外很少。</p>
+
+<h3>模型与仿真</h3>
+<p>模型是对系统实体、现象或过程的物理的、数学的或其他逻辑上的表示。建模的目的，是剥离与当前问题关系不大的性质，突出几个关键属性，让它们的行为和相互关系显露出来。按照抽象程度从高到低，模型分为三类：</p>
+<ul>
+  <li><strong>图示模型</strong>：草图、组织结构图、功能流程框图、SysML 图等。功能流程框图中的方框代表功能单元，名称以动词开头，箭头代表单元之间信息、物质或能量的流动。</li>
+  <li><strong>数学模型</strong>：从粗略的估算、牛顿定律和梁的强度这样的基本关系，到高斯分布、泊松分布、指数分布等各种统计分布（雷达杂波常用瑞利分布描述）。</li>
+  <li><strong>物理模型</strong>：风洞和拖曳水池中的缩比模型、用来研究人机接口的全尺寸实体模型，以及各种原型。</li>
+</ul>
+<p>住宅建筑师的工作就是一个例子：建筑师先给房主看草图和平面图，有时再做一个纸板或木头的缩比模型，最后为木工、管道工和电工画出按比例绘制、带有专门符号的施工图。不同的模型服务于不同的读者。</p>
+<p>粗略的数学估算有一个重要用途，就是对复杂的分析或仿真结果做“合理性检查”。系统工程师有三种做法：依靠原设计人员的复核；请一位专家独立核算；或者用自己的知识加上手册亲自估算。如果估算结果与原结果不一致，应当先检查估算中用到的近似，再去怀疑原来的结果。</p>
+<p><strong>仿真</strong>是对动态行为的建模，也就是用一个软件模型对物理系统、功能或过程做实验的数值计算技术。仿真可以从三个方面描述：静态的还是动态的，确定性的还是随机的，离散的还是连续的。系统工程中用到的仿真大致分为下面几类：</p>
+<div class="tbl"><table>
+  <thead><tr><th style="width:16%">类别</th><th style="width:22%">主要使用的时期和性质</th><th>典型例子</th></tr></thead>
+  <tbody>
+    <tr><td>运行仿真</td><td>概念开发阶段，用于确定运行需求、探索和挑选方案；动态、随机、离散事件</td><td><strong>对抗推演</strong>：蓝方操纵自己的系统，红方扮演对手，白方担任裁判。商业推演中双方是竞争对手；军事兵棋推演一次可以持续一天到几周；地缘政治推演要考虑外交、情报、军事、经济几方面的反应，用“智能体”代表国家的各个组成部分。<br><strong>系统效能仿真</strong>：在概念探索和概念定义时期比较各个候选方案的效能。<br><strong>任务仿真</strong>：研究系统的运行方式，例如空中交通管制、航天任务的轨道、高速公路扩容和智能交通系统</td></tr>
+    <tr><td>物理仿真</td><td>工程开发阶段，支持设计；动态、确定性、连续</td><td>高速飞机的六自由度仿真（三个位置坐标和三个转动坐标）；汽车防抱死制动、牵引力控制和安全气囊；阿波罗计划，以及氧气系统爆炸后把阿波罗 13 号安全接回地球；国际空间站每次任务的反复演练；会出血、抽搐、发出声音的医学仿真人体模型。<br><strong>硬件在环仿真</strong>是把真实硬件接入计算机仿真的物理仿真，例如装有微波吸收材料、可移动辐射源和真实导引头的导弹寻的制导设施，以及把车载处理器、电池、电气负载接入仿真的汽车试验</td></tr>
+    <tr><td>工程仿真</td><td>组件和子组件层级，主要由设计专家使用</td><td>电路设计仿真器（不再用面包板反复试凑），建筑和桥梁的结构分析</td></tr>
+    <tr><td>环境仿真</td><td>工程试验与评价，只模拟系统所处的环境，用来考核系统；大多是动态、确定性、离散事件</td><td>振动台、振动器和冲击试验；用装满传感器的假人做汽车碰撞试验；风洞，以及研究船体和潜航器用的水洞、拖曳水池</td></tr>
+    <tr><td>虚拟现实仿真</td><td>根据观察者的位置和视线方向实时计算出三维图像</td><td>在设计住宅、建筑、控制中心、船舱和工厂布局时“走”一遍内部空间；电子游戏；战场态势感知</td></tr>
+  </tbody>
+</table></div>
+<p>对抗推演有四个好处：</p>
+<ul>
+  <li>参与者能更清楚地理解各种任务中的运行因素，积累运行决策的经验；</li>
+  <li>通过改变系统的关键特性，探索可能提高效能的改进；</li>
+  <li>通过改变运行策略，改进运行流程和方法；</li>
+  <li>分析推演结果，可以得出比其他途径更清楚、排好优先次序的运行需求。</li>
+</ul>
+<p>除了实际的作战经验，兵棋推演是体会运行环境和任务需要的最好办法。</p>
+
+<div class="sorter" data-sort="ch11Sims"></div>
+
+<p>使用仿真要注意几点：</p>
+<ul>
+  <li><strong>费用和逼真程度</strong>：仿真可能占去整个系统开发费用中相当大的一部分，而且人们常常对仿真的逼真程度要求过高，导致进度拖延、费用超支。比较稳妥的做法是迭代开发：先建立一个核心结构，再逐步加上可以分开的模块。</li>
+  <li><strong>不存在绝对经过确认的仿真</strong>：一个仿真只能用于它经过检验的那种用途；新的效能仿真可以先用前身系统或者旧版本的仿真来校验。</li>
+  <li><strong>管理和文档</strong>：仿真通常不是交付给客户的产品，但它应当得到同等的管理关注，并且像正式产品一样编写文档，包括目标、规格、架构、用户指南和维护手册。</li>
+</ul>
+
+<h3>详解：权衡研究</h3>
+<p>每做一个决定，都是在做权衡。说话时我们下意识地挑选能够表达意思的词语组合，去野餐时挑选穿什么衣服，出差时挑选哪一趟航班，都是在比较各个备选方案之后选出结果最理想的一个。系统开发中有成百上千项重要的决策，其中需要由管理层或客户批准的，必须正式地提出，并用证据说明所推荐的方案经过了周密而客观的比较。为了加以区分，非正式的决策辅助称为“权衡”，为了向上级提出建议而做的正式研究称为“<span class="term" data-t="tradeoff">权衡研究</span>”（trade study）或“权衡分析”。</p>
+<p>无论正式程度如何，权衡都包含四个基本步骤，每一步都对应系统工程方法中的一个步骤：</p>
+<ul>
+  <li><strong>确定目标</strong>（对应需求分析）：找出解决方案必须满足的需求，尽量用<span class="term" data-t="moe">效能度量</span>定量地表示。</li>
+  <li><strong>找出备选方案</strong>（对应概念探索）：尽可能多地列出可能的做法，不满足某条必不可少的需求的方案要排除。</li>
+  <li><strong>比较备选方案</strong>（对应概念定义）：按每一项效能度量比较各个方案，看累计的评价，也看各项之间是否平衡。</li>
+  <li><strong>敏感性分析</strong>（对应概念验证）：在数据精度允许的范围内改变各项度量的优先次序和评分。只在一两项度量上得分低的方案要重新审视，看稍作修改能否改变结果。除非一个方案明显胜出，而且结果在这些变动下保持稳定，否则就要做进一步研究。</li>
+</ul>
+<p>正式的权衡研究还应当具备五个特点：</p>
+<ul>
+  <li><strong>按事先规定的过程组织</strong>：目标、范围和方法在开始之前就确定下来。</li>
+  <li><strong>考虑全部关键的系统需求</strong>：包括费用、可靠性、维修性、后勤保障和发展潜力，费用常常单独处理，这体现研究的周密。</li>
+  <li><strong>穷尽各种选择</strong>：不只考虑显而易见的方案，以免漏掉有前途的选择，这体现研究的客观。</li>
+  <li><strong>半定量</strong>：尽可能量化各种因素，给各项效能度量排出优先次序，写明全部假设。</li>
+  <li><strong>文档完备</strong>：写清每个权重和评分的理由，留下可以追查的记录，这体现推理的严密。</li>
+</ul>
+<p>一项导向重要决策的正式权衡研究分为七个步骤。这些步骤写成线性的顺序，实际上很多步骤相互重叠，有几步应当组成一个反复迭代的小过程：</p>
+<ol>
+  <li><strong>确定目标</strong>：说明主要的和必须满足的需求、选择方案时要考虑的问题、使用背景，以及与其他权衡研究的关系。目标要与开发所处的阶段相称：早期的权衡研究通常在系统层级或更高层级上进行，组件层级的权衡研究要到工程设计和实现阶段才做。</li>
+  <li><strong>找出可行的备选方案</strong>：来源包括作为基线的前身系统、技术进步、创新概念、几种系统的混合方案，以及利益相关方提出的方案。必须满足的需求要少而精，确实是必须的，不能是某个人的猜测或愿望；否则，一个只差一点没达到门槛、但在其他方面更好或者省钱很多的方案，就可能错误地遭到淘汰。这一步还要记住几点：
+    <ul>
+      <li>从来不存在唯一的解；</li>
+      <li>寻找最优解很少值得投入，系统工程是寻找“足够好”的解的艺术和科学；</li>
+      <li>要了解费用、技术风险、可靠性、安全性、质量这些区分方案的因素；</li>
+      <li>在研究进行中保持开放，到后期常会冒出一个结合了几个原方案优点的新方案。</li>
+    </ul>
+    这一步通常分阶段进行：先用头脑风暴尽量多地提出方案，不急于评价；只要剩下的方案还多于三到五个，就继续按排序淘汰，最后留下少数几个做详细的分析。</li>
+  <li><strong>确定选择准则</strong>：每条准则都是产品一项必不可少的属性，用效能度量表示，并与一条或几条需求相联系，最好能够量化。费用几乎总是关键准则，也可以先只比较技术优劣，再拿来与费用对照。所有方案都同样具备的特性区分不了方案，应当去掉；两条高度相关的准则，提供的区分能力并不比其中一条加上适当的权重更多。准则通常以 <strong>6 到 10 条</strong>为宜，太少显得研究不够周密，太多则使过程繁琐而又不增加价值。</li>
+  <li><strong>分配权重</strong>：各条准则的重要程度不同，用权重放大最关键准则的作用。困难在于很多准则无法相互比较，例如费用与风险、精度与重量，判断又往往是主观的。常见的做法有四种：
+    <ul>
+      <li>用 1 到 n 的整数打分。缺点是人们倾向于集中在中间值附近，用 1 到 5 打分实际上只用了 1 到 3；有时人们又把所有准则都打成 4 或 5，相当于只用了 1 到 2。还要记住，打 5 分的准则在计算中就是打 1 分的准则的五倍重要。</li>
+      <li>仍用 1 到 5 打分，但规定权重之和的上限，一个合适的起点是让平均权重保持不变。这样，想提高一条准则的权重，就必须降低另一条的权重。</li>
+      <li>让权重之和等于 1，每个权重是 0 到 1 之间的数。它的好处是可以表示“比另一条重要 50%”这样整数表示不了的关系。用电子表格计算时不要保留太多位有效数字，否则工程判断的可信度会很快下降。</li>
+      <li>用<span class="term" data-t="ahp">层次分析法</span>（<span class="en-term">Analytical Hierarchy Process, AHP</span>）把准则两两比较，再推算出权重。</li>
+    </ul>
+  </li>
+  <li><strong>给各方案的表现评分</strong>：各条准则的单位不同，平方英尺不能和英尺每秒相加，有些准则还是主观的，所以要先换算成统一的无量纲分数。方法有三种，也常常组合使用：
+    <ul>
+      <li><strong>主观评分法</strong>：像给学生打分一样，1 为差，2 为及格，3 为中等，4 为良好，5 为优秀。不满足某条准则的方案可以给 0 分甚至负分，确保它不会靠其他准则的高分胜出。</li>
+      <li><strong>实测分段法</strong>：先测量，再按事先规定的区间把测量值换算成分数。以体积越小越好为例：0 到 2.0 立方英尺得 5 分，2.01 到 3.0 得 4 分，3.01 到 4.0 得 3 分，4.01 到 5.0 得 2 分，大于 5.0 得 1 分。一个体积为 3.47 立方英尺的方案得 3 分。</li>
+      <li><strong>效用函数法</strong>：用<span class="term" data-t="utility">效用函数</span>（<span class="en-term">Utility Function</span>）把测量值换算成 0 到 1 之间的数值。效用函数可以是连续的直线，可以是指数曲线，可以在某个局部最大值处变平，也可以是阶梯状的。它可以通过咨询领域专家、结合具体的任务场景得出，也可以借助仿真或分析得出。</li>
+    </ul>
+  </li>
+  <li><strong>计算总分</strong>：通常用加权求和，即每条准则的权重乘以评分，再全部相加。例如四条准则的权重为 0.5、0.3、0.15、0.05，某个方案的评分为 4、3、2、5，四项得分就是 2、0.9、0.3、0.25。胜出者的总分必须在统计意义上明显高于第二名。同时一定要画出<span class="term" data-t="criteriaProfile">准则剖面图</span>，显示每个方案在每条准则上的得分：一个方案在 A、B、C 三条准则上得 5、5、4 分，在 D 上只得 1 分，总分 15 分，高于另外两个方案的 13 分和 9 分，但它在 D 上的短板是否要紧，只看总分是看不出来的。</li>
+  <li><strong>分析结果</strong>：前两三名的分数接近、没有明显胜者时，这一步尤其重要。
+    <ul>
+      <li><strong>检查剖面</strong>：在一两条准则上表现很差的方案，可能不如各项都令人满意的方案；费用要单独考虑。</li>
+      <li><strong>换一种合成方式</strong>：加权求和会淡化某一项的极低分，可以改用各项得分的乘积（或几何平均），也可以对各项得分取对数再相加，这样任何一项为零都会使方案出局。</li>
+      <li><strong>做<span class="term" data-t="sensitivity">敏感性分析</span></strong>：由于权重和评分都不确定，要考虑 20% 到 30% 这样较大的变动；比较好的做法是依次把每一条准则的权重设为零，重新计算。</li>
+      <li><strong>检查有没有漏掉准则</strong>，例如风险、发展潜力、售后支持、产品和供应商的成熟程度、易用性。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4>例子：医院病人登记处</h4>
+<p>一家医院原有的病人登记流程太慢，病人等候时间长，工作人员负担过重，病人迟迟见不到医生，需要提高接待能力。备选方案有三个：A 是单队列、单窗口；B 是单队列、多窗口；C 是多队列、多窗口。评价准则有四条：病人等候时间（分钟）、每小时接待的病人数、所需工作人员数量，以及登记处和排队区的占地面积（平方英尺）。</p>
+<p>权重通过与利益相关者两两比较得出，每一次比较的理由都记录下来，以便日后有人质疑时可以追查和重现。</p>
+
+<div class="stepper" data-step="ch11Ahp">
+  <div class="svgwrap"><svg viewBox="0 0 640 250" role="img" aria-label="四条准则两两比较的矩阵：等候时间一行为 1、3、3、5，合计 12.00，权重 0.46；接待人数一行为 0.33、1、0.33、3，合计 4.67，权重 0.18；工作人员数量一行为 0.33、3、1、3，合计 7.33，权重 0.28；占地面积一行为 0.20、0.33、0.33、1，合计 1.87，权重 0.07；全部合计 25.87">
+    <rect class="fS" x="20" y="20" width="110" height="216"/>
+    <rect class="fS" x="130" y="20" width="496" height="36"/>
+    <line class="lnL" x1="20" y1="56" x2="626" y2="56"/>
+    <line class="lnL" x1="20" y1="92" x2="626" y2="92"/>
+    <line class="lnL" x1="20" y1="128" x2="626" y2="128"/>
+    <line class="lnL" x1="20" y1="164" x2="626" y2="164"/>
+    <line class="lnL" x1="20" y1="200" x2="626" y2="200"/>
+    <line class="lnL" x1="130" y1="20" x2="130" y2="236"/>
+    <line class="lnL" x1="214" y1="56" x2="214" y2="200"/>
+    <line class="lnL" x1="298" y1="56" x2="298" y2="200"/>
+    <line class="lnL" x1="382" y1="56" x2="382" y2="200"/>
+    <line class="lnL" x1="466" y1="20" x2="466" y2="236"/>
+    <line class="lnL" x1="546" y1="20" x2="546" y2="236"/>
+    <rect class="lnL" x="20" y="20" width="606" height="216" rx="6"/>
+
+    <text class="t3" x="172" y="42" text-anchor="middle">等候时间</text>
+    <text class="t3" x="256" y="42" text-anchor="middle">接待人数</text>
+    <text class="t3" x="340" y="42" text-anchor="middle">工作人员数量</text>
+    <text class="t3" x="424" y="42" text-anchor="middle">占地面积</text>
+    <text class="t3" x="506" y="42" text-anchor="middle">行合计</text>
+    <text class="t3" x="586" y="42" text-anchor="middle">权重</text>
+    <text class="t1" x="75" y="78.5" text-anchor="middle">等候时间</text>
+    <text class="t1" x="75" y="114.5" text-anchor="middle">接待人数</text>
+    <text class="t1" x="75" y="150.5" text-anchor="middle">工作人员数量</text>
+    <text class="t1" x="75" y="186.5" text-anchor="middle">占地面积</text>
+    <text class="t3" x="75" y="222.5" text-anchor="middle">合计</text>
+
+    <g data-s="1">
+      <text class="t1" data-on="1" x="172" y="78.5" text-anchor="middle">1.00</text>
+      <text class="t1" data-on="1" x="256" y="114.5" text-anchor="middle">1.00</text>
+      <text class="t1" data-on="1" x="340" y="150.5" text-anchor="middle">1.00</text>
+      <text class="t1" data-on="1" x="424" y="186.5" text-anchor="middle">1.00</text>
+    </g>
+    <g data-s="2">
+      <text class="t1" data-on="2" x="256" y="78.5" text-anchor="middle">3.00</text>
+      <text class="t1" data-on="2" x="340" y="78.5" text-anchor="middle">3.00</text>
+      <text class="t1" data-on="2" x="424" y="78.5" text-anchor="middle">5.00</text>
+      <text class="t1" data-on="2" x="172" y="114.5" text-anchor="middle">0.33</text>
+      <text class="t1" data-on="2" x="172" y="150.5" text-anchor="middle">0.33</text>
+      <text class="t1" data-on="2" x="172" y="186.5" text-anchor="middle">0.20</text>
+    </g>
+    <g data-s="3">
+      <text class="t1" data-on="3" x="340" y="114.5" text-anchor="middle">0.33</text>
+      <text class="t1" data-on="3" x="256" y="150.5" text-anchor="middle">3.00</text>
+    </g>
+    <g data-s="4">
+      <text class="t1" data-on="4" x="424" y="114.5" text-anchor="middle">3.00</text>
+      <text class="t1" data-on="4" x="256" y="186.5" text-anchor="middle">0.33</text>
+      <text class="t1" data-on="4" x="424" y="150.5" text-anchor="middle">3.00</text>
+      <text class="t1" data-on="4" x="340" y="186.5" text-anchor="middle">0.33</text>
+    </g>
+    <g data-s="5">
+      <text class="t1" data-on="5" x="506" y="78.5" text-anchor="middle">12.00</text>
+      <text class="t1" data-on="5" x="506" y="114.5" text-anchor="middle">4.67</text>
+      <text class="t1" data-on="5" x="506" y="150.5" text-anchor="middle">7.33</text>
+      <text class="t1" data-on="5" x="506" y="186.5" text-anchor="middle">1.87</text>
+      <text class="t1" data-on="5" x="506" y="222.5" text-anchor="middle">25.87</text>
+    </g>
+    <g data-s="6">
+      <text class="tA" x="586" y="78.5" text-anchor="middle">0.46</text>
+      <text class="tA" x="586" y="114.5" text-anchor="middle">0.18</text>
+      <text class="tA" x="586" y="150.5" text-anchor="middle">0.28</text>
+      <text class="tA" x="586" y="186.5" text-anchor="middle">0.07</text>
+    </g>
+  </svg></div>
+</div>
+
+<p>权重确定之后，再用效用函数把每个方案的实测数据换算成 0 到 1 的分数。这些效用函数一部分来自测量，一部分来自分析，还有一部分来自领域专家的经验。例如等候时间的效用函数是递减的，而且等候超过 10 分钟以后，每多等一分钟损失的价值越来越少。</p>
+<div class="tbl"><table>
+  <thead><tr><th>准则（权重）</th><th>A 单队列单窗口</th><th>B 单队列多窗口</th><th>C 多队列多窗口</th></tr></thead>
+  <tbody>
+    <tr><td>等候时间（0.46）</td><td>30 分钟 → 0.2</td><td>5 分钟 → 0.7</td><td>10 分钟 → 0.5</td></tr>
+    <tr><td>接待人数（0.18）</td><td>每小时 10 人 → 0.2</td><td>每小时 30 人 → 0.6</td><td>每小时 50 人 → 1.0</td></tr>
+    <tr><td>工作人员数量（0.28）</td><td>1 人 → 1.0</td><td>2 人 → 0.75</td><td>3 人 → 0.5</td></tr>
+    <tr><td>占地面积（0.07）</td><td>100 平方英尺 → 0.8</td><td>200 平方英尺 → 0.5</td><td>300 平方英尺 → 0</td></tr>
+    <tr><td><strong>加权总分</strong></td><td>0.464</td><td><strong>0.675</strong></td><td>0.55</td></tr>
+  </tbody>
+</table></div>
+
+<div class="calc" id="hospCalc">
+  <div class="d-title">医院病人登记处的加权评分</div>
+  <div class="wrow"><label for="w0">等候时间</label><input type="range" id="w0" min="0" max="1" step="0.01" value="0.46"><output>0.46</output></div>
+  <div class="wrow"><label for="w1">接待人数</label><input type="range" id="w1" min="0" max="1" step="0.01" value="0.18"><output>0.18</output></div>
+  <div class="wrow"><label for="w2">工作人员数量</label><input type="range" id="w2" min="0" max="1" step="0.01" value="0.28"><output>0.28</output></div>
+  <div class="wrow"><label for="w3">占地面积</label><input type="range" id="w3" min="0" max="1" step="0.01" value="0.07"><output>0.07</output></div>
+  <div class="bars">
+    <div class="brow"><b>A 单队列单窗口</b><div class="track"><div class="fill"></div></div><span></span></div>
+    <div class="brow"><b>B 单队列多窗口</b><div class="track"><div class="fill"></div></div><span></span></div>
+    <div class="brow"><b>C 多队列多窗口</b><div class="track"><div class="fill"></div></div><span></span></div>
+  </div>
+  <button type="button" class="reset">恢复两两比较得出的权重</button>
+</div>
+
+<p>按两两比较得出的权重，方案 B 以 0.675 分胜出，C 为 0.55 分，A 为 0.464 分。敏感性分析依次把每条准则的权重设为零，其余权重不变：</p>
+<div class="tbl"><table>
+  <thead><tr><th>情况</th><th>A</th><th>B</th><th>C</th></tr></thead>
+  <tbody>
+    <tr><td>原始权重</td><td>0.464</td><td><strong>0.675</strong></td><td>0.55</td></tr>
+    <tr><td>等候时间权重为零</td><td><strong>0.372</strong></td><td>0.353</td><td>0.32</td></tr>
+    <tr><td>接待人数权重为零</td><td>0.428</td><td><strong>0.567</strong></td><td>0.37</td></tr>
+    <tr><td>工作人员数量权重为零</td><td>0.184</td><td><strong>0.465</strong></td><td>0.41</td></tr>
+    <tr><td>占地面积权重为零</td><td>0.408</td><td><strong>0.64</strong></td><td>0.55</td></tr>
+  </tbody>
+</table></div>
+<p>只有把等候时间的权重设为零时，A 才以 0.372 对 0.353 反超 B；把其他任何一条准则的权重设为零，B 都仍然领先。这说明 B 的优势主要来自它的等候时间很短，而这条准则占了 46% 的权重。决策者需要确认，等候时间是否真的有这么重要。</p>
+
+<figure class="fig">
+  <div class="f-title">医院病人登记处：三个方案的准则剖面</div>
+  <div class="svgwrap"><svg viewBox="0 0 640 326" role="img" aria-label="三个方案在四条准则上的效用折线：B 各项都不低于 0.5；A 在工作人员数量和占地面积上最高，在等候时间和接待人数上只有 0.2；C 的接待人数为 1，占地面积为 0">
+    <line class="lnL" x1="110" y1="50" x2="560" y2="50"/>
+    <line class="lnL" x1="110" y1="145" x2="560" y2="145"/>
+    <line class="lnL" x1="110" y1="240" x2="560" y2="240"/>
+    <text class="t3" x="100" y="30" text-anchor="end">效用</text>
+    <text class="t2" x="100" y="54" text-anchor="end">1</text>
+    <text class="t2" x="100" y="149" text-anchor="end">0.5</text>
+    <text class="t2" x="100" y="244" text-anchor="end">0</text>
+
+    <polyline class="ln dash" points="150,202 270,202 390,50 510,88"/>
+    <polyline class="lnB" points="150,145 270,50 390,145 510,240"/>
+    <polyline class="lnA" points="150,107 270,126 390,97.5 510,145"/>
+    <circle class="fM" cx="150" cy="202" r="4"/><circle class="fM" cx="270" cy="202" r="4"/><circle class="fM" cx="390" cy="50" r="4"/><circle class="fM" cx="510" cy="88" r="4"/>
+    <circle class="fB" cx="150" cy="145" r="4"/><circle class="fB" cx="270" cy="50" r="4"/><circle class="fB" cx="390" cy="145" r="4"/><circle class="fB" cx="510" cy="240" r="4"/>
+    <circle class="fA" cx="150" cy="107" r="4"/><circle class="fA" cx="270" cy="126" r="4"/><circle class="fA" cx="390" cy="97.5" r="4"/><circle class="fA" cx="510" cy="145" r="4"/>
+    <text class="t3" x="524" y="92">A</text>
+    <text class="tA" x="524" y="149">B</text>
+    <text class="tB" x="524" y="236">C</text>
+
+    <text class="t1" x="150" y="266" text-anchor="middle">等候时间</text>
+    <text class="t1" x="270" y="266" text-anchor="middle">接待人数</text>
+    <text class="t1" x="390" y="266" text-anchor="middle">工作人员数量</text>
+    <text class="t1" x="510" y="266" text-anchor="middle">占地面积</text>
+    <text class="t3" x="150" y="284" text-anchor="middle">权重 0.46</text>
+    <text class="t3" x="270" y="284" text-anchor="middle">权重 0.18</text>
+    <text class="t3" x="390" y="284" text-anchor="middle">权重 0.28</text>
+    <text class="t3" x="510" y="284" text-anchor="middle">权重 0.07</text>
+
+    <line class="ln dash" x1="120" y1="310" x2="146" y2="310"/>
+    <text class="t3" x="154" y="314">A 单队列单窗口</text>
+    <line class="lnA" x1="276" y1="310" x2="302" y2="310"/>
+    <text class="t3" x="310" y="314">B 单队列多窗口</text>
+    <line class="lnB" x1="432" y1="310" x2="458" y2="310"/>
+    <text class="t3" x="466" y="314">C 多队列多窗口</text>
+  </svg></div>
+  <figcaption>B 在四条准则上的效用都不低于 0.5，没有明显的短板；A 在工作人员数量和占地面积上效用最高，在等候时间和接待人数上却只有 0.2；C 的接待人数效用最高，占地面积一项为零。</figcaption>
+</figure>
+
+<h4>权衡研究的汇报和报告</h4>
+<p>正式权衡研究的结果是系统开发中的一个重要里程碑，要通过口头汇报和书面报告两种形式传达给客户、管理人员、技术负责人等主要参与者。两者都应当包括：</p>
+<ul>
+  <li>问题和对解决方案的要求；</li>
+  <li>假设，以及与其他组件和子系统的关系；</li>
+  <li>任务或运行方面的考虑；</li>
+  <li>相关的关键系统或子系统需求；</li>
+  <li>每个备选方案的说明和入选的主要理由；</li>
+  <li>评价准则是怎样选出的、权重的理由；</li>
+  <li>每个方案在每条准则上评分的理由；</li>
+  <li>比较结果的总结；</li>
+  <li>敏感性分析及其结果；</li>
+  <li>最终结论和对其有效性的评价；</li>
+  <li>采纳结论还是继续研究的建议；</li>
+  <li>所引用的技术和定量资料。</li>
+</ul>
+<p>口头汇报主要用图形展示，尽量少用文字图表，但权重和评分的理由必须清楚、合乎逻辑、有说服力，比较用的电子表格可以作为附发材料。书面报告不仅是项目决策依据的历史记录，更重要的是，日后项目出现问题时，它是重新审视这个问题的参考。</p>
+
+<div class="note">
+  <div class="n-title">数字比较的三个局限</div>
+  <p>任何决策支持方法都只是为决策者提供信息，并不替决策者做决定。权衡分析是一种有价值的决策辅助手段，算不上保证成功的公式，它的结果完全取决于输入的质量和是否充分。尤其是权重来自定性判断时，自动计算会带来三个问题：</p>
+  <ul>
+    <li>计算方法会给人一种可信的印象，而这种可信程度超过了输入数据本身的可靠程度。</li>
+    <li>结果写出的有效数字，往往比数据所能支持的更多。只有特性已经准确掌握的现有产品，输入才是真正定量的。</li>
+    <li>研究报告常常省略了计算背后的假设。</li>
+  </ul>
+  <p>对策是：用文字写明权重的理由，把结果四舍五入到有意义的位数，并用常识做一次检查。</p>
+</div>
+<p>不需要向管理层汇报的决策，收集数据和推理的过程同样应当周密：所有决策，无论正式与否，都应当系统地进行，用关键需求导出决策准则，列出相关的备选方案，尽量客观地比较各个方案的效用。遇到重要的决策，还应当征求同事的意见，借助集体的判断解决复杂的问题。</p>
+
+<div class="sim" data-sim="ch11Trade"></div>
+
+<h3>其他评估方法</h3>
+<p>上面的权衡研究所用的加权方法，属于一类更大的数学方法，即<span class="term" data-t="maut">多属性效用理论</span>（<span class="en-term">Multi-attribute Utility Theory, MAUT</span>）。此外还有线性规划、整数规划、试验设计、影响图、贝叶斯网络等方法，下面介绍几种在决策支持中常用的方法。</p>
+
+<h4>多属性效用理论</h4>
+<p>可靠性没有单位，体积用立方米，重量用千克，多少可靠性才抵得上一定的体积和重量？多属性效用理论的回答是用效用函数把每条准则换算成无量纲的效用，通常是 0 到 1 之间的数，再把加权后的效用合成为一个指标。合成的方式有加权求和、加权乘积，以及对加权效用取对数再相加；一般先用加权求和，在敏感性分析中再试其他方式。它适合需要同时照顾多个利益相关者的多个目标的决策，步骤与前面的权衡研究相近：</p>
+<ol>
+  <li>找出各方的准则，并弄清各方的优先次序如何相互影响；</li>
+  <li>用类似层次分析法的方法分配权重并记录理由；</li>
+  <li>尽量用定量数据评分；</li>
+  <li>用电子表格计算加权和；</li>
+  <li>做敏感性分析；</li>
+  <li>把数据和推理过程告知所有利益相关者，了解结果对各方的影响，必要时重新研究问题。</li>
+</ol>
+<div class="example">
+  <div class="n-title">例子：为居家的老年病人提供医疗服务</div>
+  <p>目标有四个：在家里或离家很近的地方得到照护；由多家机构提供的照护，感觉上像来自同一家；整个地区的照护水平大体一致；出了问题知道该找谁。备选方案有四个：A 是一家集中的医院，B 是多位分散的专科医生，C 是设在一家综合医院里的多个社区服务，D 是一条远程的集中求助热线。</p>
+  <p>四条准则和效用函数的形状是：离家的距离越近越好，超过 30 英里就失去了及时反应的意义，效用为零；所代表的服务机构越多越好，呈直线关系；地区内的照护越均匀越好，也呈直线关系；随时得到帮助的可能性越高越好，低于 60% 就很不理想。分析的结果是方案 A 胜出，而且依次把每条准则的权重设为零之后，A 仍然胜出。即便如此，结论还是要拿去和利益相关者讨论，确认备选方案、准则和权重都选得对。</p>
+</div>
+
+<h4>成本效益分析</h4>
+<p>如果时间和资源允许，可以做比上面更详细的研究。在美国，这类研究常常由政策规定必须进行，称为<strong>备选方案分析</strong>（<span class="en-term">Analysis of Alternatives, AoA</span>）。这时通常要用模型和高逼真度的仿真来度量各个方案的效能，再估算各自的费用，然后把两者结合起来，看单位费用能换来多少效能，这就是<strong>成本效益分析</strong>。费用通常分为研制、采购和使用（含维修）三部分，有些系统（例如核反应堆）还要计入退役和处置的费用。成本效益分析分为三种：</p>
+<ul>
+  <li><strong>成本相同、比较效能</strong>：把各方案限制在同一费用水平或一个费用上限之内，按效能排序。例如新型打击武器的需求中，通常在关键性能参数里规定了费用上限，所有方案都必须低于这个上限。缺点是很难把各方案真正限制在相同的费用上。</li>
+  <li><strong>效能相同、比较成本</strong>：把各方案限制在同一效能水平或一个效能下限之上，按费用排序。例如选择一座电厂，必须提供规定的发电量，各方案主要比较费用。</li>
+  <li><strong>成本和效能都可变</strong>：只规定费用上限和效能下限，或者两者都不规定。这样可以发现“出格”的方案：一个方案的效能比下限低 5%，费用却比其他方案低 50%，决策者至少应当知道有这样一种可能。缺点是可能没有一个方案明显更好，每个方案的效能都与它的费用相称，这时可以比较单位费用的效能。新的车辆、航天器、卫星、软件系统和能源系统，大多数系统都属于这一种。</li>
+</ul>
+<p>第三种情况还可以把各方案的性能和费用画成散点图，按平均性能和平均费用画两条线，分成四个象限：</p>
+<figure class="fig">
+  <div class="f-title">性能与费用的四个象限</div>
+  <div class="svgwrap"><svg viewBox="0 0 640 296" role="img" aria-label="以性能为横轴、费用为纵轴的散点图，平均性能和平均费用两条虚线把平面分成四个象限：右下方的方案 1 性能高、费用低，最理想；右上方的方案 2 性能高、费用高，是镀金方案；左上方的方案 3 性能低、费用高，最不理想；左下方的方案 4 性能低、费用低">
+    <line class="ln" x1="90" y1="30" x2="90" y2="250"/>
+    <line class="ln" x1="90" y1="250" x2="600" y2="250"/>
+    <text class="t3" x="90" y="22" text-anchor="middle">费用</text>
+    <text class="t3" x="345" y="276" text-anchor="middle">性能</text>
+    <line class="lnL dash" x1="345" y1="34" x2="345" y2="250"/>
+    <line class="lnL dash" x1="90" y1="140" x2="600" y2="140"/>
+    <text class="t2" x="351" y="44">平均性能</text>
+    <text class="t2" x="596" y="134" text-anchor="end">平均费用</text>
+
+    <circle class="fM" cx="217" cy="62" r="5"/>
+    <text class="t1" x="217" y="94" text-anchor="middle">方案 3：性能低、费用高</text>
+    <text class="t3" x="217" y="112" text-anchor="middle">最不理想</text>
+
+    <circle class="fM" cx="472" cy="62" r="5"/>
+    <text class="t1" x="472" y="94" text-anchor="middle">方案 2：性能高、费用高</text>
+    <text class="t3" x="472" y="112" text-anchor="middle">“镀金”方案，看多出的性能值不值</text>
+
+    <circle class="fM" cx="217" cy="170" r="5"/>
+    <text class="t1" x="217" y="202" text-anchor="middle">方案 4：性能低、费用低</text>
+    <text class="t3" x="217" y="220" text-anchor="middle">经费不足时也许可以接受</text>
+
+    <circle class="fA" cx="472" cy="170" r="5"/>
+    <text class="tA" x="472" y="202" text-anchor="middle">方案 1：性能高、费用低</text>
+    <text class="t3" x="472" y="220" text-anchor="middle">最理想</text>
+  </svg></div>
+  <figcaption>左下象限能力最弱，但如果项目经费有限、又需要某种能力，它也许可以满足要求；右上象限的“镀金”方案是否值得，要看多出来的性能对任务有多重要。</figcaption>
+</figure>
+<p>以上讨论的都是一维的情况。效能和费用都有多个维度时，仍然属于这三种类型之一，处理办法有两种：先用多属性效用理论把效能和费用合成单一指标，再按上面三种方式之一处理；或者把效能和费用各自写成一组数值（剖面向量），对整组数值设置数学约束，代替对单个数值设置的门槛。</p>
+
+<h4>质量功能展开</h4>
+<p><span class="term" data-t="qfd">质量功能展开</span>（<span class="en-term">Quality Function Deployment, QFD</span>）20 世纪 60 年代起源于日本，最初是一个质量改进项目。赤尾洋二在 1972 年发表的文章中首先提出了它的一种形式，1978 年又出版了介绍这一过程的书；福特汽车公司在 80 年代把它引入美国，到 90 年代，美国政府的一些机构也采用了它。</p>
+<p>它的核心是一个称为“质量屋”的矩阵，由六部分组成：</p>
+<ul>
+  <li>左侧：客户需求及其优先次序；</li>
+  <li>上方：技术特性；</li>
+  <li>中间：客户需求与技术特性之间的关系矩阵；</li>
+  <li>屋顶：一个三角形，表示各项技术特性之间的相互关系；</li>
+  <li>右侧：竞争对比评价；</li>
+  <li>下方：技术评价和排好优先次序的技术特性。</li>
+</ul>
+<p>关系的强弱分为四种：9 表示强正相关，3 表示中等正相关，1 表示弱正相关，−3 表示负相关。质量屋主要用于设计过程，让设计、制造和营销人员始终围绕客户的需求和优先次序工作；在权衡研究中，它可以用来提出选择准则和权重，也可以作为设计工作的一部分直接完成权衡研究。</p>
+
+<div class="quiz" data-ch="11"></div>
+</article>
+
+
+<nav class="pager" aria-label="翻页">
+  <a class="prev" href="ch10.html"><small>上一章</small><span>第 10 章　基于模型的系统工程</span></a>
+  <a class="next" href="ch12.html"><small>下一章</small><span>第 12 章　风险管理</span></a>
+</nav>
+</div>
+</main>
+<div class="pop" id="pop" role="tooltip"></div>
+<script>
+(function(){
+  var U = [[0.2,0.2,1.0,0.8],[0.7,0.6,0.75,0.5],[0.5,1.0,0.5,0]];
+  var BASE = [0.46,0.18,0.28,0.07];
+  function init(){
+    var box = document.getElementById("hospCalc"); if (!box) return;
+    var inputs = box.querySelectorAll("input[type=range]");
+    var rows = box.querySelectorAll(".brow");
+    function update(){
+      var w = [], i, j;
+      for (i = 0; i < 4; i++){ w.push(parseFloat(inputs[i].value)); inputs[i].nextElementSibling.textContent = w[i].toFixed(2); }
+      var tot = U.map(function(u){ var s = 0; for (j = 0; j < 4; j++) s += w[j]*u[j]; return s; });
+      var max = Math.max.apply(null, tot), scale = Math.max(max, 0.0001);
+      tot.forEach(function(t, k){
+        rows[k].querySelector(".fill").style.width = (t/scale*100).toFixed(1) + "%";
+        rows[k].querySelector("span:last-child").textContent = t.toFixed(3);
+        rows[k].classList.toggle("win", max > 0 && Math.abs(t - max) < 1e-9);
+      });
+    }
+    Array.prototype.forEach.call(inputs, function(el){ el.addEventListener("input", update); });
+    box.querySelector(".reset").addEventListener("click", function(){
+      for (var i = 0; i < 4; i++) inputs[i].value = BASE[i];
+      update();
+    });
+    update();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
+Object.assign(GLOSSARY, {
+  utility: ["效用函数", "Utility Function", "把某条准则的实测值（例如等候分钟数）换算成 0 到 1 之间无量纲分数的函数，使不同单位的准则可以相加比较。"],
+  sensitivity: ["敏感性分析", "Sensitivity Analysis", "改变权重或评分，检验比较结论是否随之改变。常用的做法是依次把每条准则的权重设为零，或把数值变动 20% 到 30%。"],
+  ahp: ["层次分析法", "Analytical Hierarchy Process, AHP", "把准则两两比较来确定权重的方法。每次只判断两条准则中哪条更重要、重要多少（同样重要记 1，稍重要记 3，重要得多记 5，反过来取倒数），再由比较矩阵推算出各条准则的权重。"],
+  criteriaProfile: ["准则剖面图", "Criteria Profile", "把每个方案在每条准则上的得分画在同一张图上的图形。它能显示被总分掩盖的短板，例如一个总分最高的方案在某条关键准则上得分极低。"],
+  maut: ["多属性效用理论", "Multi-attribute Utility Theory, MAUT", "用效用函数把单位各不相同的多条准则换算成无量纲的效用，再按权重合成为一个指标，用来比较备选方案的数学方法。合成方式有加权求和、加权乘积和对数求和。"],
+  qfd: ["质量功能展开", "Quality Function Deployment, QFD", "起源于日本的一种方法，核心是称为“质量屋”的矩阵，把客户需求及其优先次序与产品的技术特性联系起来，用来确定设计目标，也可以为权衡研究提供准则和权重。"]
+});
+SORTS.ch11Sims = {
+  title: "分类：这些仿真属于哪一类",
+  prompt: "下面每个例子用的是哪一类仿真？",
+  cats: [
+    { k:"op", label:"运行仿真" },
+    { k:"ph", label:"物理仿真" },
+    { k:"en", label:"工程仿真" },
+    { k:"env", label:"环境仿真" },
+    { k:"vr", label:"虚拟现实仿真" }
+  ],
+  items: [
+    { t:"军方组织一次持续两周的推演：一组军官操纵新型侦察系统，另一组扮演对手，第三组观察双方并评判结果，目的是看这种系统能否发现隐身目标。", c:"op",
+      why:"蓝方、红方、白方三组人员参与的对抗推演，是运行仿真的典型形式。它在概念阶段用来理解运行因素、探索系统改进和整理运行需求。" },
+    { t:"一座导弹寻的制导试验设施：墙面铺满微波吸收材料，辐射源可以移动，被测的是真实的导引头，导弹的飞行由计算机计算。", c:"ph",
+      why:"这是硬件在环仿真，即把真实硬件接入计算机驱动的仿真，它属于物理仿真。虽然设施模拟了电磁环境，但研究的对象是导引头本身的寻的动态，这与只模拟环境、用来考核系统的环境仿真不同。" },
+    { t:"汽车厂商把装满传感器的假人放进车里，让整车撞向障碍物，测量车身结构能在多大程度上减轻乘员受到的冲击。", c:"env",
+      why:"碰撞试验模拟的是系统所处的危险环境，用来在工程试验与评价中考核设计，属于环境仿真。它用的是实物，但被仿真的是“碰撞”这个环境，车身本身是被考核的对象。" },
+    { t:"交通工程师建立单个驾驶员行为的模型，评估给高速公路增加车道和出口的方案是否可行。", c:"op",
+      why:"这类仿真研究的是系统如何运行，例如交通管理、空中交通管制、航天轨道，属于运行仿真中的任务仿真，用来在设计开始之前打下分析基础。" },
+    { t:"设计人员用六自由度模型研究高速飞机在亚声速和超声速之间过渡时，气动力的非线性变化和机翼的弯曲。", c:"ph",
+      why:"用运动方程表示飞行器在外力和控制作用下的动态行为，是物理仿真的核心用途。它是动态的、确定性的、连续的，主要在工程开发阶段支持设计。" },
+    { t:"医学院学生在一个会出血、抽搐、发出声音的仿真人体模型上练习操作，模型会根据学生的动作做出反应。", c:"ph",
+      why:"医学仿真人体模型模拟的是人体这个“系统”的物理反应，属于物理仿真。它容易被误认为虚拟现实仿真，但它是实物模型，不靠计算三维图像。" },
+    { t:"为一个新的控制中心做初步设计时，让未来的值班人员戴上头盔，在计算机生成的房间里四处“走动”，检查出入口和设备布置。", c:"vr",
+      why:"根据观察者的位置和视线方向实时计算三维图像，让人在设计中的空间里“行走”，这是虚拟现实仿真中的空间仿真。" },
+    { t:"电路设计人员在计算机上设计一块电路的功能、测试并反复修改，直到性能满足要求，不再用面包板试凑。", c:"en",
+      why:"组件和子组件层级的设计工具属于工程仿真，主要由设计专家使用。系统工程师需要了解它们的能力和局限，才能判断它们用得是否恰当。" }
+  ]
+};
+STEPS.ch11Ahp = {
+  title: "层次分析法：医院例子的权重是怎样算出来的",
+  steps: [
+    { label:"对角线", title:"每条准则与自身相比", html:"<p>矩阵中每个格子表示<strong>行</strong>上的准则相对于<strong>列</strong>上的准则的重要程度：同样重要记 1，稍重要记 3，重要得多记 5。一条准则与自身相比当然同样重要，所以对角线上都是 1。</p>" },
+    { label:"等候时间", title:"等候时间与其他三条准则相比", html:"<p>利益相关者认为：等候时间比接待人数重要（3），比工作人员数量重要（3），比占地面积重要得多（5）。</p><p>比较是对称的：如果甲准则比乙准则稍重要（3），就认定乙比甲稍不重要（1/3，约 0.33）。所以等候时间所在的列上同时填入 0.33、0.33 和 0.20。</p>" },
+    { label:"人员与人数", title:"一个方向相反的比较", html:"<p>接待人数与工作人员数量相比，利益相关者认为工作人员数量更重要。所以接待人数一行记 0.33，工作人员数量一行记 3。</p><p>两两比较的好处在于，每次只要判断两条准则中哪一条更重要、重要多少，这比一次给四条准则同时打分容易得多，也更容易说明理由。</p>" },
+    { label:"占地面积", title:"其余两对比较", html:"<p>接待人数比占地面积重要（3），工作人员数量也比占地面积重要（3），相应的倒数 0.33 填在占地面积一行。</p><p>六次比较的理由都要记录下来。这样日后如果有人质疑权重，或者需要重新计算，都有据可查。</p>" },
+    { label:"行合计", title:"把每一行加起来", html:"<p>等候时间一行合计 12.00，接待人数 4.67，工作人员数量 7.33，占地面积 1.87，四行总计 25.87。一行的合计越大，说明这条准则在比较中越常被认为更重要。</p>" },
+    { label:"权重", title:"用总计去除各行合计", html:"<p>各行合计除以 25.87，得到四个权重：等候时间 0.46，接待人数 0.18，工作人员数量 0.28，占地面积 0.07。</p><p>等候时间一项就占了将近一半的权重，后面的敏感性分析会显示，方案 B 能够胜出，很大程度上就靠这一条。</p>" }
+  ]
+};
+SIMS.ch11Trade = {
+  title: "情境：一项要向管理层汇报的权衡研究",
+  intro: "<p>一家物流公司要为新建的仓库选择包裹分拣系统，有几家供应商提出了方案。你是项目的系统工程师，负责一项正式的权衡研究，结论要提交公司管理层批准。</p>",
+  start: "s1",
+  nodes: {
+    s1: { text:"<p>项目经理给出了一条“必须满足”的需求：分拣能力不得低于某个门槛。一家供应商的方案只差一点没有达到这个门槛，但费用比其他方案低很多，其他方面也表现不错。你怎样处理这个方案？</p>",
+      choices: [
+        { t:"既然是必须满足的需求，就按规则把它排除，免得研究被质疑不严格。", tone:"bad", next:"s2",
+          fb:"<p>必须满足的需求要少而精，而且要确认它确实是必须的。一个只差一点没达到门槛、却能大幅省钱的方案，常常就这样错误地遭到淘汰。先弄清这个门槛是怎么来的，再决定是否排除。</p>" },
+        { t:"先核实这个门槛从哪里来，再决定是否把方案留在比较之中。", tone:"good", next:"s2",
+          fb:"<p>如果这个门槛只是某个人的估计或愿望，就应当把方案留下。确定备选方案时要做到：保持必须满足的需求少而精，确认每一条都确实必须，不是某个人的猜测或愿望。</p>" },
+        { t:"把方案留下，但在分拣能力这一项给它打零分，让总分来决定它的去留。", tone:"mixed", next:"s2",
+          fb:"<p>给不满足准则的方案打零分甚至负分，目的就是保证它被淘汰，这和直接排除效果相同，只是绕了一个弯。真正要回答的问题是：这个门槛是否确实必须满足。</p>" }
+      ]},
+    s2: { text:"<p>团队列出了 14 条选择准则，其中包括“符合消防规范”（每个方案都符合），以及“每小时分拣件数”和“每天分拣件数”两条。你怎样整理这份清单？</p>",
+      choices: [
+        { t:"全部保留。准则越多，越能说明研究考虑周全。", tone:"bad", next:"s3",
+          fb:"<p>准则太多会使过程繁琐，却不增加价值。所有方案都同样具备的特性区分不了方案，只会掩盖真正起作用的因素；两条高度相关的准则，提供的区分能力也不比其中一条多。</p>" },
+        { t:"去掉区分不了方案和互相重复的准则，压缩到 6 到 10 条。", tone:"good", next:"s3",
+          fb:"<p>准则通常以 6 到 10 条为宜。“符合消防规范”区分不了方案，可以去掉；“每小时分拣件数”和“每天分拣件数”高度相关，只留一条。这样整理之后，剩下的每一条都应当是与需求相联系、最好能够量化的关键属性。</p>" },
+        { t:"只保留费用和分拣能力两条最重要的准则，其他的都不考虑。", tone:"bad", next:"s3",
+          fb:"<p>准则太少，研究就显得不够周密，管理层很难相信结论；可靠性、维修性、发展潜力这些关键需求也会被漏掉。费用固然几乎总是关键准则，但它常常要单独处理。</p>" }
+      ]},
+    s3: { text:"<p>你请各部门的代表用 1 到 5 给剩下的准则打权重。收上来一看，几乎每条准则都被打成了 4 或 5。接下来怎么办？</p>",
+      choices: [
+        { t:"直接使用。这些权重代表了各部门的真实意见。", tone:"bad", next:"s4",
+          fb:"<p>所有准则都打 4 或 5，相当于只用了 1 到 2 两档，权重几乎起不到区分作用。人们打分时还常常集中在中间值附近，这都是 1 到 n 打分法的老问题。</p>" },
+        { t:"改用两两比较，并把每次比较的理由记录下来。", tone:"good", next:"s4",
+          fb:"<p>两两比较（层次分析法）让参与者每次只需判断两条准则孰轻孰重，更容易给出有区分度的判断；记录理由可以在权重受到质疑时提供依据。规定权重总分上限，迫使人们“提高一条就要降低另一条”，也是一种可行的补救办法。</p>" },
+        { t:"把所有准则的权重设成相同，免得各部门互相争执。", tone:"bad", next:"s4",
+          fb:"<p>准则的重要程度本来就不同，设成相同等于放弃了这一步，而且同样是一个主观的假设，只是没有写出理由。权重的作用就是放大最关键准则的影响。</p>" }
+      ]},
+    s4: { text:"<p>计算完成。两个方案的加权总分非常接近，领先的方案在“维修是否方便”一项上得分很低。电子表格把总分算到了小数点后六位。你准备怎样向管理层汇报？</p>",
+      choices: [
+        { t:"推荐总分最高的方案，附上精确到六位小数的总分，说明差距虽小但确实存在。", tone:"bad", next:"endBad",
+          fb:"<p>多余的有效数字会制造出输入数据根本支持不了的精确印象，可信度反而会迅速下降。总分接近时，胜出者的优势必须明显才算数；领先方案在维修性上的短板也被总分掩盖了。</p>" },
+        { t:"展示准则剖面图和敏感性分析，数字取到有意义的位数，说明两案难分高下。", tone:"good", next:"endGood",
+          fb:"<p>剖面图把维修性上的短板摆到决策者面前；依次把每条准则的权重设为零，可以看出结论稳不稳定；数字取到合理的位数，再写明假设和权重理由，结论就经得起追问。</p>" },
+        { t:"改用各项得分的乘积重新计算，以乘积最高的方案作为最终答案。", tone:"mixed", next:"endMixed",
+          fb:"<p>改用乘积是检查低分短板的有效手段，但它只是另一种算法。把任何一种公式的结果直接当成决定，都是把决策交给了数字。决策支持方法只为决策者提供信息。</p>" }
+      ]},
+    endGood: { end:true, tone:"good", text:"<p>管理层看到两个方案各有长短，也看清了领先方案的维修性问题。管理层要求供应商补充维修方案的资料后再做决定，书面报告则留作日后复查的依据。</p>" },
+    endMixed: { end:true, tone:"mixed", text:"<p>换一种算法后排名变了，管理层反而更困惑：到底该信哪一个数字？权衡研究的价值在于把比较的过程和理由摆清楚，帮助决策者判断，任何单一公式都替代不了这种判断。</p>" },
+    endBad: { end:true, tone:"bad", text:"<p>管理层批准了总分最高的方案。投入使用后，维修困难的问题逐渐暴露出来，而报告中既没有剖面图，也没有写明假设，事后很难弄清当初为什么做出这个选择。</p>" }
+  }
+};
+QUIZ[11] = [
+  { q:"某单位第一次决定是否采用一项没有任何先例的新技术，不确定性很高。这属于哪一类决策，需要什么技术支持？",
+    o:["结构化决策，需要信息系统和数据库","半结构化决策，需要决策支持系统","非结构化决策，需要专家系统","半结构化决策，需要专家系统"], a:2,
+    e:"第一次做、没有先例、不确定性很高，正是非结构化决策的特征，需要最复杂的推理支持，也就是专家系统。很多系统工程决策确实属于半结构化决策，但半结构化决策仍有一定的指导可循，对应的支持技术是决策支持系统。" },
+  { q:"医院例子中，把等候时间的权重设为零以后，方案 A 以 0.372 对 0.353 反超方案 B；把其他准则的权重设为零，B 都仍然领先。决策者最应当从中得出什么结论？",
+    o:["B 的结论不稳定，应当改选在敏感性分析中胜出过的 A","权重由两两比较推算而来，可能算错了，应当重新计算","只要原始权重下 B 的总分最高，这个结果可以不必理会","B 的领先主要靠等候时间一项，要确认它是否真这么重要"], a:3,
+    e:"B 的优势主要来自它很短的等候时间，而这条准则占了 46% 的权重，所以结论对这个权重很敏感。敏感性分析的作用是揭示这种依赖关系，提醒决策者确认等候时间是否真的这么重要；这并不等于应当直接改选 A，因为 A 只在等候时间完全不计时才领先。" },
+  { q:"一个方案的加权总分最高，但它在一条必不可少的准则上得分接近零。为什么还要看准则剖面图，或者改用乘积来检查？",
+    o:["加权求和只适合少量准则，准则一多就应当改用乘积","加权求和会淡化极低的单项分，总分高可能掩盖短板","乘积在电子表格中更容易计算，也更不容易出错","剖面图可以代替权重，让评分不再受主观判断影响"], a:1,
+    e:"加权求和会淡化某一项的极低分，其他准则上的高分可以把它掩盖起来；改用乘积时，任何一项为零都会使方案出局，剖面图则直接显示每个方案在每条准则上的得分。准则数目通常以 6 到 10 条为宜，但这和用求和还是用乘积没有关系。" },
+  { q:"要求所有备选的电厂方案都提供规定的发电量，再比较各自的费用。这属于哪一种成本效益分析？",
+    o:["效能相同、比较成本，按费用高低排序","成本相同、比较效能，按效能高低排序","成本和效能都可变，比较单位成本的效能","先用多属性效用理论把各项合成一个指标"], a:0,
+    e:"规定的发电量把效能固定了下来，各方案只在费用上有差别，所以按费用高低排序，属于“效能相同、比较成本”。大多数系统属于成本和效能都可变的第三种，但这个例子的效能是事先定死的，所以不属于第三种。" }
+];
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

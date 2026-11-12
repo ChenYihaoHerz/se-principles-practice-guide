@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 13 章 先期开发 · 系统工程原理与实践导读</title>
+<meta name="description" content="系统工程原理与实践第 13 章“先期开发”的中文导读">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem("se-guide:theme");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t));}catch(e){}</script>
+<script>var QUIZ={}, GLOSSARY={}, DIAGRAMS={}, SIMS={}, SORTS={}, STEPS={};</script>
+<script src="assets/glossary.js"></script>
+</head>
+<body class="page-ch">
+<div class="topbar">
+  <button class="iconbtn menu-btn" id="menuBtn" aria-label="打开目录">☰<span class="lbl-txt"> 目录</span></button>
+  <a class="title" href="index.html"><b>系统工程原理与实践</b>　导读</a>
+  <a class="iconbtn" id="mapBtn" href="concepts.html"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><circle cx="2.6" cy="3.2" r="1.5"/><circle cx="13.4" cy="3.6" r="1.5"/><circle cx="3" cy="13" r="1.5"/><circle cx="13" cy="12.6" r="1.5"/><path d="M8 8 L2.6 3.2 M8 8 L13.4 3.6 M8 8 L3 13 M8 8 L13 12.6"/></svg><span class="lbl-txt">概念图</span></a>
+  <button class="iconbtn" id="themeBtn" aria-label="切换深浅色">◐<span class="lbl-txt"> 深浅色</span></button>
+</div>
+<div class="progress" id="progress"></div>
+<nav class="sidebar" id="sidebar" aria-label="目录">
+  <a class="side-home" href="index.html">全书导读首页</a>
+  <div class="side-stat">
+    <div class="row"><span>已读章节</span><b id="readCount">0 / 23</b></div>
+    <div class="bar"><i id="readBar"></i></div>
+  </div>
+  <div class="toc" id="toc"><div class="toc-part">第一部分 · 系统工程的基础</div><a href="ch01.html" data-ch="ch1" class="core"><span class="num">1</span><span class="lbl">系统工程与现代系统</span><span class="chk" aria-hidden="true"></span></a><a href="ch02.html" data-ch="ch2" class="core"><span class="num">2</span><span class="lbl">复杂系统的结构</span><span class="chk" aria-hidden="true"></span></a><a href="ch03.html" data-ch="ch3" class="core"><span class="num">3</span><span class="lbl">系统开发过程</span><span class="chk" aria-hidden="true"></span></a><a href="ch04.html" data-ch="ch4" class="core"><span class="num">4</span><span class="lbl">系统工程管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第二部分 · 概念开发阶段</div><a href="ch05.html" data-ch="ch5" class="core"><span class="num">5</span><span class="lbl">需要分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch06.html" data-ch="ch6" class="core"><span class="num">6</span><span class="lbl">需求分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch07.html" data-ch="ch7" class="core"><span class="num">7</span><span class="lbl">功能分析</span><span class="chk" aria-hidden="true"></span></a><a href="ch08.html" data-ch="ch8" class="core"><span class="num">8</span><span class="lbl">评估与选择</span><span class="chk" aria-hidden="true"></span></a><a href="ch09.html" data-ch="ch9" class="core"><span class="num">9</span><span class="lbl">系统架构设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch10.html" data-ch="ch10" class="core"><span class="num">10</span><span class="lbl">基于模型的系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch11.html" data-ch="ch11" class="core"><span class="num">11</span><span class="lbl">决策分析与支持</span><span class="chk" aria-hidden="true"></span></a><a href="ch12.html" data-ch="ch12" class="core"><span class="num">12</span><span class="lbl">风险管理</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第三部分 · 工程开发阶段</div><a href="ch13.html" data-ch="ch13" class=" active" aria-current="page"><span class="num">13</span><span class="lbl">先期开发</span><span class="chk" aria-hidden="true"></span></a><a href="ch14.html" data-ch="ch14" class=""><span class="num">14</span><span class="lbl">软件系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch15.html" data-ch="ch15" class=""><span class="num">15</span><span class="lbl">工程设计</span><span class="chk" aria-hidden="true"></span></a><a href="ch16.html" data-ch="ch16" class=""><span class="num">16</span><span class="lbl">系统集成</span><span class="chk" aria-hidden="true"></span></a><a href="ch17.html" data-ch="ch17" class=""><span class="num">17</span><span class="lbl">试验与评价</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第四部分 · 开发后阶段</div><a href="ch18.html" data-ch="ch18" class=""><span class="num">18</span><span class="lbl">生产</span><span class="chk" aria-hidden="true"></span></a><a href="ch19.html" data-ch="ch19" class=""><span class="num">19</span><span class="lbl">运行与保障</span><span class="chk" aria-hidden="true"></span></a><a href="ch20.html" data-ch="ch20" class=""><span class="num">20</span><span class="lbl">体系工程</span><span class="chk" aria-hidden="true"></span></a><div class="toc-part">第五部分 · 系统工程的应用领域</div><a href="ch21.html" data-ch="ch21" class=""><span class="num">21</span><span class="lbl">企业系统工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch22.html" data-ch="ch22" class=""><span class="num">22</span><span class="lbl">系统安全工程</span><span class="chk" aria-hidden="true"></span></a><a href="ch23.html" data-ch="ch23" class=""><span class="num">23</span><span class="lbl">系统工程的未来</span><span class="chk" aria-hidden="true"></span></a></div>
+</nav>
+<div class="scrim" id="scrim"></div>
+<main>
+<div class="wrap">
+<div class="part-tag"><a href="index.html#part3">第三部分 · 工程开发阶段</a></div>
+<article class="chapter" id="ch13" data-ch="13" data-title="先期开发">
+<div class="ch-head">
+  <div class="ch-label"><span>第 13 章</span></div>
+  <h2>先期开发</h2>
+  <div class="en">Advanced Development</div>
+</div>
+
+<p class="lead">先期开发是系统开发从概念开发阶段转入工程开发阶段的过渡时期。它的任务，是通过分析、仿真、开发和制作原型，消除所选方案中绝大部分的不确定因素，直到此前未经证明的每一个子系统和组件的功能设计都得到验证，使后续的大规模工程设计能够有把握地开始。</p>
+<p>这个时期的输入是上一个时期（概念定义）给出的<strong>系统功能规范</strong>（<span class="en-term">System Functional Specifications</span>），它说明系统必须做什么；输出是<strong>系统设计规范</strong>（<span class="en-term">System Design Specifications</span>）和一个经过验证的开发模型，它们说明系统的各项功能大体上要用什么样的硬件和软件来实现。此外，工作分解结构、系统工程管理计划和系统架构也都要随之更新。概念定义时期的结论往往是在时间紧、经费少、多家单位相互竞争的情况下得出的，应当看作初步结论，在真正理解之前要保持怀疑。</p>
+<p>有些项目用不着一个正式的先期开发时期。例如汽车厂商推出新车型时，大部分部件都是成熟的，只有少数关键部件，比如安全气囊、混合动力系统和自动驾驶功能，需要单独并行开发。改用天然气、电力或太阳能驱动的汽车是另一个例子：改动集中在燃料子系统和它的接口上，但高压储气罐或电池的储能方式、碰撞时的安全性都必须通过实验来确定，还需要建设配套的加气站或充电站。这是一项重大的变化，却只局限在少数几个部件上。</p>
+
+<h3>这个时期的四项工作</h3>
+<p>系统工程方法的四个步骤，在先期开发中表现为四项工作：</p>
+<ol>
+  <li><strong>需求分析</strong>：首先重新检查概念定义交来的功能规范是否有效，把每条功能需求追溯到它所根据的性能需求和运行需求，与前身系统的需求比较，并尽可能与用户交谈；然后找出还不够成熟、不能直接进入大规模工程设计的部件。</li>
+  <li><strong>功能分析与设计</strong>：分析功能的分配，在其他系统中寻找类似的功能单元，用分析和仿真解决性能上的问题，完成整个系统的功能设计和集成。</li>
+  <li><strong>原型开发</strong>：找出采用未经证明的技术实现时会遇到的问题，确定每个部件需要开发到什么程度，设计关键的软件，设计并制作关键部件的原型，根据测试反馈纠正缺陷。</li>
+  <li><strong>开发测试</strong>：制订测试计划和判据，准备测试设备和设施，测试关键部件，把发现的设计缺陷或者过高的需求反馈回去，最终得到一个成熟的、经过验证的设计。</li>
+</ol>
+<p>这里的“开发测试”（<span class="en-term">Development Testing</span>）针对的是子系统和组件，由开发方进行。它和常说的“研制试验”“使用试验”不同：后两者都针对已经完成工程设计的整个系统，研制试验由开发方在受控的场景下进行，使用试验则有客户参与，在更接近真实的条件下进行。</p>
+
+<h3>详解：哪些部件需要专门开发</h3>
+<p>这个时期的核心工作，是逐个判断哪些部件还不够成熟、需要专门开发，再为每一类不成熟的部件选择合适的开发与验证方式。判断一个部件是否成熟，可以从三个方面入手：</p>
+<ul>
+  <li><strong>功能上是否成熟</strong>：有没有已经证明可靠的部件，功能和性能与它非常接近，而且两者的差别没有超出已经验证过的范围？</li>
+  <li><strong>实物构造上是否成熟</strong>：有没有采用相近材料和结构的部件，它承受的应力、公差、安全性和寿命都在已经验证过的范围之内？</li>
+  <li><strong>与使用环境的相互作用是否可以预测</strong>：能否用已知的工程关系预测它在真实环境中的表现？人与机器之间的交互很少能够这样预测。</li>
+</ul>
+<p>如果找到了大致对应的成熟部件，下一步是看能否用成熟的工程关系定量地说明两者的差别，从而证明新部件可以有把握地设计出来。如果做不到，就只有两条路：把规定的性能降低到能够这样推算的水平，或者安排一项开发和测试计划，取得所需的工程数据。从功能角度看，经常需要专门开发的部件有三种：</p>
+<ul>
+  <li><strong>性能超出已验证范围的部件</strong>。如果这个部件既未经证明、又对整个系统至关重要，就必须开发到能够演示和验证它的性能为止。</li>
+  <li><strong>功能高度复杂的部件</strong>，以及复杂的接口和相互作用。部件内部的复杂性，通常在设计中就能发现并解决；接口上的复杂性却可能要到集成测试时才暴露出来，那时再修改，时间和代价都很大。有几类部件特别难以只靠分析弄清楚，通常要做原型或者实物测试：
+    <ul>
+      <li><strong>实时软件</strong>：中断随时可能以不同的优先级发生，时序的控制非常复杂。</li>
+      <li><strong>分布式处理软件</strong>：数据和处理分布在联网的各台处理器和存储器上，设计者在很大程度上控制不了它们具体放在哪里，系统的运行过程因此极难分析。</li>
+      <li><strong>图形用户界面软件</strong>：需求往往不完整、经常变化，它的灵活性本身又容易引出复杂性。</li>
+      <li><strong>闭环动态系统</strong>，例如自动驾驶仪：往往有一些与实物实现分不开的耦合和次要效应（例如惯性器件安装座的弯曲），绝大多数必须做出来测试，才能确认系统的稳定性没有问题。</li>
+    </ul>
+  </li>
+  <li><strong>与环境的相互作用了解不足的部件</strong>，例如：
+    <ul>
+      <li>在气象杂波或地面回波中探测目标的雷达：运行和环境条件千差万别，人们对杂波散射和反常传播的物理机理又了解有限，所以无法明确地描述它的环境。</li>
+      <li>航天器：以往任务留下的数据有限，太空环境也很难描述清楚。</li>
+      <li>医疗信息系统：医生、护士、文员等用户的需要往往说不清楚，因人而异，还存在争议。</li>
+      <li>汽车安全气囊：要反复试验，才能找到合适的触发条件，既不频繁误触发，又能对真实碰撞可靠地响应；气囊的形状、大小、充气和放气的速度，也只能通过实验来确定。</li>
+    </ul>
+  </li>
+</ul>
+<p>判断出不成熟的部件之后，要根据“新在哪里”来选择开发方式。新部件有四种典型情况，每一种只在一个方面不成熟，对应的开发方式和要验证的内容也各不相同：</p>
+<div class="diagram" data-d="newComponents">
+<div class="svgwrap">
+<svg viewBox="0 0 640 300" role="img" aria-label="四类新部件的成熟度矩阵：新功能只在功能上不成熟，新的实现方式只在实物实现上不成熟，新的生产方法只在生产方法上不成熟，扩展的功能是在成熟部件上扩展功能；右侧列出各自的开发方式和验证内容">
+  <text class="t3" x="300" y="28" text-anchor="middle">成熟度</text>
+  <line class="lnL" x1="176" y1="38" x2="424" y2="38"/>
+  <text class="t3" x="82" y="56" text-anchor="middle">部件类型</text>
+  <text class="t3" x="212" y="56" text-anchor="middle">功能</text>
+  <text class="t3" x="300" y="56" text-anchor="middle">实物实现</text>
+  <text class="t3" x="388" y="56" text-anchor="middle">生产方法</text>
+  <text class="t3" x="456" y="56">开发方式与验证内容</text>
+  <line class="lnL" x1="160" y1="120" x2="624" y2="120"/>
+  <line class="lnL" x1="160" y1="176" x2="624" y2="176"/>
+  <line class="lnL" x1="160" y1="232" x2="624" y2="232"/>
+
+  <g class="hot" data-k="a"><rect x="16" y="68" width="132" height="48" rx="8"/><text class="t1" x="82" y="96" text-anchor="middle">新功能</text></g>
+  <rect class="bxA" x="182" y="79" width="60" height="26" rx="13"/><text class="tA" x="212" y="97" text-anchor="middle">新</text>
+  <rect class="bxW" x="270" y="79" width="60" height="26" rx="13"/><text class="t3" x="300" y="96" text-anchor="middle">成熟</text>
+  <rect class="bxW" x="358" y="79" width="60" height="26" rx="13"/><text class="t3" x="388" y="96" text-anchor="middle">成熟</text>
+  <text class="t1" x="456" y="88">快速原型</text>
+  <text class="t3" x="456" y="106">验证：功能和性能</text>
+
+  <g class="hot" data-k="b"><rect x="16" y="124" width="132" height="48" rx="8"/><text class="t1" x="82" y="152" text-anchor="middle">新的实现方式</text></g>
+  <rect class="bxW" x="182" y="135" width="60" height="26" rx="13"/><text class="t3" x="212" y="152" text-anchor="middle">成熟</text>
+  <rect class="bxA" x="270" y="135" width="60" height="26" rx="13"/><text class="tA" x="300" y="153" text-anchor="middle">新</text>
+  <rect class="bxW" x="358" y="135" width="60" height="26" rx="13"/><text class="t3" x="388" y="152" text-anchor="middle">成熟</text>
+  <text class="t1" x="456" y="144">快速开发模型</text>
+  <text class="t3" x="456" y="162">验证：工程设计是否可行</text>
+
+  <g class="hot" data-k="c"><rect x="16" y="180" width="132" height="48" rx="8"/><text class="t1" x="82" y="208" text-anchor="middle">新的生产方法</text></g>
+  <rect class="bxW" x="182" y="191" width="60" height="26" rx="13"/><text class="t3" x="212" y="208" text-anchor="middle">成熟</text>
+  <rect class="bxW" x="270" y="191" width="60" height="26" rx="13"/><text class="t3" x="300" y="208" text-anchor="middle">成熟</text>
+  <rect class="bxA" x="358" y="191" width="60" height="26" rx="13"/><text class="tA" x="388" y="209" text-anchor="middle">新</text>
+  <text class="t1" x="456" y="200">生产方法的关键实验</text>
+  <text class="t3" x="456" y="218">验证：生产方法本身</text>
+
+  <g class="hot" data-k="d"><rect x="16" y="236" width="132" height="48" rx="8"/><text class="t1" x="82" y="264" text-anchor="middle">扩展的功能</text></g>
+  <rect class="bxA" x="182" y="247" width="60" height="26" rx="13"/><text class="tA" x="212" y="265" text-anchor="middle">扩展</text>
+  <rect class="bxW" x="270" y="247" width="60" height="26" rx="13"/><text class="t3" x="300" y="264" text-anchor="middle">成熟</text>
+  <rect class="bxW" x="358" y="247" width="60" height="26" rx="13"/><text class="t3" x="388" y="264" text-anchor="middle">成熟</text>
+  <text class="t1" x="456" y="256">功能仿真</text>
+  <text class="t3" x="456" y="274">验证：扩展后的功能和性能</text>
+</svg>
+</div>
+</div>
+
+<p>在实物实现方面，有四类情形特别容易出问题，可以用作检查清单：</p>
+<ul>
+  <li>对物理性能的要求异常严格，例如极高的可靠性、耐久性、安全性或者很小的公差。无人值守、几个星期才维护一次的空中交通管制雷达，使用寿命长达 30 到 40 年的飞机，载人航天器的安全性，以及跑 5 万到 10 万英里不需要维护的汽车发动机，都属于这种情况。</li>
+  <li>采用新材料或者新的制造方法。新工艺所需的费用和时间很难事先估计，必须投入足够的资源，或者准备好退路。</li>
+  <li>工作环境极端，或者环境条件本身就不清楚。军用设备要在很宽的温度范围内工作，还要经受野外的粗暴搬运；军用系统越来越多地采用标准的商用部件、放宽军用规范以节省费用，每个部件能否在预期的环境中工作都要仔细检查，这让系统工程承担的责任比严格执行军用规范时更大。</li>
+  <li>接口异常复杂。部件之间的接口，可能是系统设计中最受忽视的方面：很少有人把接口列为关键单元，接口又处在各个设计专业之间，往往只有系统工程会为它们负责。接口过于复杂往往说明系统的划分方式不恰当。应对的办法有成立接口控制小组、编写接口文档和标准、举行接口设计评审等。</li>
+</ul>
+<p>面对每一个风险点，工程师应当像一个怀疑者那样问自己：</p>
+<ul>
+  <li>哪些地方可能出错？</li>
+  <li>出错时最先会表现出什么迹象？</li>
+  <li>到那时可以采取什么办法来纠正？</li>
+</ul>
+<p>可靠性、维修性、可用性、安全性和可生产性，也必须在这个时期认真考虑，不能推到工程设计阶段，否则后面很可能要大改设计，牵动其他组件乃至整个系统。</p>
+<p>为此，要把熟悉生产、维修、后勤、安全的“专业工程师”请进先期开发，让这些专业工程师的经验进入设计决策和早期验证，这种做法称为<span class="term" data-t="concurrentEng">并行工程</span>（<span class="en-term">Concurrent Engineering</span>），是集成产品团队的职能之一。它和“阶段并行”是两回事，后者指把先期开发和工程设计这样的两个阶段同时进行。专业工程师精通自己的领域，却缺少与其他领域交流的共同语言，系统工程师要充当协调者、翻译者，必要时还要充当导师。</p>
+
+<h4>哪些问题可以用仿真解决</h4>
+<p>很多问题只能靠制作实物原型来解决，但也有一些问题可以有效地用仿真来探索：</p>
+<ul>
+  <li><strong>系统的动态特性</strong>：除了频率很高的动态效应之外，大多数动态特性（例如飞机或导弹的六自由度动力学）都可以足够逼真地仿真。</li>
+  <li><strong>人机接口</strong>：最好在开发早期就做一个仿真，请潜在的用户参与设计，并随着经验的积累不断完善。</li>
+  <li><strong>运行场景</strong>：系统要面对的各种运行场景，可以用一个输入条件可变的仿真，在制作原型或者做外场试验之前加以研究。</li>
+</ul>
+<div class="example">
+  <div class="n-title">例子：一种中程客机用什么发动机</div>
+  <p>一家飞机公司考虑研制一种新的中程客机，两个基本选择是涡轮螺旋桨发动机和喷气发动机。两者的大致特性是已知的，但装用不同类型和数量的发动机时，整架飞机的性能还不够清楚，而为此制造原型机显然不现实。由于飞机在各种条件下的性能已有大量工程数据，仿真是合适的办法。</p>
+  <p>这时要回答的只是发动机的类型和数量，所以只需要一个一阶的二维（垂直方向和纵向）气动和飞行动力学模型，发动机的性能用由实测数据得到的推力与燃油流量、速度、高度等的关系式表示。这个简单模型就能针对不同的总重、发动机数量和载荷，算出起飞距离、爬升率和最大巡航速度。选定构型之后，再把模型扩展到更细的层次。要验证或补充分析结果，可以把原型发动机放进发动机试验设施，在预计的各种气流和大气条件下运行；更逼真的做法是把它装在一架“母机”翼下的专用吊舱里，在各种速度和高度上飞行，这时母机本身就成了一座开发试验设施。</p>
+</div>
+
+<h4>开发投入多少才合适</h4>
+<p>每一个风险领域要用什么手段、开发到什么程度，是规划降低风险工作时的关键决定。这个问题可以看作“<span class="term" data-t="riskCost">风险成本</span>”（<span class="en-term">Risk-cost</span>）的权衡：开发投入太少，遗留的风险就多，日后处理这些风险要花更多的钱；开发投入太多，则直接推高了项目成本。合理的做法是让<strong>开发成本</strong>（分析、仿真、设计和测试的费用）与<strong>处理遗留风险的成本</strong>（把剩余风险降到可以进入工程设计的低水平所需的费用）之和最小。这个决定应当写进风险管理计划。</p>
+<ul>
+  <li>关键而又不成熟的部件，平衡点可能要求一直开发到原型阶段。</li>
+  <li>不关键或者已经成熟的部件，只做分析就够了。</li>
+  <li>经费不足以验证所有高风险部件时，应当把其中风险最大的几个换成更保守的方案，不要让它们在未经验证的状态下进入工程设计。</li>
+</ul>
+<p>除了原型开发和开发测试这两种主要方法，还有其他降低风险的手段：</p>
+<ul>
+  <li><strong>项目经理的采办策略</strong>
+    <ul>
+      <li>并行开发几种替代的技术或工艺，以防主要技术不能成熟；</li>
+      <li>采用不同的集成策略，侧重不同的接口方案；</li>
+      <li>采用增量开发，在技术成熟的同时先完成一部分功能。</li>
+    </ul>
+  </li>
+  <li><strong>系统工程师的手段</strong>
+    <ul>
+      <li>更多地用建模和仿真代替实物原型，加深对环境和系统过程的了解；</li>
+      <li>在工程化的组件做出来之前，先开发和测试接口，降低接口风险。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>原型与开发测试</h3>
+<p>部件的设计和整个系统的开发一样是反复迭代的，测试应当贯穿设计过程，也就是常说的“做一点，测一点”。这看起来不太有条理，却往往是最快、最省钱的办法：大部分设计单元在较低的层级上、在不太复杂的测试配置中就得到验证，错误也能尽早纠正。如果一个部件的设计问题主要是功能上的，可以用比较性的仿真来解决；如果问题涉及实物特性，通常就要做出原型，放在模拟使用条件的物理环境中测试。像疲劳裂纹这样的实物特性，很难通过分析或仿真预测出来。</p>
+<ul>
+  <li><span class="term" data-t="rapidProto">快速原型</span>（<span class="en-term">Rapid Prototyping</span>）是为了尽早在真实条件下测试而加快制作的部件、子系统乃至整个系统的试验模型，制作时会暂时放宽质量标准。当用户需求不拿一个能运行的模型来试验就无法说清楚时，最常采用这种方法，决策支持系统、动态控制系统和工作在特殊环境中的系统尤其如此。这里有一个反复出现的陷阱：客户为原型付了钱，常常会要求直接把它用于生产，但原型缺少开发标准、文档和严格测试，最终往往无法通过研制试验和使用试验，导致进度拖延和费用超支。因此原型应当在完成使命后丢弃，并事先向客户说明这一点。</li>
+  <li>制作原型的其他理由还包括：降低风险、验证设计、集成子系统和组件、评估技术、探索需求、试验新的制造工艺，以及让多家单位竞争，供出资方评估最前沿的设计。原型既可以是硬件，也可以是软件，或者两者兼有：一个共享单车系统的原型，既要测试锁车装置，也要测试与金融机构交换数据时软件的稳定性和安全性。</li>
+  <li><span class="term" data-t="digitalTwin">数字孪生</span>（<span class="en-term">Digital Twin</span>）把正在运行的实物系统在虚拟环境中复制一份，并在系统的整个寿命中不断更新它的性能、维修和健康状态。工程师可以先在“孪生”上探索各种做法，再决定对实物系统采取什么措施，从而减少对实物系统的风险。</li>
+  <li><strong>开发试验设施</strong>（<span class="en-term">Development Facility</span>）是专门用来真实而定量地模拟某种环境条件的固定场所，通常是一笔很大的投资。风洞用来比较几种候选的气动外形时是开发工具，用来为一个全尺寸的飞机操纵面提供高速气流、检验它的性能时就是验证设施。汽车厂商用试车场让满载的汽车高速行驶或在颠簸路面上行驶，模拟加速老化；射频微波暗室可以在各种干扰信号下测试真实的导弹导引头，同时由计算机仿真导弹的飞行。</li>
+</ul>
+<p>一个计划周密的开发测试项目包括五个步骤：</p>
+<ol>
+  <li>制订测试计划、测试程序和测试分析计划；</li>
+  <li>研制或购置测试设备和专用设施；</li>
+  <li>进行演示和验证测试，包括软件的验证；</li>
+  <li>分析和评价测试结果；</li>
+  <li>纠正设计缺陷。</li>
+</ol>
+<p>测试计划的出发点，应当是尽量暴露潜在的设计缺陷，并取得足够的数据来找出缺陷的来源。只做最少测试、默认一定成功的计划，起初花钱少，却常常漏掉设计缺陷，日后造成项目中断和拖延，最终花费大得多。</p>
+<p>制订测试计划时要做的工作：</p>
+<ul>
+  <li><strong>确定测试的目标</strong>：除了按选定的运行和性能需求检验系统，还可以是增强客户对某些方面的信心、暴露高风险领域的设计缺陷、公开演示某项能力，或者演示与外部实体的接口。</li>
+  <li><strong>挑出要评价的特性和参数</strong>：从运行需求和顶层需求中挑选，关键性能参数一定要包括在内，但通常不可能每条需求都测。</li>
+  <li><strong>规定测试条件</strong>，包括上下限和容差。</li>
+  <li><strong>回顾此前的工作</strong>：当初怎样选出需要开发的部件、涉及哪些设计问题，以及已有的开发测试结果把这些问题解决到了什么程度。</li>
+  <li><strong>找出所有接口和相互作用</strong>，包括被测组件与系统其他部分之间的，以及与环境之间的。</li>
+  <li><strong>确定测试配置</strong>
+    <ul>
+      <li>最理想的是把整个系统放在它的使用环境中测试，但代价太高；</li>
+      <li>最低限度是单个组件加上对其接口的简单模拟；</li>
+      <li>比较实际的折中，是把组件装进一个原型子系统，再用仿真代替系统的其余部分和环境。</li>
+    </ul>
+  </li>
+  <li><strong>确定其余事项</strong>：测试的输入和输出、测试设备和设施的要求、费用和人力、进度，最后编写详细的测试计划。</li>
+</ul>
+<p>测试分析计划要回答三个问题：</p>
+<ul>
+  <li>收集哪些数据？</li>
+  <li>通过什么途径取得：实验室测试、仿真、子系统测试还是全尺寸测试？</li>
+  <li>数据怎样处理、分析和展示？</li>
+</ul>
+
+<div class="stepper" data-step="ch13TestEval">
+  <div class="svgwrap"><svg viewBox="0 0 640 316" role="img" aria-label="系统单元的试验与评价过程：搭建测试环境、生成测试激励、激励被测单元、记录测试响应；同一组激励也输入单元模型，得到预测响应；比较测试响应和预测响应，找出偏差的来源；测试缺陷反馈到测试环境，设计缺陷反馈到原型开发，过高的需求反馈到需求分析">
+    <defs><marker id="m-ch13-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker></defs>
+    <g data-s="1">
+      <rect class="bxW" data-on="1" x="16" y="110" width="146" height="36" rx="8"/><text class="t1" x="89" y="132.5" text-anchor="middle">设计并搭建测试环境</text>
+      <rect class="bxW" data-on="1" x="182" y="110" width="100" height="36" rx="8"/><text class="t1" x="232" y="132.5" text-anchor="middle">生成测试激励</text>
+      <rect class="bxB" data-on="1" x="306" y="110" width="110" height="36" rx="8"/><text class="t1" x="361" y="132.5" text-anchor="middle">激励被测单元</text>
+      <rect class="bxW" data-on="1" x="440" y="110" width="110" height="36" rx="8"/><text class="t1" x="495" y="132.5" text-anchor="middle">记录测试响应</text>
+      <line class="ln" x1="162" y1="128" x2="181" y2="128" marker-end="url(#m-ch13-arr)"/>
+      <line class="ln" x1="282" y1="128" x2="305" y2="128" marker-end="url(#m-ch13-arr)"/>
+      <line class="ln" x1="416" y1="128" x2="439" y2="128" marker-end="url(#m-ch13-arr)"/>
+    </g>
+    <g data-s="2">
+      <rect class="bxW" data-on="2" x="16" y="30" width="100" height="36" rx="8"/><text class="t1" x="66" y="52.5" text-anchor="middle">单元模型</text>
+      <rect class="bxW" data-on="2" x="306" y="30" width="110" height="36" rx="8"/><text class="t1" x="361" y="52.5" text-anchor="middle">激励单元模型</text>
+      <rect class="bxW" data-on="2" x="440" y="30" width="110" height="36" rx="8"/><text class="t1" x="495" y="52.5" text-anchor="middle">预测响应</text>
+      <line class="ln" x1="116" y1="48" x2="232" y2="48"/>
+      <line class="ln" x1="232" y1="110" x2="232" y2="48"/>
+      <circle class="fM" cx="232" cy="48" r="2.5"/>
+      <line class="ln" x1="232" y1="48" x2="305" y2="48" marker-end="url(#m-ch13-arr)"/>
+      <line class="ln" x1="416" y1="48" x2="439" y2="48" marker-end="url(#m-ch13-arr)"/>
+    </g>
+    <g data-s="3">
+      <rect class="bxA" data-on="3" x="440" y="190" width="110" height="36" rx="8"/><text class="t1" x="495" y="212.5" text-anchor="middle">比较测试响应</text>
+      <line class="ln" x1="495" y1="146" x2="495" y2="189" marker-end="url(#m-ch13-arr)"/>
+      <path class="ln" d="M550,48 H590 V208 H551" marker-end="url(#m-ch13-arr)"/>
+    </g>
+    <g data-s="4">
+      <rect class="bxA" data-on="4" x="306" y="190" width="110" height="36" rx="8"/><text class="t1" x="361" y="212.5" text-anchor="middle">找出偏差来源</text>
+      <line class="ln" x1="440" y1="208" x2="417" y2="208" marker-end="url(#m-ch13-arr)"/>
+    </g>
+    <g data-s="5">
+      <path class="lnA" d="M306,208 H89 V147" marker-end="url(#m-ch13-arr)"/>
+      <text class="tA" x="200" y="200" text-anchor="middle">测试缺陷</text>
+    </g>
+    <g data-s="6">
+      <rect class="bxW dash" x="150" y="270" width="80" height="36" rx="8"/><text class="t1" x="190" y="292.5" text-anchor="middle">需求分析</text>
+      <rect class="bxW dash" x="321" y="270" width="80" height="36" rx="8"/><text class="t1" x="361" y="292.5" text-anchor="middle">原型开发</text>
+      <path class="ln" d="M306,220 H266 V288 H231" marker-end="url(#m-ch13-arr)"/>
+      <line class="ln" x1="361" y1="226" x2="361" y2="269" marker-end="url(#m-ch13-arr)"/>
+      <text class="t3" data-on="6" x="274" y="252">需求过高</text>
+      <text class="t3" data-on="6" x="369" y="252">设计缺陷</text>
+    </g>
+  </svg></div>
+</div>
+
+<p>测试设备和被测单元一样需要测试和验证，确保它足够准确可靠，可以用来衡量系统的性能。这项工作常常要把测量设备用到能力的极限，项目却经常低估它的难度，分配给它的时间和力量都不够。</p>
+<p>先期开发的主要工作是解决已经识别出来的设计问题，也就是消除“已知的未知”。运气好的话，绝大部分最初的不确定因素都能得到解决。但每一个新的复杂系统都不可避免地会遇到事先没有想到的“<span class="term" data-t="unkUnks">未知的未知</span>”（<span class="en-term">Unknown Unknowns</span>），在投入大规模工程设计之前发现它们，同样是这个时期的主要目标之一。所以验证测试要让系统经受足够宽的条件范围，把以前没有发现的设计缺陷暴露出来。</p>
+<p>测试暴露出“未知的未知”时，通常表现为被测单元没有按预期工作，有时失败还很引人注目，例如新飞机或导弹的试验。在找到解决办法之前，项目可能被迫停顿，如果不能较快地解决，整个项目都可能陷入危险。这时系统工程师最不可缺少，因为只有系统工程师具备找出办法所需的广博知识和经验。常见的出路有三种：</p>
+<ul>
+  <li>组件的缺陷无法就地修补，但可以通过修改系统中相关的另一部分来弥补；</li>
+  <li>分析表明问题出在测试设备或测试程序上；</li>
+  <li>分析表明出问题的那条性能需求在运行上并没有充分的理由，可以放宽。</li>
+</ul>
+<p>寻找最佳解决办法的加急工作由系统工程主导，说服项目管理层、客户和其他决策者支持这个办法，也是系统工程的任务。</p>
+<p>分析测试结果需要一支由分析人员、测试工程师和系统工程师组成的团队：分析人员把原始测试结果换算成具体系统单元的性能，测试工程师提供对测试条件、传感器和其他测试变量的深入了解，系统工程师则把这些知识结合起来，根据需求判断系统的性能。评价判据应当在测试之前就根据系统需求和单元的关键设计特征制订好。还有几点要注意：</p>
+<ul>
+  <li>测试中出现与预期不符的结果时，首先应该怀疑测试设备和测试程序本身，因为它们得到的验证通常少于被测试的部件。</li>
+  <li>系统不仅要在使用环境中工作，还要经受运输、储存、安装和维修等整个寿命中会遇到的条件。设计早期常常忽视这些条件，等到问题暴露时，纠正的代价已经极高，所以验证测试要明确地施加所有这些条件。</li>
+  <li>测试经常会暴露事先没有想到的问题，所以测试计划必须为验证设计修改预留时间和资源。以“所有测试都会一次成功”为前提制定的进度计划，起初看起来便宜，最终却更贵，这是造成费用超支和进度拖延的一个主要原因。</li>
+</ul>
+<p>用户界面的评价是一个特殊的难题。除了显示亮度这类最基本的特征，界面几乎无法客观地定量测量，用户的经验、视觉和逻辑能力、个人好恶又千差万别。评价可以分为四部分：</p>
+<ul>
+  <li>学会使用操作控制是否容易；</li>
+  <li>态势显示是否清晰；</li>
+  <li>信息内容对系统运行是否有用；</li>
+  <li>联机帮助是否有效。</li>
+</ul>
+<p>设计团队的成员不能充当唯一的受试者，应当尽量请类似系统的操作人员参加。最好拿出几个方案请用户挑选，这在软件中通常不难做到。评价还需要人因专家参与，系统工程师要掌握足够的人机交互基础知识，才能策划、领导和解释这些测试。</p>
+
+<div class="sim" data-sim="ch13Test"></div>
+
+<p>如果开发总体上是成功的，最后剩下的设计缺陷会比较少，但怎样消除它们未必显而易见，需要的工作量也未必小，而这时往往已经没有多少时间和资源去从容地重新设计、重新测试。所以要组织一项加急的、分清轻重缓急的工作，尽快把系统设计推进到可以有较大把握开始大规模工程设计的程度。这项工作的规划和领导，是系统工程一项特别关键的职责。</p>
+
+<div class="quiz" data-ch="13"></div>
+</article>
+
+
+<nav class="pager" aria-label="翻页">
+  <a class="prev" href="ch12.html"><small>上一章</small><span>第 12 章　风险管理</span></a>
+  <a class="next" href="ch14.html"><small>下一章</small><span>第 14 章　软件系统工程</span></a>
+</nav>
+</div>
+</main>
+<div class="pop" id="pop" role="tooltip"></div>
+<script>
+DIAGRAMS.newComponents = {
+  title: "四类新部件与对应的开发方式",
+  initial: "a",
+  items: [
+    { k:"a", label:"新功能",
+      html:"<ul><li><strong>新在哪里：</strong>部件要完成的功能是以前没有做过的，但所用的物理手段和生产方法都是成熟的。</li><li><strong>开发方式：</strong>设计、制作并测试一个快速原型。</li><li><strong>要验证的内容：</strong>部件能否达到所要求的功能和性能。</li></ul>" },
+    { k:"b", label:"新的实现方式",
+      html:"<ul><li><strong>新在哪里：</strong>功能本身是成熟的，但打算用一种新的物理方式来实现，例如采用新的材料或结构。</li><li><strong>开发方式：</strong>设计、制作并测试一个快速开发模型。</li><li><strong>要验证的内容：</strong>这种工程设计是否可行。</li></ul>" },
+    { k:"c", label:"新的生产方法",
+      html:"<ul><li><strong>新在哪里：</strong>部件本身是成熟的，但要用新的方法来制造。</li><li><strong>开发方式：</strong>针对这种生产方法做关键性的实验。</li><li><strong>要验证的内容：</strong>生产方法本身。新工艺所需的费用和时间很难事先估计，必须投入足够的资源，或者准备好退路。</li></ul>" },
+    { k:"d", label:"扩展的功能",
+      html:"<ul><li><strong>新在哪里：</strong>部件是成熟的，但要求它的性能超出以往验证过的范围。</li><li><strong>开发方式：</strong>设计并运行功能仿真。</li><li><strong>要验证的内容：</strong>扩展之后的功能和性能。</li></ul>" }
+  ]
+};
+Object.assign(GLOSSARY, {
+  rapidProto: ["快速原型", "Rapid Prototyping", "为了尽早在真实条件下测试，而加快设计和制作的部件、子系统或系统的试验模型。制作时会暂时放宽质量标准，用完后应当丢弃，不应直接用于生产。"],
+  riskCost: ["风险成本", "Risk-cost", "为降低一个风险领域所花的开发成本（分析、仿真、设计和测试），加上把剩余风险降到可以进入工程设计的水平所需的处理成本。确定开发程度时，目标是使两者之和最小。"]
+});
+STEPS.ch13TestEval = {
+  title: "一个系统单元的试验与评价过程",
+  steps: [
+    { label:"实际测试", title:"对被测单元施加激励", html:"<p>先设计并搭建测试环境，它往往在以前的模型基础上建立。测试环境生成测试激励，施加到被测的系统单元上，再把单元的响应记录下来。</p>" },
+    { label:"单元模型", title:"同一组激励输入单元模型", html:"<p>与此同时，同一组激励也输入这个单元的模型，由模型算出它“应当”给出的预测响应。没有预测，测试结果就无从判断好坏。</p>" },
+    { label:"比较", title:"比较测试响应和预测响应", html:"<p>记录下来的响应可以事后分析，也可以实时地与模型的预测值比较。比较时依照的评价判据，应当在测试之前根据系统需求和单元的关键设计特征制订好。</p>" },
+    { label:"找出来源", title:"找出偏差的来源", html:"<p>所有重要的偏差都要找出来源，并判断是否需要采取补救措施。这一步需要分析人员、测试工程师和系统工程师一起完成，而且要做得快，因为结果会影响后续的测试和设计工作。</p>" },
+    { label:"测试缺陷", title:"首先怀疑测试本身", html:"<p>偏差的来源可能是测试设备或测试程序的缺陷。这是首先要检查的地方，因为验证测试设备所花的时间和力量，通常比设计被测单元所花的少得多。查出的测试缺陷反馈回去，修正测试环境。</p>" },
+    { label:"设计与需求", title:"设计缺陷和过高的需求", html:"<p>排除了测试本身的问题之后，偏差可能说明设计有缺陷，这要反馈到原型开发；也可能说明需求定得过高，这要反馈到需求分析。如果弥补缺陷需要大量的重新设计，就要严格审查相关的需求，看能否在不明显降低系统效能的前提下放宽它。</p>" }
+  ]
+};
+SIMS.ch13Test = {
+  title: "情境：先期开发中的验证测试",
+  intro: "<p>一家公司正在研制一套新的终端区空中交通管制系统，项目处在先期开发阶段，几个关键部件正在做原型和验证测试。你是项目的系统工程师。</p>",
+  start: "s1",
+  nodes: {
+    s1: { text:"<p>管制员显示界面的快速原型演示得很成功。客户代表非常满意，提出：“这个原型已经很好用了，直接拿去生产吧，还能省下不少时间。”你怎么回应？</p>",
+      choices: [
+        { t:"同意。原型是客户出钱做的，而且演示已经证明它能用。", tone:"bad", next:"s2",
+          fb:"<p>快速原型为了速度暂时放宽了质量标准，缺少开发标准、文档和严格的测试。直接用于生产，往往通不过研制试验和使用试验，最后导致进度拖延、费用超支。</p>" },
+        { t:"说明原型放宽了质量标准，只把得到的结论带进工程设计。", tone:"good", next:"s2",
+          fb:"<p>原型完成使命后应当丢弃。最好在制作原型之前就向客户说明这一点，免得客户到时候要求把它当作生产的基础。</p>" },
+        { t:"同意直接生产，但事后补写文档、补做测试，把原型“转正”。", tone:"mixed", next:"s2",
+          fb:"<p>补文档和补测试解决不了根本问题：原型本身是在没有开发标准和质量控制的情况下做出来的，测试很可能暴露大量需要返工的缺陷，省下的时间最后都会加倍还回去。</p>" }
+      ]},
+    s2: { text:"<p>项目经理拿来一份验证测试的进度计划：每项测试只安排一次，默认全部一次通过，这样进度最短、费用最低。你怎么看？</p>",
+      choices: [
+        { t:"可以接受。只要测试准备得足够充分，每项测试就应该一次通过。", tone:"bad", next:"s3",
+          fb:"<p>以百分之百成功为前提的测试进度，是新的复杂系统费用超支和进度拖延的一个主要原因。每个新系统都会遇到“未知的未知”。</p>" },
+        { t:"要求按会出现意外来排计划，为纠正缺陷和重新验证留出时间。", tone:"good", next:"s3",
+          fb:"<p>测试计划必须预料到会出现意外的结果，为纠正缺陷后的再验证安排时间和资源；测试本身也要以暴露缺陷、收集足够的数据为目标。默认成功的计划起初便宜，最终更贵。</p>" },
+        { t:"保留一次通过的假设，但砍掉接口测试，把省下的时间留作机动。", tone:"bad", next:"s3",
+          fb:"<p>接口的复杂性往往要到集成测试时才暴露，那时修改的代价很大。砍掉接口测试，等于把最容易受忽视的风险推到了后面。</p>" }
+      ]},
+    s3: { text:"<p>雷达数据处理单元的一项关键测试结果，与模型的预测值相差很大。设计小组已经开始讨论要不要重新设计。你首先做什么？</p>",
+      choices: [
+        { t:"立即启动重新设计，工程设计马上开始，时间不能再耽误。", tone:"bad", next:"s4",
+          fb:"<p>还没有弄清偏差的来源就重新设计，很可能白费力气。测试设备和程序得到的验证通常少于被测单元，问题常常出在那里。</p>" },
+        { t:"先检查测试设备和测试程序有没有问题，必要时重做测试。", tone:"good", next:"s4",
+          fb:"<p>出现测试偏差时，首先要找的地方之一就是测试设备或测试程序的缺陷，因为它们得到的验证时间和力量通常比被测单元少。</p>" },
+        { t:"在测试报告中记录这个单元“未通过”，交给设计小组处理。", tone:"mixed", next:"s4",
+          fb:"<p>记录结果是必要的，但找出偏差的来源需要分析人员、测试工程师和系统工程师一起工作。不弄清来源就把问题推给设计小组，可能让设计小组去修一个并不存在的设计缺陷。</p>" }
+      ]},
+    s4: { text:"<p>测试设备没有问题，偏差确实来自设计。要在这个单元内部完全修好，需要大量的重新设计，而工程设计阶段马上就要开始。你怎么办？</p>",
+      choices: [
+        { t:"不惜代价在这个单元内部重新设计，不管花多少时间，直到它完全满足需求为止。", tone:"mixed", next:"endMixed",
+          fb:"<p>有时这是唯一的办法，但还有别的路可以先看一看：缺陷也许能由系统中相关的另一部分来弥补，那条需求也许在运行上并没有充分的理由。</p>" },
+        { t:"加急分析能否由系统中相关的部分弥补，并审查这条需求的运行理由。", tone:"good", next:"endGood",
+          fb:"<p>弥补缺陷不一定要在出问题的单元内部完成；没有充分运行理由的需求也可以放宽。找出最佳办法并说服各方支持，是系统工程的职责。</p>" },
+        { t:"按计划进入工程设计，把这个缺陷留到详细设计阶段，和其他问题一起解决。", tone:"bad", next:"endBad",
+          fb:"<p>进入工程设计的条件，是系统设计已经得到成功的验证。带着一个没有解决的设计缺陷进入大规模工程设计，日后的代价会高得多。</p>" }
+      ]},
+    endGood: { end:true, tone:"good", text:"<p>分析发现，在相邻的显示处理软件中稍作修改，就能弥补这个单元的不足，客户也同意略微放宽一项要求过严的指标。修改后的设计通过了验证，项目带着较低的剩余风险进入工程设计。</p>" },
+    endMixed: { end:true, tone:"mixed", text:"<p>单元最终修好了，但工程设计的开始日期推迟了几个月。事后回顾发现，系统中另一部分的一个小修改本来就能弥补这个缺陷。</p>" },
+    endBad: { end:true, tone:"bad", text:"<p>工程设计阶段，这个缺陷牵连到与它相连的几个组件，多个设计小组不得不返工。问题发现得越晚，纠正的代价越大。</p>" }
+  }
+};
+QUIZ[13] = [
+  { q:"概念定义时期已经选定了系统方案，项目进入先期开发。这个时期结束时，应当交给工程设计的是什么？",
+    o:["系统设计规范和一个经过验证的开发模型","系统功能规范，说明系统必须做什么","第一批可以交给用户试用的正式产品","在几种候选方案之间做出的最终选择"], a:0,
+    e:"先期开发把“系统必须做什么”转化为“各项功能大体用什么硬件和软件实现”，所以输出是系统设计规范和经过验证的开发模型。系统功能规范是概念定义交来的输入，候选方案的选择也在概念定义时期就已经完成。" },
+  { q:"某部件的功能和生产方法都已经成熟，但打算改用一种新的材料和结构来实现。这种部件通常应当怎样开发？",
+    o:["设计并运行功能仿真，验证扩展后的性能","针对新的生产方法做关键性的实验","设计、制作并测试快速开发模型，验证工程设计","设计、制作并测试快速原型，验证功能和性能"], a:2,
+    e:"新的只是实物实现方式，所以要做一个快速开发模型，验证这种工程设计是否可行。快速原型对应的是功能本身是新的情况，要验证的是功能和性能；这里功能已经成熟，需要回答的是新材料和新结构能不能做出来。" },
+  { q:"开发测试中，一个关键部件的测量结果与预期明显不符。首先应当怀疑哪里？",
+    o:["部件的设计存在缺陷","测试设备和测试程序本身","这项性能需求定得过高","部件的制造质量不合格"], a:1,
+    e:"测试设备和测试程序得到的验证通常少于被测试的部件，所以出现偏差时首先要检查它们。排除了测试本身的问题之后，才轮到考虑设计缺陷，或者需求是否定得过高、是否可以放宽。" },
+  { q:"先期开发的经费不足以验证所有高风险部件。哪一种做法最稳妥？",
+    o:["把经费平均分给每一个高风险部件","削减每个部件的测试项目，使所有部件都能测一遍","先让未验证的部件进入工程设计，到时再边做边改","把风险最大的几个部件换成更保守的方案"], a:3,
+    e:"把最危险的几个部件换成更保守的方案，进入工程设计的部件就都有把握。把经费摊薄或者削减测试项目，每个部件都验证得不充分；让未验证的部件进入工程设计，日后处理遗留风险的代价更高，这正是“风险成本”权衡所要避免的。" }
+];
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>
